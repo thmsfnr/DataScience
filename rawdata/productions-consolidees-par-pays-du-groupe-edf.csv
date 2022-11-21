@@ -1,0 +1,300 @@
+tri;annee;perimetre_juridique;legal_perimeter;perimetre_spatial;spatial_perimeter;filiere;sector;type_d_energie;type_of_energy;production;unite;methode_de_consolidation;consolidation_method
+1;2021;Groupe;Group;Afrique du Sud;South Africa;Eolienne;Wind;Electrique;Electric;180.968205599999;GWh;Nette;Net
+2;2021;Groupe;Group;Allemagne;Germany;Eolienne;Wind;Electrique;Electric;219.07617;GWh;Nette;Net
+3;2021;Groupe;Group;Allemagne;Germany;Hydraulique;Hydraulic;Electrique;Electric;396.932;GWh;Nette;Net
+4;2021;Groupe;Group;Belgique;Belgium;Hydraulique;Hydraulic;Electrique;Electric;193.371888;GWh;Nette;Net
+5;2021;Groupe;Group;Belgique;Belgium;Gaz;Gas;Electrique;Electric;1742.851987;GWh;Nette;Net
+6;2021;Groupe;Group;Belgique;Belgium;Eolienne;Wind;Electrique;Electric;733.0635422;GWh;Nette;Net
+7;2021;Groupe;Group;Belgique;Belgium;Solaire;Solar;Electrique;Electric;1.557901;GWh;Nette;Net
+8;2021;Groupe;Group;Belgique;Belgium;Gaz;Gas;Chaleur;Heat;52.838237;GWh;Nette;Net
+9;2021;Groupe;Group;Belgique;Belgium;Nucléaire;Nuclear;Electrique;Electric;6352.035127;GWh;Nette;Net
+10;2021;Groupe;Group;Brésil;Brazil;Gaz;Gas;Electrique;Electric;7134.569485;GWh;Nette;Net
+11;2021;Groupe;Group;Brésil;Brazil;Hydraulique;Hydraulic;Electrique;Electric;711.3072;GWh;Nette;Net
+12;2021;Groupe;Group;Brésil;Brazil;Eolienne;Wind;Electrique;Electric;1705.101015;GWh;Nette;Net
+13;2021;Groupe;Group;Brésil;Brazil;Solaire;Solar;Electrique;Electric;388.512325;GWh;Nette;Net
+14;2021;Groupe;Group;Canada;Canada;Eolienne;Wind;Electrique;Electric;2037.8922;GWh;Nette;Net
+15;2021;Groupe;Group;Canada;Canada;Solaire;Solar;Electrique;Electric;47.879;GWh;Nette;Net
+16;2021;Groupe;Group;République populaire de Chine;People's Republic of China;Nucléaire;Nuclear;Electrique;Electric;5546.1;GWh;Nette;Net
+17;2021;Groupe;Group;République populaire de Chine;People's Republic of China;Charbon;Coal;Electrique;Electric;9303.182;GWh;Nette;Net
+18;2021;Groupe;Group;République populaire de Chine;People's Republic of China;Eolienne;Wind;Electrique;Electric;727.422721599999;GWh;Nette;Net
+19;2021;Groupe;Group;République populaire de Chine;People's Republic of China;Solaire;Solar;Electrique;Electric;107.96545;GWh;Nette;Net
+20;2021;Groupe;Group;République populaire de Chine;People's Republic of China;Biomasse;Biomass;Electrique;Electric;103.35;GWh;Nette;Net
+21;2021;Groupe;Group;Espagne;Spain;Gaz;Gas;Electrique;Electric;38.3074229948852;GWh;Nette;Net
+22;2021;Groupe;Group;Espagne;Spain;Solaire;Solar;Electrique;Electric;1.66692764197755;GWh;Nette;Net
+23;2021;Groupe;Group;Espagne;Spain;Gaz;Gas;Chaleur;Heat;175.447433705546;GWh;Nette;Net
+24;2021;Groupe;Group;France;France;Nucléaire;Nuclear;Electrique;Electric;354394.205;GWh;Nette;Net
+25;2021;Groupe;Group;France;France;Charbon;Coal;Electrique;Electric;3097.606;GWh;Nette;Net
+26;2021;Groupe;Group;France;France;Fioul;Fioul;Electrique;Electric;5218.7929;GWh;Nette;Net
+27;2021;Groupe;Group;France;France;Gaz;Gas;Electrique;Electric;9800.98476508;GWh;Nette;Net
+28;2021;Groupe;Group;France;France;Hydraulique;Hydraulic;Electrique;Electric;43330.7899136;GWh;Nette;Net
+29;2021;Groupe;Group;France;France;Eolienne;Wind;Electrique;Electric;3396.2569246;GWh;Nette;Net
+30;2021;Groupe;Group;France;France;Solaire;Solar;Electrique;Electric;349.848924399999;GWh;Nette;Net
+31;2021;Groupe;Group;France;France;Géothermie;Geothermal;Electrique;Electric;3.7459264;GWh;Nette;Net
+32;2021;Groupe;Group;France;France;Biomasse;Biomass;Electrique;Electric;767.7651405;GWh;Nette;Net
+33;2021;Groupe;Group;France;France;Energie marine;Marine energy;Electrique;Electric;543.049;GWh;Nette;Net
+34;2021;Groupe;Group;France;France;Divers;Various;Electrique;Electric;118.988564;GWh;Nette;Net
+35;2021;Groupe;Group;France;France;Charbon;Coal;Chaleur;Heat;15.6710738195347;GWh;Nette;Net
+36;2021;Groupe;Group;France;France;Fioul;Fioul;Chaleur;Heat;221.085093684972;GWh;Nette;Net
+37;2021;Groupe;Group;France;France;Gaz;Gas;Chaleur;Heat;14597.6366149675;GWh;Nette;Net
+38;2021;Groupe;Group;France;France;Divers;Various;Chaleur;Heat;374.620492381667;GWh;Nette;Net
+39;2021;Groupe;Group;France;France;ENR;Renewable Energies;Chaleur;Heat;7848.24067660148;GWh;Nette;Net
+40;2021;Groupe;Group;Grèce;Greece;Gaz;gas;Electrique;Electric;1834.07063205;GWh;Nette;Net
+41;2021;Groupe;Group;Grèce;Greece;Eolienne;Wind;Electrique;Electric;509.05868721103;GWh;Nette;Net
+42;2021;Groupe;Group;Grèce;Greece;Solaire;Solar;Electrique;Electric;18.578882;GWh;Nette;Net
+43;2021;Groupe;Group;Inde;India;Eolienne;Wind;Electrique;Electric;513.8141;GWh;Nette;Net
+44;2021;Groupe;Group;Inde;India;Solaire;Solar;Electrique;Electric;275.64825675;GWh;Nette;Net
+45;2021;Groupe;Group;Israël;Israel;Solaire;Solar;Electrique;Electric;495.00525894;GWh;Nette;Net
+46;2021;Groupe;Group;Italie;Italy;Gaz;Gas;Electrique;Electric;12367.0822525502;GWh;Nette;Net
+47;2021;Groupe;Group;Italie;Italy;Hydraulique;Hydraulic;Electrique;Electric;2810.61188441179;GWh;Nette;Net
+48;2021;Groupe;Group;Italie;Italy;Eolienne;Wind;Electrique;Electric;1478.72093;GWh;Nette;Net
+49;2021;Groupe;Group;Italie;Italy;Solaire;Solar;Electrique;Electric;102.232557;GWh;Nette;Net
+50;2021;Groupe;Group;Italie;Italy;Biomasse;Biomass;Electrique;Electric;18.2961393;GWh;Nette;Net
+51;2021;Groupe;Group;Italie;Italy;Divers;Various;Electrique;Electric;32.61783126;GWh;Nette;Net
+52;2021;Groupe;Group;Italie;Italy;Fioul;Fioul;Chaleur;Heat;0.261985070406;GWh;Nette;Net
+53;2021;Groupe;Group;Italie;Italy;Gaz;Gas;Chaleur;Heat;2884.812111;GWh;Nette;Net
+54;2021;Groupe;Group;Italie;Italy;ENR;Renewable Energies;Chaleur;Heat;70.008721075038;GWh;Nette;Net
+55;2021;Groupe;Group;Mexique;Mexico;Eolienne;Wind;Electrique;Electric;469.420227999999;GWh;Nette;Net
+56;2021;Groupe;Group;Mexique;Mexico;Solaire;Solar;Electrique;Electric;257.13958955;GWh;Nette;Net
+57;2021;Groupe;Group;Pologne;Poland;Charbon;Coal;Electrique;Electric;24.9153344358;GWh;Nette;Net
+58;2021;Groupe;Group;Pologne;Poland;Eolienne;Wind;Electrique;Electric;24.8;GWh;Nette;Net
+59;2021;Groupe;Group;Pologne;Poland;Divers;Various;Electrique;Electric;79.027555;GWh;Nette;Net
+60;2021;Groupe;Group;Pologne;Poland;Charbon;Coal;Chaleur;Heat;869.8818252932;GWh;Nette;Net
+61;2021;Groupe;Group;Pologne;Poland;Gaz;Gas;Chaleur;Heat;90.284067384;GWh;Nette;Net
+62;2021;Groupe;Group;Pologne;Poland;Divers;Various;Chaleur;Heat;152.963926544;GWh;Nette;Net
+63;2021;Groupe;Group;Portugal;Portugal;Eolienne;Wind;Electrique;Electric;359.538648566;GWh;Nette;Net
+64;2021;Groupe;Group;Suisse;Switzerland;Hydraulique;Hydraulic;Electrique;Electric;268.5108327;GWh;Nette;Net
+65;2021;Groupe;Group;Turquie;Turkey;Eolienne;Wind;Electrique;Electric;372.081;GWh;Nette;Net
+66;2021;Groupe;Group;Turquie;Turkey;Solaire;Solar;Electrique;Electric;14.638;GWh;Nette;Net
+67;2021;Groupe;Group;Royaume-Uni;United-Kingdom;Nucléaire;Nuclear;Electrique;Electric;33368.0;GWh;Nette;Net
+68;2021;Groupe;Group;Royaume-Uni;United-Kingdom;Charbon;Coal;Electrique;Electric;490.479;GWh;Nette;Net
+69;2021;Groupe;Group;Royaume-Uni;United-Kingdom;Gaz;Gas;Electrique;Electric;2601.427;GWh;Nette;Net
+70;2021;Groupe;Group;Royaume-Uni;United-Kingdom;Eolienne;Wind;Electrique;Electric;881.67595550614;GWh;Nette;Net
+71;2021;Groupe;Group;Royaume-Uni;United-Kingdom;Biomasse;Biomass;Electrique;Electric;13.7402509;GWh;Nette;Net
+72;2021;Groupe;Group;Royaume-Uni;United-Kingdom;Divers;Various;Chaleur;Heat;1.708974;GWh;Nette;Net
+73;2021;Groupe;Group;Royaume-Uni;United-Kingdom;ENR;Renewable Energies;Chaleur;Heat;1.708974;GWh;Nette;Net
+74;2021;Groupe;Group;Etats-Unis;United States of America;Nucléaire;Nuclear;Electrique;Electric;10105.9784;GWh;Nette;Net
+75;2021;Groupe;Group;Etats-Unis;United States of America;Eolienne;Wind;Electrique;Electric;10627.3083452298;GWh;Nette;Net
+76;2021;Groupe;Group;Etats-Unis;United States of America;Solaire;Solar;Electrique;Electric;1277.17935122426;GWh;Nette;Net
+77;2021;Groupe;Group;Viêt Nam;Vietnam;Gaz;Gas;Electrique;Electric;2205.0545625;GWh;Nette;Net
+78;2021;Groupe;Group;Pays-Bas;Netherlands;Gaz;Gas;Electrique;Electric;1743.5;GWh;Nette;Net
+79;2021;Groupe;Group;Chili;Chile;Fioul;Fioul;Electrique;Electric;261.06;GWh;Nette;Net
+80;2021;Groupe;Group;Chili;Chile;Gaz;Gas;Electrique;Electric;378.03;GWh;Nette;Net
+81;2021;Groupe;Group;Chili;Chile;Eolienne;Wind;Electrique;Electric;153.0923;GWh;Nette;Net
+82;2021;Groupe;Group;Chili;Chile;Solaire;Solar;Electrique;Electric;280.2596;GWh;Nette;Net
+83;2021;Groupe;Group;Laos;Laos;Hydraulique;Hydraulic;Electrique;Electric;1904.0;GWh;Nette;Net
+84;2021;Groupe;Group;Maroc;Morocco;ENR;Renewable Energies;Chaleur;Heat;5.80065185224181;GWh;Nette;Net
+85;2021;Groupe;Group;Emirats Arabes Unis;United Arab Emirates;Solaire;Solar;Electrique;Electric;392.0816053216;GWh;Nette;Net
+86;2021;Groupe;Group;Egypte;Egypte;Solaire;Solar;Electrique;Electric;152.6506371352;GWh;Nette;Net
+87;2021;Groupe;Group;Monde;World;Nucléaire;Nuclear;Electrique;Electric;409754.842;GWh;Intégration Globale;Full integration
+88;2021;Groupe;Group;Monde;World;Charbon;Coal;Electrique;Electric;3530.525974;GWh;Intégration Globale;Full integration
+89;2021;Groupe;Group;Monde;World;Fioul;Fioul;Electrique;Electric;5093.9829;GWh;Intégration Globale;Full integration
+90;2021;Groupe;Group;Monde;World;Gaz;Gas;Electrique;Electric;37994.7712306171;GWh;Intégration Globale;Full integration
+91;2021;Groupe;Group;Monde;World;Hydraulique;Hydraulic;Electrique;Electric;45593.9793362463;GWh;Intégration Globale;Full integration
+92;2021;Groupe;Group;Monde;World;Eolienne;Wind;Electrique;Electric;18302.7495813679;GWh;Intégration Globale;Full integration
+93;2021;Groupe;Group;Monde;World;Solaire;Solar;Electrique;Electric;1775.89332839208;GWh;Intégration Globale;Full integration
+94;2021;Groupe;Group;Monde;World;Géothermie;Geothermal;Electrique;Electric;4.226;GWh;Intégration Globale;Full integration
+95;2021;Groupe;Group;Monde;World;Biomasse;Biomass;Electrique;Electric;834.817;GWh;Intégration Globale;Full integration
+96;2021;Groupe;Group;Monde;World;Energie marine;Marine energy;Electrique;Electric;543.049;GWh;Intégration Globale;Full integration
+97;2021;Groupe;Group;Monde;World;Divers;Various;Electrique;Electric;231.6978;GWh;Intégration Globale;Full integration
+98;2021;Groupe;Group;Monde;World;Charbon;Coal;Chaleur;Heat;893.6186781088;GWh;Intégration Globale;Full integration
+99;2021;Groupe;Group;Monde;World;Fioul;Fioul;Chaleur;Heat;221.4874395596;GWh;Intégration Globale;Full integration
+100;2021;Groupe;Group;Monde;World;Gaz;Gas;Chaleur;Heat;17928.4518488444;GWh;Intégration Globale;Full integration
+101;2021;Groupe;Group;Monde;World;Divers;Various;Chaleur;Heat;529.61115962144;GWh;Intégration Globale;Full integration
+102;2021;Groupe;Group;Monde;World;ENR;Renewable Energies;Chaleur;Heat;7937.37494796156;GWh;Intégration Globale;Full integration
+103;2020;Groupe;Group;Monde;World;Nucléaire;Nuclear;Electrique;Electric;384099.389;GWh;Intégration Globale;Full integration
+104;2020;Groupe;Group;Monde;World;Charbon;Coal;Electrique;Electric;2215.637818;GWh;Intégration Globale;Full integration
+105;2020;Groupe;Group;Monde;World;Fioul;Fioul;Electrique;Electric;4574.865;GWh;Intégration Globale;Full integration
+106;2020;Groupe;Group;Monde;World;Gaz;Gas;Electrique;Electric;41966.1881503;GWh;Intégration Globale;Full integration
+107;2020;Groupe;Group;Monde;World;Hydraulique;Hydraulic;Electrique;Electric;48820.1649888;GWh;Intégration Globale;Full integration
+108;2020;Groupe;Group;Monde;World;Eolienne;Wind;Electrique;Electric;17172.7531941;GWh;Intégration Globale;Full integration
+109;2020;Groupe;Group;Monde;World;Solaire;Solar;Electrique;Electric;1170.91221035;GWh;Intégration Globale;Full integration
+110;2020;Groupe;Group;Monde;World;Géothermie;Geothermal;Electrique;Electric;2.75;GWh;Intégration Globale;Full integration
+111;2020;Groupe;Group;Monde;World;Biomasse;Biomass;Electrique;Electric;958.925964148;GWh;Intégration Globale;Full integration
+112;2020;Groupe;Group;Monde;World;Energie marine;Marine energy;Electrique;Electric;539.947;GWh;Intégration Globale;Full integration
+113;2020;Groupe;Group;Monde;World;Divers;Various;Electrique;Electric;376.068884148;GWh;Intégration Globale;Full integration
+114;2020;Groupe;Group;Monde;World;Charbon;Coal;Chaleur;Heat;888.784964;GWh;Intégration Globale;Full integration
+115;2020;Groupe;Group;Monde;World;Fioul;Fioul;Chaleur;Heat;206.4564374;GWh;Intégration Globale;Full integration
+116;2020;Groupe;Group;Monde;World;Gaz;Gas;Chaleur;Heat;15575.772128;GWh;Intégration Globale;Full integration
+117;2020;Groupe;Group;Monde;World;Divers;Various;Chaleur;Heat;811.88562634;GWh;Intégration Globale;Full integration
+118;2020;Groupe;Group;Monde;World;ENR;Renewable Energies;Chaleur;Heat;8579.41488309;GWh;Intégration Globale;Full integration
+119;2020;Groupe;Group;Belgique;Belgium;Nucléaire;Nuclear;Electrique;Electric;2119.0158449;GWh;Nette;Net
+120;2020;Groupe;Group;République populaire de Chine;People's Republic of China;Nucléaire;Nuclear;Electrique;Electric;6471.0;GWh;Nette;Net
+121;2020;Groupe;Group;France;France;Nucléaire;Nuclear;Electrique;Electric;330004.38633;GWh;Nette;Net
+122;2020;Groupe;Group;Royaume-Uni;United Kingdom;Nucléaire;Nuclear;Electrique;Electric;36533.6;GWh;Nette;Net
+123;2020;Groupe;Group;États-Unis;United States of America;Nucléaire;Nuclear;Electrique;Electric;16607.737788;GWh;Nette;Net
+124;2020;Groupe;Group;République populaire de Chine;People's Republic of China;Charbon;Coal;Electrique;Electric;8697.09456;GWh;Nette;Net
+125;2020;Groupe;Group;France;France;Charbon;Coal;Electrique;Electric;1143.633;GWh;Nette;Net
+126;2020;Groupe;Group;Pologne;Poland;Charbon;Coal;Electrique;Electric;14.136894141;GWh;Nette;Net
+127;2020;Groupe;Group;Royaume-Uni;United Kingdom;Charbon;Coal;Electrique;Electric;1161.638;GWh;Nette;Net
+128;2020;Groupe;Group;France;France;Fioul;Fioul;Electrique;Electric;4688.46812992;GWh;Nette;Net
+129;2020;Groupe;Group;Chili;Chile;Fioul;Fioul;Electrique;Electric;88.86;GWh;Nette;Net
+130;2020;Groupe;Group;Belgique;Belgium;Gaz;Gas;Electrique;Electric;2279.8288919;GWh;Nette;Net
+131;2020;Groupe;Group;Brésil;Brazil;Gaz;Gas;Electrique;Electric;5340.574716;GWh;Nette;Net
+132;2020;Groupe;Group;Espagne;Spain;Gaz;Gas;Electrique;Electric;31.5000013495;GWh;Nette;Net
+133;2020;Groupe;Group;France;France;Gaz;Gas;Electrique;Electric;10310.9313863;GWh;Nette;Net
+134;2020;Groupe;Group;Grèce;Greece;Gaz;Gas;Electrique;Electric;1607.71109725;GWh;Nette;Net
+135;2020;Groupe;Group;Italie;Italy;Gaz;Gas;Electrique;Electric;13457.6964766;GWh;Nette;Net
+136;2020;Groupe;Group;Royaume-Uni;United Kingdom;Gaz;Gas;Electrique;Electric;4860.719;GWh;Nette;Net
+137;2020;Groupe;Group;Viêt Nam;Vietnam;Gaz;Gas;Electrique;Electric;2711.3158125;GWh;Nette;Net
+138;2020;Groupe;Group;Pays-Bas;Netherlands;Gaz;Gas;Electrique;Electric;2513.4;GWh;Nette;Net
+139;2020;Groupe;Group;Chili;Chile;Gaz;Gas;Electrique;Electric;462.75;GWh;Nette;Net
+140;2020;Groupe;Group;Allemagne;Germany;Hydraulique;Hydraulic;Electrique;Electric;380.45;GWh;Nette;Net
+141;2020;Groupe;Group;Belgique;Belgium;Hydraulique;Hydraulic;Electrique;Electric;125.4618167;GWh;Nette;Net
+142;2020;Groupe;Group;Brésil;Brazil;Hydraulique;Hydraulic;Electrique;Electric;300.8043342;GWh;Nette;Net
+143;2020;Groupe;Group;France;France;Hydraulique;Hydraulic;Electrique;Electric;46097.316304;GWh;Nette;Net
+144;2020;Groupe;Group;Italie;Italy;Hydraulique;Hydraulic;Electrique;Electric;3130.3704745;GWh;Nette;Net
+145;2020;Groupe;Group;Suisse;Switzerland;Hydraulique;Hydraulic;Electrique;Electric;292.589727;GWh;Nette;Net
+146;2020;Groupe;Group;Laos;Laos;Hydraulique;Hydraulic;Electrique;Electric;2024.4;GWh;Nette;Net
+147;2020;Groupe;Group;Afrique du Sud;South Africa;Eolienne;Wind;Electrique;Electric;164.442;GWh;Nette;Net
+148;2020;Groupe;Group;Allemagne;Germany;Eolienne;Wind;Electrique;Electric;261.057;GWh;Nette;Net
+149;2020;Groupe;Group;Belgique;Belgium;Eolienne;Wind;Electrique;Electric;844.178341;GWh;Nette;Net
+150;2020;Groupe;Group;Brésil;Brazil;Eolienne;Wind;Electrique;Electric;879.915;GWh;Nette;Net
+151;2020;Groupe;Group;Canada;Canada;Eolienne;Wind;Electrique;Electric;2104.438;GWh;Nette;Net
+152;2020;Groupe;Group;République populaire de Chine;People's Republic of China;Eolienne;Wind;Electrique;Electric;392.015;GWh;Nette;Net
+153;2020;Groupe;Group;France;France;Eolienne;Wind;Electrique;Electric;3466.638208;GWh;Nette;Net
+154;2020;Groupe;Group;Grèce;Greece;Eolienne;Wind;Electrique;Electric;508.248;GWh;Nette;Net
+155;2020;Groupe;Group;Inde;India;Eolienne;Wind;Electrique;Electric;462.877;GWh;Nette;Net
+156;2020;Groupe;Group;Italie;Italy;Eolienne;Wind;Electrique;Electric;743.949074885;GWh;Nette;Net
+157;2020;Groupe;Group;Mexique;Mexico;Eolienne;Wind;Electrique;Electric;620.784;GWh;Nette;Net
+158;2020;Groupe;Group;Portugal;Portugal;Eolienne;Wind;Electrique;Electric;485.241;GWh;Nette;Net
+159;2020;Groupe;Group;Turquie;Turkey;Eolienne;Wind;Electrique;Electric;770.444;GWh;Nette;Net
+160;2020;Groupe;Group;Royaume-Uni;United Kingdom;Eolienne;Wind;Electrique;Electric;1111.89660168;GWh;Nette;Net
+161;2020;Groupe;Group;États-Unis;United States of America;Eolienne;Wind;Electrique;Electric;9377.013;GWh;Nette;Net
+162;2020;Groupe;Group;Chili;Chile;Eolienne;Wind;Electrique;Electric;171.533;GWh;Nette;Net
+163;2020;Groupe;Group;Belgique;Belgium;Solaire;Solar;Electrique;Electric;1.077491;GWh;Nette;Net
+164;2020;Groupe;Group;Brésil;Brazil;Solaire;Solar;Electrique;Electric;378.699;GWh;Nette;Net
+165;2020;Groupe;Group;Canada;Canada;Solaire;Solar;Electrique;Electric;46.024;GWh;Nette;Net
+166;2020;Groupe;Group;République populaire de Chine;People's Republic of China;Solaire;Solar;Electrique;Electric;98.859;GWh;Nette;Net
+167;2020;Groupe;Group;Espagne;Spain;Solaire;Solar;Electrique;Electric;0.625433719653;GWh;Nette;Net
+168;2020;Groupe;Group;France;France;Solaire;Solar;Electrique;Electric;293.78224712;GWh;Nette;Net
+169;2020;Groupe;Group;Grèce;Greece;Solaire;Solar;Electrique;Electric;20.167;GWh;Nette;Net
+170;2020;Groupe;Group;Inde;India;Solaire;Solar;Electrique;Electric;157.207;GWh;Nette;Net
+171;2020;Groupe;Group;Israël;Israel;Solaire;Solar;Electrique;Electric;373.695;GWh;Nette;Net
+172;2020;Groupe;Group;Italie;Italy;Solaire;Solar;Electrique;Electric;104.986866301;GWh;Nette;Net
+173;2020;Groupe;Group;Mexique;Mexico;Solaire;Solar;Electrique;Electric;261.347;GWh;Nette;Net
+174;2020;Groupe;Group;Turquie;Turkey;Solaire;Solar;Electrique;Electric;28.498;GWh;Nette;Net
+175;2020;Groupe;Group;États-Unis;United States of America;Solaire;Solar;Electrique;Electric;529.315;GWh;Nette;Net
+176;2020;Groupe;Group;Chili;Chile;Solaire;Solar;Electrique;Electric;287.399;GWh;Nette;Net
+177;2020;Groupe;Group;Emirats Arabes Unis;United Arab Emirates;Solaire;Solar;Electrique;Electric;350.909;GWh;Nette;Net
+178;2020;Groupe;Group;Egypte;Egypte;Solaire;Solar;Electrique;Electric;148.867;GWh;Nette;Net
+179;2020;Groupe;Group;France;France;Géothermie;Geothermal;Electrique;Electric;2.4376;GWh;Nette;Net
+180;2020;Groupe;Group;France;France;Biomasse;Biomass;Electrique;Electric;886.981992157;GWh;Nette;Net
+181;2020;Groupe;Group;Italie;Italy;Biomasse;Biomass;Electrique;Electric;8.96440601;GWh;Nette;Net
+182;2020;Groupe;Group;Royaume-Uni;United Kingdom;Biomasse;Biomass;Electrique;Electric;27.4805018;GWh;Nette;Net
+183;2020;Groupe;Group;France;France;Energie marine;Marine energy;Electrique;Electric;539.947;GWh;Nette;Net
+184;2020;Groupe;Group;France;France;Divers;Various;Electrique;Electric;237.977012217;GWh;Nette;Net
+185;2020;Groupe;Group;Italie;Italy;Divers;Various;Electrique;Electric;34.635679;GWh;Nette;Net
+186;2020;Groupe;Group;Pologne;Poland;Divers;Various;Electrique;Electric;102.3455558;GWh;Nette;Net
+187;2020;Groupe;Group;France;France;Charbon;Coal;Chaleur;Heat;14.40095424;GWh;Nette;Net
+188;2020;Groupe;Group;Pologne;Poland;Charbon;Coal;Chaleur;Heat;866.107452218;GWh;Nette;Net
+189;2020;Groupe;Group;France;France;Fioul;Fioul;Chaleur;Heat;206.146258188;GWh;Nette;Net
+190;2020;Groupe;Group;Italie;Italy;Fioul;Fioul;Chaleur;Heat;0.185155;GWh;Nette;Net
+191;2020;Groupe;Group;Belgique;Belgium;Gaz;Gas;Chaleur;Heat;42.770216;GWh;Nette;Net
+192;2020;Groupe;Group;Espagne;Spain;Gaz;Gas;Chaleur;Heat;170.693054642;GWh;Nette;Net
+193;2020;Groupe;Group;France;France;Gaz;Gas;Chaleur;Heat;12865.8171787;GWh;Nette;Net
+194;2020;Groupe;Group;Italie;Italy;Gaz;Gas;Chaleur;Heat;2368.34503079;GWh;Nette;Net
+195;2020;Groupe;Group;Pologne;Poland;Gaz;Gas;Chaleur;Heat;33.555013072;GWh;Nette;Net
+196;2020;Groupe;Group;France;France;Divers;Various;Chaleur;Heat;672.268023364;GWh;Nette;Net
+197;2020;Groupe;Group;Pologne;Poland;Divers;Various;Chaleur;Heat;135.813463;GWh;Nette;Net
+198;2020;Groupe;Group;Royaume-Uni;United Kingdom;Divers;Various;Chaleur;Heat;3.3170086;GWh;Nette;Net
+199;2020;Groupe;Group;France;France;ENR;Renewable Energies;Chaleur;Heat;8524.77091302;GWh;Nette;Net
+200;2020;Groupe;Group;Italie;Italy;ENR;Renewable Energies;Chaleur;Heat;46.3896053318;GWh;Nette;Net
+201;2020;Groupe;Group;Royaume-Uni;United Kingdom;ENR;Renewable Energies;Chaleur;Heat;3.3170086;GWh;Nette;Net
+202;2020;Groupe;Group;Maroc;Morocco;ENR;Renewable Energies;Chaleur;Heat;6.714305;GWh;Nette;Net
+203;2019;Groupe;Group;Monde;World;Nucléaire;Nuclear;Electrique;Electric;437559.881;GWh;Intégration Globale;Full integration
+204;2019;Groupe;Group;Monde;World;Charbon;Coal;Electrique;Electric;3419.601355;GWh;Intégration Globale;Full integration
+205;2019;Groupe;Group;Monde;World;Fioul;Fioul;Electrique;Electric;4700.341;GWh;Intégration Globale;Full integration
+206;2019;Groupe;Group;Monde;World;Gaz;Gas;Electrique;Electric;49017.5960402;GWh;Intégration Globale;Full integration
+207;2019;Groupe;Group;Monde;World;Hydraulique;Hydraulic;Electrique;Electric;43707.4373898;GWh;Intégration Globale;Full integration
+208;2019;Groupe;Group;Monde;World;Eolienne;Wind;Electrique;Electric;16010.1931933;GWh;Intégration Globale;Full integration
+209;2019;Groupe;Group;Monde;World;Solaire;Solar;Electrique;Electric;973.304466156;GWh;Intégration Globale;Full integration
+210;2019;Groupe;Group;Monde;World;Géothermie;Geothermal;Electrique;Electric;4.19;GWh;Intégration Globale;Full integration
+211;2019;Groupe;Group;Monde;World;Biomasse;Biomass;Electrique;Electric;1293.27982409;GWh;Intégration Globale;Full integration
+212;2019;Groupe;Group;Monde;World;Energie marine;Marine energy;Electrique;Electric;531.652;GWh;Intégration Globale;Full integration
+213;2019;Groupe;Group;Monde;World;Divers;Various;Electrique;Electric;396.0715;GWh;Intégration Globale;Full integration
+214;2019;Groupe;Group;Monde;World;Charbon;Coal;Chaleur;Heat;990.2814336;GWh;Intégration Globale;Full integration
+215;2019;Groupe;Group;Monde;World;Fioul;Fioul;Chaleur;Heat;266.9434758;GWh;Intégration Globale;Full integration
+216;2019;Groupe;Group;Monde;World;Gaz;Gas;Chaleur;Heat;17392.2508795;GWh;Intégration Globale;Full integration
+217;2019;Groupe;Group;Monde;World;Divers;Various;Chaleur;Heat;3258.20326506;GWh;Intégration Globale;Full integration
+218;2019;Groupe;Group;Monde;World;ENR;Renewable Energies;Chaleur;Heat;8517.57675774;GWh;Intégration Globale;Full integration
+219;2019;Groupe;Group;Belgique;Belgium;Nucléaire;Nuclear;Electrique;Electric;6152.7385983;GWh;Nette;Net
+220;2019;Groupe;Group;République populaire de Chine;People's Republic of China;Nucléaire;Nuclear;Electrique;Electric;4851.0;GWh;Nette;Net
+221;2019;Groupe;Group;France;France;Nucléaire;Nuclear;Electrique;Electric;368131.21913;GWh;Nette;Net
+222;2019;Groupe;Group;Royaume-Uni;United Kingdom;Nucléaire;Nuclear;Electrique;Electric;40825.6704;GWh;Nette;Net
+223;2019;Groupe;Group;États-Unis;United States of America;Nucléaire;Nuclear;Electrique;Electric;16864.666392;GWh;Nette;Net
+224;2019;Groupe;Group;République populaire de Chine;People's Republic of China;Charbon;Coal;Electrique;Electric;9462.06646;GWh;Nette;Net
+225;2019;Groupe;Group;France;France;Charbon;Coal;Electrique;Electric;927.388841333;GWh;Nette;Net
+226;2019;Groupe;Group;Pologne;Poland;Charbon;Coal;Electrique;Electric;22.7432269475;GWh;Nette;Net
+227;2019;Groupe;Group;Royaume-Uni;United Kingdom;Charbon;Coal;Electrique;Electric;2570.423;GWh;Nette;Net
+228;2019;Groupe;Group;France;France;Fioul;Fioul;Electrique;Electric;4825.69600362;GWh;Nette;Net
+229;2019;Groupe;Group;Chili;Chile;Fioul;Fioul;Electrique;Electric;19.74325;GWh;Nette;Net
+230;2019;Groupe;Group;Belgique;Belgium;Gaz;Gas;Electrique;Electric;2066.4225343;GWh;Nette;Net
+231;2019;Groupe;Group;Brésil;Brazil;Gaz;Gas;Electrique;Electric;6475.17955;GWh;Nette;Net
+232;2019;Groupe;Group;Espagne;Spain;Gaz;Gas;Electrique;Electric;22.3373743988;GWh;Nette;Net
+233;2019;Groupe;Group;France;France;Gaz;Gas;Electrique;Electric;11978.1062586;GWh;Nette;Net
+234;2019;Groupe;Group;Grèce;Greece;Gaz;Gas;Electrique;Electric;1423.3547;GWh;Nette;Net
+235;2019;Groupe;Group;Italie;Italy;Gaz;Gas;Electrique;Electric;16182.2805906;GWh;Nette;Net
+236;2019;Groupe;Group;Royaume-Uni;United Kingdom;Gaz;Gas;Electrique;Electric;6202.273;GWh;Nette;Net
+237;2019;Groupe;Group;Viêt Nam;Vietnam;Gaz;Gas;Electrique;Electric;3031.752375;GWh;Nette;Net
+238;2019;Groupe;Group;Pays-Bas;Netherlands;Gaz;Gas;Electrique;Electric;2395.4;GWh;Nette;Net
+239;2019;Groupe;Group;Chili;Chile;Gaz;Gas;Electrique;Electric;433.024;GWh;Nette;Net
+240;2019;Groupe;Group;Belgique;Belgium;Hydraulique;Hydraulic;Electrique;Electric;137.5708939;GWh;Nette;Net
+241;2019;Groupe;Group;Brésil;Brazil;Hydraulique;Hydraulic;Electrique;Electric;144.73477986;GWh;Nette;Net
+242;2019;Groupe;Group;France;France;Hydraulique;Hydraulic;Electrique;Electric;41336.8801009;GWh;Nette;Net
+243;2019;Groupe;Group;Italie;Italy;Hydraulique;Hydraulic;Electrique;Electric;2844.35637225;GWh;Nette;Net
+244;2019;Groupe;Group;Suisse;Switzerland;Hydraulique;Hydraulic;Electrique;Electric;273.28878;GWh;Nette;Net
+245;2019;Groupe;Group;Laos;Laos;Hydraulique;Hydraulic;Electrique;Electric;2026.4;GWh;Nette;Net
+246;2019;Groupe;Group;Afrique du Sud;South Africa;Eolienne;Wind;Electrique;Electric;336.46;GWh;Nette;Net
+247;2019;Groupe;Group;Allemagne;Germany;Eolienne;Wind;Electrique;Electric;280.879;GWh;Nette;Net
+248;2019;Groupe;Group;Belgique;Belgium;Eolienne;Wind;Electrique;Electric;408.410352;GWh;Nette;Net
+249;2019;Groupe;Group;Brésil;Brazil;Eolienne;Wind;Electrique;Electric;829.594;GWh;Nette;Net
+250;2019;Groupe;Group;Canada;Canada;Eolienne;Wind;Electrique;Electric;1932.182;GWh;Nette;Net
+251;2019;Groupe;Group;République populaire de Chine;People's Republic of China;Eolienne;Wind;Electrique;Electric;244.039;GWh;Nette;Net
+252;2019;Groupe;Group;France;France;Eolienne;Wind;Electrique;Electric;3230.9025686;GWh;Nette;Net
+253;2019;Groupe;Group;Grèce;Greece;Eolienne;Wind;Electrique;Electric;521.497;GWh;Nette;Net
+254;2019;Groupe;Group;Inde;India;Eolienne;Wind;Electrique;Electric;305.601;GWh;Nette;Net
+255;2019;Groupe;Group;Italie;Italy;Eolienne;Wind;Electrique;Electric;776.555065521;GWh;Nette;Net
+256;2019;Groupe;Group;Mexique;Mexico;Eolienne;Wind;Electrique;Electric;651.906;GWh;Nette;Net
+257;2019;Groupe;Group;Portugal;Portugal;Eolienne;Wind;Electrique;Electric;513.2;GWh;Nette;Net
+258;2019;Groupe;Group;Turquie;Turkey;Eolienne;Wind;Electrique;Electric;749.158;GWh;Nette;Net
+259;2019;Groupe;Group;Royaume-Uni;United Kingdom;Eolienne;Wind;Electrique;Electric;2046.99;GWh;Nette;Net
+260;2019;Groupe;Group;États-Unis;United States of America;Eolienne;Wind;Electrique;Electric;8951.568;GWh;Nette;Net
+261;2019;Groupe;Group;Chili;Chile;Eolienne;Wind;Electrique;Electric;178.9;GWh;Nette;Net
+262;2019;Groupe;Group;Maroc;Morocco;Eolienne;Wind;Electrique;Electric;73.533;GWh;Nette;Net
+263;2019;Groupe;Group;Belgique;Belgium;Solaire;Solar;Electrique;Electric;1.081684293;GWh;Nette;Net
+264;2019;Groupe;Group;Brésil;Brazil;Solaire;Solar;Electrique;Electric;415.5;GWh;Nette;Net
+265;2019;Groupe;Group;Canada;Canada;Solaire;Solar;Electrique;Electric;58.3817539074;GWh;Nette;Net
+266;2019;Groupe;Group;République populaire de Chine;People's Republic of China;Solaire;Solar;Electrique;Electric;93.16;GWh;Nette;Net
+267;2019;Groupe;Group;Espagne;Spain;Solaire;Solar;Electrique;Electric;0.14995888605;GWh;Nette;Net
+268;2019;Groupe;Group;France;France;Solaire;Solar;Electrique;Electric;260.210142955;GWh;Nette;Net
+269;2019;Groupe;Group;Grèce;Greece;Solaire;Solar;Electrique;Electric;18.645;GWh;Nette;Net
+270;2019;Groupe;Group;Inde;India;Solaire;Solar;Electrique;Electric;169.427;GWh;Nette;Net
+271;2019;Groupe;Group;Israël;Israel;Solaire;Solar;Electrique;Electric;398.586;GWh;Nette;Net
+272;2019;Groupe;Group;Italie;Italy;Solaire;Solar;Electrique;Electric;108.838322324;GWh;Nette;Net
+273;2019;Groupe;Group;Mexique;Mexico;Solaire;Solar;Electrique;Electric;122.161;GWh;Nette;Net
+274;2019;Groupe;Group;Turquie;Turkey;Solaire;Solar;Electrique;Electric;5.6;GWh;Nette;Net
+275;2019;Groupe;Group;États-Unis;United States of America;Solaire;Solar;Electrique;Electric;418.635;GWh;Nette;Net
+276;2019;Groupe;Group;Chili;Chile;Solaire;Solar;Electrique;Electric;281.9;GWh;Nette;Net
+277;2019;Groupe;Group;Emirats Arabes Unis;United Arab Emirates;Solaire;Solar;Electrique;Electric;134.1;GWh;Nette;Net
+278;2019;Groupe;Group;Autres pays;Various countries;Solaire;Solar;Electrique;Electric;47.3;GWh;Nette;Net
+279;2019;Groupe;Group;France;France;Géothermie;Geothermal;Electrique;Electric;3.714016;GWh;Nette;Net
+280;2019;Groupe;Group;France;France;Biomasse;Biomass;Electrique;Electric;1044.1894516;GWh;Nette;Net
+281;2019;Groupe;Group;Royaume-Uni;United Kingdom;Biomasse;Biomass;Electrique;Electric;28.4099438;GWh;Nette;Net
+282;2019;Groupe;Group;États-Unis;United States of America;Biomasse;Biomass;Electrique;Electric;180.826;GWh;Nette;Net
+283;2019;Groupe;Group;France;France;Energie marine;Marine energy;Electrique;Electric;531.652;GWh;Nette;Net
+284;2019;Groupe;Group;France;France;Divers;Various;Electrique;Electric;264.5941482;GWh;Nette;Net
+285;2019;Groupe;Group;Italie;Italy;Divers;Various;Electrique;Electric;32.4342835;GWh;Nette;Net
+286;2019;Groupe;Group;Pologne;Poland;Divers;Various;Electrique;Electric;97.9771784;GWh;Nette;Net
+287;2019;Groupe;Group;France;France;Charbon;Coal;Chaleur;Heat;94.1075016;GWh;Nette;Net
+288;2019;Groupe;Group;Pologne;Poland;Charbon;Coal;Chaleur;Heat;886.866425866;GWh;Nette;Net
+289;2019;Groupe;Group;France;France;Fioul;Fioul;Chaleur;Heat;266.7828342;GWh;Nette;Net
+290;2019;Groupe;Group;Belgique;Belgium;Gaz;Gas;Chaleur;Heat;44.576756627;GWh;Nette;Net
+291;2019;Groupe;Group;Espagne;Spain;Gaz;Gas;Chaleur;Heat;20.4557295;GWh;Nette;Net
+292;2019;Groupe;Group;France;France;Gaz;Gas;Chaleur;Heat;14395.6913996;GWh;Nette;Net
+293;2019;Groupe;Group;Italie;Italy;Gaz;Gas;Chaleur;Heat;2826.82207372;GWh;Nette;Net
+294;2019;Groupe;Group;France;France;Divers;Various;Chaleur;Heat;3069.10743;GWh;Nette;Net
+295;2019;Groupe;Group;Pologne;Poland;Divers;Various;Chaleur;Heat;185.5695914;GWh;Nette;Net
+296;2019;Groupe;Group;Royaume-Uni;United Kingdom;Divers;Various;Chaleur;Heat;1.5710568;GWh;Nette;Net
+297;2019;Groupe;Group;France;France;ENR;Renewable Energies;Chaleur;Heat;8479.3125536;GWh;Nette;Net
+298;2019;Groupe;Group;Italie;Italy;ENR;Renewable Energies;Chaleur;Heat;28.6201900939;GWh;Nette;Net
+299;2019;Groupe;Group;Royaume-Uni;United Kingdom;ENR;Renewable Energies;Chaleur;Heat;1.5710568;GWh;Nette;Net
