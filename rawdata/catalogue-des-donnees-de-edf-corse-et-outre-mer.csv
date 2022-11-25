@@ -1,0 +1,287 @@
+title;link;description;pubdate;perimetre_juridique;perimetre_spatial
+Registre national des installations de production et de stockage d'électricité (au 31/08/2022);http://opendata-corse-outremer.edf.fr/explore/dataset/registre-des-installations-de-production-et-de-stockage-d-electricite/;Ce registre présente les installations de production et de stockage d'électricité raccordées directement ou indirectement aux réseaux publics d’électricité en France métropolitaine et dans les zones non interconnectées (ZNI).   Il contient notamment les informations suivantes :      Nom de l’installation     Département et commune du point de livraison de l’installation     Filière de l’installation     Puissance active maximale installée     Date de mise en service  Pour les « petites » installations (< 36 kVA), une agrégation est réalisée par lot d'au moins 10 à la maille commune ou département.  Les informations relatives à ces installations de moins de 36 kW sont rendues publiques après agrégation, tel que défini dans l'arrêté du 7 juillet 2016.  Dans le respect des obligations règlementaires de l'article 179 de la LTECV, la maille territoriale la plus fine autorisée est la maille IRIS, et le pas temporel est annuel.;2022-10-18T18:05:57+02:00;EDF SA;Corse et/ou Outre Mer
+Production d’électricité par filière et coûts de production au pas horaire;http://opendata-corse-outremer.edf.fr/explore/dataset/courbe-de-charge-de-la-production-delectricite-par-filiere/;Chaque mois, les informations relatives à la production d'électricité  par filière sont établies à partir de données de comptage, de télémesures ainsi que  des estimations.  	  Les informations relatives au coût constaté de production concernent  une moyenne de l’ensemble des moyens de production (toutes filières  confondues).  Cette information est différente du coût marginal horaire du système, qui correspondrait en première approche au coût variable du moyen dispatchable le plus cher démarré. Ces coûts ne sont donc en particulier pas comparables aux coûts marginaux prospectifs publiés par la CRE.  A ce jour, les données 2016 à 2021 sont validées alors que les données 2021 sont estimées.  Le fuseau horaire des données est celui de la France métropolitaine (UTC+1 en hiver / UTC+2 en été);2022-04-19T13:53:30+02:00;EDF SA;Corse et/ou Outre Mer
+Signal réseau Guadeloupe - Recharge véhicule électrique;http://opendata-corse-outremer.edf.fr/explore/dataset/signal-reseau-guadeloupe-recharge-vehicule-electrique/;"Les spécificités du système électrique  insulaire de la Guadeloupe   incitent à prendre des précautions concernant le  développement de la   mobilité électrique.   EDF en Guadeloupe propose ainsi, à travers  ce  jeu de données, un signal réseau  afin d'inciter le pilotage   intelligent de la recharge des véhicules  électriques en : 
+Évitant les périodes de contraintes sur le réseau, et notamment la pointe de consommation du soirDiminuant    l’impact CO2 en favorisant la recharge pendant les heures où le mix    électrique est moins carboné (heures solaires principalement) La valeur 1 signifie que le créneau est favorable et que le recharge est conseillée.    La valeur 0 signifie que le créneau est défavorable et que la recharge est à éviter si possible.  Le fuseau horaire des données est celui de la Guadeloupe (UTC-4)  Une authentification (compte) est nécessaire pour l'utilisation régulière  de l'API, en particulier dans le cadre du programme ADVENIR ZNI (voir  pièce-jointe). Vous pouvez adresser vos questions à l'adresse suivante : sei-opendata@edf.fr";2022-02-08T18:17:10+01:00;EDF SA;Corse et/ou Outre Mer
+Signal réseau Réunion - Recharge véhicule électrique;http://opendata-corse-outremer.edf.fr/explore/dataset/signal-reseau-reunion-recharge-vehicule-electrique/;Les spécificités du système électrique  insulaire de la Réunion incitent à prendre des précautions concernant le  développement de la mobilité électrique.   EDF à la Réunion propose ainsi, à travers ce jeu de données, un signal réseau  afin d'inciter le pilotage intelligent de la recharge des véhicules  électriques en : Évitant les périodes de contraintes sur le réseau, et notamment la pointe de consommation du soirDiminuant  l’impact CO2 en favorisant la recharge pendant les heures où le mix  électrique est moins carboné (heures solaires principalement) La valeur 1 signifie que le créneau est favorable et que le recharge est conseillée.    La valeur 0 signifie que le créneau est défavorable et que la recharge est à éviter si possible.  Le fuseau horaire des données est celui de l'île de la Réunion (UTC+4)  Une authentification (compte) est nécessaire pour l'utilisation régulière  de l'API, en particulier dans le cadre du programme ADVENIR ZNI (voir  pièce-jointe). Vous pouvez adresser vos questions à l'adresse suivante : sei-opendata@edf.fr;2022-02-08T18:14:47+01:00;EDF SA;Corse et/ou Outre Mer
+Postes sources - Corse;http://opendata-corse-outremer.edf.fr/explore/dataset/postes-sources/;"Ce
+jeu de données représente la position des postes source sur l’ensemble du
+réseau électrique exploité par EDF en Corse.
+Ces
+données sont publiées à titre purement indicatif, EDF ne peut garantir leur
+exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T18:12:32+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes haute tension (HTB aérien) - Guyane;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-haute-tension-htb-aerien-guy/;"Ce jeu de données présente l'ensemble des lignes haute tension (HTB)
+aériennes de la Guyane. 
+Ces
+données sont publiées à titre purement indicatif, EDF ne peut garantir leur
+exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T18:03:24+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes basse tension (BT souterrain) - Guyane;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-basse-tension-bt-souterrain/;"Ce
+jeu de données présente l'ensemble des lignes basse tension (BT) souterraines
+de la Guyane.
+Ces données sont publiées à titre purement indicatif, EDF ne peut
+garantir leur exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T18:01:12+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes basse tension (BT souterrain) - Corse;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-basse-tension-bt-souterrain0/;"Ce
+jeu de données présente l'ensemble des lignes basse tension (BT) souterraines de Corse. 
+Ces données sont publiées à titre purement indicatif, EDF ne peut
+garantir leur exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T17:55:16+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes haute tension (HTB souterrain) - Guadeloupe;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-haute-tension-htb-souterrain-gua/;"Ce jeu de données présente l'ensemble des lignes haute tension (HTB) souterraines
+de Guadeloupe.
+
+Ces
+données sont publiées à titre purement indicatif, EDF ne peut garantir leur
+exactitude et leur exhaustivité. Des mises à jour seront publiées régulièrement.";2022-02-08T17:53:32+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes haute tension (HTA aérien) - Guadeloupe;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-haute-tension-hta-aerien-gua/;"Ce
+jeu de données présente l'ensemble des lignes haute tension (HTA) aériennes de Guadeloupe. 
+Ces données sont publiées à titre purement indicatif, EDF ne peut
+garantir leur exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T17:52:56+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes basse tension (BT aérien) - Guadeloupe;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-basse-tension-bt-aerien-gua/;"Ce
+jeu de données présente l'ensemble des lignes basse tension (BT) aériennes de Guadeloupe. 
+Ces données sont publiées à titre purement indicatif, EDF ne peut
+garantir leur exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T17:51:33+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes haute tension (HTB aérien) - Réunion;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-haute-tension-htb-aerien-run/;"Ce jeu de données présente l'ensemble des lignes haute tension (HTB) aériennes de l'île de la Réunion.   Ces
+ données sont publiées  à titre purement indicatif, EDF ne peut garantir
+ leur exactitude et  leur exhaustivité. Des mises à jour seront publiées
+ régulièrement.";2022-02-08T17:46:46+01:00;EDF SA;Corse et/ou Outre Mer
+Postes sources - Réunion;http://opendata-corse-outremer.edf.fr/explore/dataset/postes-sources-run/;"Ce
+jeu de données représente la position des postes source sur l’ensemble du
+réseau électrique exploité par EDF sur l'île de la Réunion. 
+Ces
+données sont publiées à titre purement indicatif, EDF ne peut garantir leur
+exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T17:44:59+01:00;EDF SA;Corse et/ou Outre Mer
+Postes Sources - Martinique;http://opendata-corse-outremer.edf.fr/explore/dataset/postes-sources-mar/;"Ce
+jeu de données représente la position des postes source sur l’ensemble du
+réseau électrique exploité par EDF en Martinique.
+Ces
+données sont publiées à titre purement indicatif, EDF ne peut garantir leur
+exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T17:40:44+01:00;EDF SA;Corse et/ou Outre Mer
+;;;;EDF SA;Corse et/ou Outre Mer
+Consommation annuelle par commune;http://opendata-corse-outremer.edf.fr/explore/dataset/consommation-annuelle-par-commune-new/;"Ce jeu de données inclut la consommation d'électricité annuelle et le nombre de points de livraison par commune, avec distinction selon le secteur d'activité (résidentiel, tertiaire, industrie, agriculture, ou non affecté) Des données plus détaillées (IRIS, EPCI, NAF...) sont mise
+à disposition par EDF SEI via le portail du Ministère de la transition
+écologique (Sous-Direction des statistiques de l'énergie) : https://www.statistiques.developpement-durable.gouv.fr/donnees-locales-de-consommation-denergie";2022-10-26T11:02:34+02:00;EDF SA;Corse et/ou Outre Mer
+File d'attente producteur;http://opendata-corse-outremer.edf.fr/explore/dataset/file-dattente-producteur/;File d'attente de raccordement des producteurs par filière incluant le nombre d'installations et la puissance (en MW) avec le détail du niveau de tension concerné (basse tension : BT, moyenne tension : HTA et haute tension : HTB)   Mise à jour : 24/06/2022;2022-10-21T12:29:05+02:00;EDF SA;Corse et/ou Outre Mer
+Registre des installations de production et de stockage (Déprécié);http://opendata-corse-outremer.edf.fr/explore/dataset/registre-des-installations-de-production-et-de-stockage/;"ATTENTION : ce jeu de données est déprécié. Merci de consulter la version à jour ici : https://opendata-corse-outremer.edf.fr/explore/dataset/registre-des-installations-de-production-et-de-stockage-d-electricite/   ----------   Parc détaillé des installations de production et de stockage d’électricité contenant notamment les informations suivantes :  
+Nom de l’installationDépartement et commune du point de livraison de l’installation Filière de l’installationPuissance active maximale installéeDate de mise en service Pour les « petites » installations (< 36 kVA), une agrégation est réalisée par lot d'au moins 10 à la maille commune ou département.   Il s'agit de la situation au 31/12/2021.";2022-03-15T11:33:34+01:00;EDF SA;Corse et/ou Outre Mer
+Postes HTA / BT - Réunion;http://opendata-corse-outremer.edf.fr/explore/dataset/postes-hta-bt-run/;"Ce
+jeu de données représente la position des postes de distribution publique
+(postes HTA/BT) sur l’ensemble du réseau de distribution exploité par EDF sur l'île de la Réunion.
+Ces
+données sont publiées à titre purement indicatif, EDF ne peut garantir leur
+exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T18:22:19+01:00;EDF SA;Corse et/ou Outre Mer
+Postes sources - Guadeloupe;http://opendata-corse-outremer.edf.fr/explore/dataset/postes-sources-gua/;"Ce
+jeu de données représente la position des postes sources sur l’ensemble du
+réseau électrique exploité par EDF en Guadeloupe.
+Ces
+données sont publiées à titre purement indicatif, EDF ne peut garantir leur
+exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T18:19:14+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes haute tension (HTA aérien) - Guyane;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-haute-tension-hta-aerien-guy/;"Ce
+jeu de données présente l'ensemble des lignes haute tension (HTA) aériennes de la Guyane. 
+Ces
+données sont publiées à titre purement indicatif, EDF ne peut garantir leur
+exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T18:02:50+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes basse tension (BT aérien) - Guyane;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-basse-tension-bt-aerien-guy/;"Ce
+jeu de données présente l'ensemble des lignes basse tension (BT) aériennes
+de la Guyane.
+
+Ces données sont publiées à titre purement indicatif, EDF ne peut
+garantir leur exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T18:02:13+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes haute tension (HTB aérien) - Corse;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-haute-tension-htb-aerien/;"Ce jeu de données présente l'ensemble des lignes haute tension (HTB)
+aériennes de Corse. 
+Ces données sont publiées à titre purement indicatif, EDF ne peut garantir
+leur exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T17:58:59+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes haute tension (HTB souterrain) - Corse;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-haute-tension-htb-souterrain/;"Ce jeu de données présente l'ensemble des lignes haute tension (HTB)
+souterraines de Corse. 
+Ces données sont publiées à titre purement indicatif, EDF ne peut garantir
+leur exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T17:58:20+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes basse tension (BT aérien) - Corse;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-basse-tension-bt-aerien/;"Ce
+jeu de données présente l'ensemble des lignes basse tension (BT) aériennes de Corse. 
+Ces données sont publiées à titre purement indicatif, EDF ne peut
+garantir leur exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T17:57:46+01:00;EDF SA;Corse et/ou Outre Mer
+Pylônes HTB - Corse;http://opendata-corse-outremer.edf.fr/explore/dataset/pylones-htb/;"Ce
+jeu de données représente la position des pylônes HTB sur l’ensemble du réseau électrique
+exploité par EDF en Corse.
+Ces
+données sont publiées à titre purement indicatif, EDF ne peut garantir leur
+exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T17:55:54+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes haute tension (HTA souterrain) - Corse;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-haute-tension-hta-souterrain0/;"Ce
+jeu de données présente l'ensemble des lignes haute tension (HTA) souterraines de Corse. 
+Ces données sont publiées à titre purement indicatif, EDF ne peut
+garantir leur exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T17:54:40+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes basse tension (BT souterrain) - Guadeloupe;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-basse-tension-bt-souterrain1/;"Ce
+jeu de données présente l'ensemble des lignes basse tension (BT) souterraines de Guadeloupe.   
+Ces données sont publiées à titre purement indicatif, EDF ne peut
+garantir leur exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T17:48:59+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes haute tension (HTB souterrain) - Réunion;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-haute-tension-htb-souterrain-run/;"Ce jeu de données présente l'ensemble des lignes haute tension (HTB) souterraines de l'île de la Réunion.   Ces
+ données sont publiées  à titre purement indicatif, EDF ne peut garantir
+ leur exactitude et  leur exhaustivité. Des mises à jour seront publiées
+ régulièrement.";2022-02-08T17:46:01+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes basse tension (BT aérien) - Réunion;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-basse-tension-bt-aerien-run/;"Ce jeu de données présente l'ensemble des lignes basse tension (BT) aériennes de l'île de la Réunion.   Ces
+ données sont publiées  à titre purement indicatif, EDF ne peut garantir
+ leur exactitude et  leur exhaustivité. Des mises à jour seront publiées
+ régulièrement.   Mis a jour en Fevrier 2020";2022-02-08T17:44:16+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes basse tension (BT souterrain) - Réunion;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-basse-tension-bt-souterrain2/;Ce jeu de données présente l'ensemble des lignes basse tension (BT) souterraines de La Réunion. Ces données sont publiées à titre purement indicatif, EDF ne peut garantir leur exactitude et leur exhaustivité. Des mises à jour seront publiées régulièrement.;2022-02-08T17:41:57+01:00;EDF SA;Corse et/ou Outre Mer
+Déconnexion maximale des installations photovoltaïques;http://opendata-corse-outremer.edf.fr/explore/dataset/deconnexions-des-installations-photovoltaiques/;La part maximale d'énergies renouvelables intermittentes (éolien et photovoltaïque sans stockage) pouvant être injectée sur les réseaux insulaires à un instant donné est limitée à 35%. Au delà de ce seuil, des déconnexions ou limitations sont possibles afin de préserver la stabilité du système électrique.   Ce jeu de données détaille mois par mois le nombre maximal d'heures de déconnexion et de limitation des installations photovoltaïques.  A compter de 2019, un nouvel indicateur est intégré au jeu de donnée : le taux d'ENR interfacé par électronique de puissance accepté.;2022-06-23T15:56:33+02:00;EDF SA;Corse et/ou Outre Mer
+Poste source - Guyane;http://opendata-corse-outremer.edf.fr/explore/dataset/poste-source-guy/;"Ce
+jeu de données représente la position des postes source sur l’ensemble du
+réseau électrique exploité par EDF en Guyane.
+Ces
+données sont publiées à titre purement indicatif, EDF ne peut garantir leur
+exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement";2022-02-08T18:21:31+01:00;EDF SA;Corse et/ou Outre Mer
+Signal réseau Martinique - Recharge véhicule électrique;http://opendata-corse-outremer.edf.fr/explore/dataset/signal-reseau-martinique-recharge-vehicule-electrique/;"Les spécificités du système électrique  insulaire de la Martinique  incitent à prendre des précautions concernant le  développement de la  mobilité électrique.   EDF en Martinique propose ainsi, à travers ce  jeu de données, un signal réseau  afin d'inciter le pilotage  intelligent de la recharge des véhicules  électriques en : 
+Évitant les périodes de contraintes sur le réseau, et notamment la pointe de consommation du soirDiminuant   l’impact CO2 en favorisant la recharge pendant les heures où le mix   électrique est moins carboné (heures solaires principalement) La valeur 1 signifie que le créneau est favorable et que le recharge est conseillée.    La valeur 0 signifie que le créneau est défavorable et que la recharge est à éviter si possible.  Le fuseau horaire des données est celui de la Martinique (UTC-4)   Une authentification (compte) est nécessaire pour l'utilisation  régulière  de l'API, en particulier dans le cadre du programme ADVENIR  ZNI (voir  pièce-jointe). Vous pouvez adresser vos questions à l'adresse suivante : sei-opendata@edf.fr";2022-02-08T18:15:18+01:00;EDF SA;Corse et/ou Outre Mer
+Postes HTA / BT - Guyane;http://opendata-corse-outremer.edf.fr/explore/dataset/postes-hta-bt-guy/;"Ce
+jeu de données représente la position des postes de distribution publique
+(postes HTA/BT) sur l’ensemble du réseau de distribution exploité par EDF en Guyane.
+Ces données sont publiées à titre purement indicatif, EDF ne peut
+garantir leur exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T18:06:55+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes haute tension (HTA souterrain) - Guyane;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-haute-tension-hta-souterrain/;"Ce
+jeu de données présente l'ensemble des lignes haute tension (HTA) souterraines
+de la Guyane. 
+Ces
+données sont publiées à titre purement indicatif, EDF ne peut garantir leur
+exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T18:00:01+01:00;EDF SA;Corse et/ou Outre Mer
+Pylônes HTB - Guadeloupe;http://opendata-corse-outremer.edf.fr/explore/dataset/pylones-htb-gua/;"Ce
+jeu de données représente la position des pylônes HTB sur l’ensemble du réseau électrique
+exploité par EDF en Guadeloupe. 
+Ces données sont publiées à titre purement indicatif, EDF ne peut
+garantir leur exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T17:50:44+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes haute tension (HTA souterrain) - Réunion;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-haute-tension-hta-souterrain2/;"Ce
+jeu de données présente l'ensemble des lignes haute tension (HTA) souterraines
+de La Réunion. 
+Ces
+données sont publiées à titre purement indicatif, EDF ne peut garantir leur
+exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T17:42:41+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes et postes électriques;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-et-postes-electriques/;Données relatives aux lignes et postes électriques des réseaux insulaires : longueur (en km) des lignes basse tension (BT), moyenne tension (HTA) et haute tension (HTB), ainsi que le nombre de postes sources (HTB/HTA, dont les postes de production uniquement) et de postes de distribution (HTA/BT);2018-01-17T11:52:23+01:00;EDF SA;Corse et/ou Outre Mer
+Effacements de consommation mensuels;http://opendata-corse-outremer.edf.fr/explore/dataset/effacements-mensuels/;Historique mensuel des effacements de consommation électrique réalisés.  L’effacement consiste pour un consommateur à renoncer ou reporter tout ou une partie de sa consommation, en réaction à un signal émis par EDF pendant une période de contrainte pour le système électrique (déséquilibre offre/demande).   A l’heure actuelle, les effacements ont été contractualisés uniquement avec des clients industriels. Durée cumulée d'effacements par mois (h)Volume effacé par mois (MWh) Il s'agit de la situation au 31/12/2019.  Attention : pour la Corse, les données 2018 sont manquantes et seront mises à jour prochainement.;2022-09-20T16:29:36+02:00;EDF SA;Corse et/ou Outre Mer
+Actions d'Efficacité Énergétique;http://opendata-corse-outremer.edf.fr/explore/dataset/actions-defficacite-energetique/;Bilan annuel des différentes actions d'efficacité énergétique menées chez les particuliers par EDF en Corse & Outre-mer (offres Agir +)  Liste des opérations suivies : isolation thermiquelampe basse consommation (LBC)LEDchauffe-eau solaire individuel (CESI)chauffe-eau thermodynamique (CET)chaudière et appareil boisasservissement chauffe-eau électrique climatiseur performant (DOM) et pompe à chaleur (Corse)appareil blanc performant (réfrigérateur, congélateur, lave-linge, lave-vaisselle)coupe veilleéconomiseur d'eau (kit);2022-09-02T15:57:31+02:00;EDF SA;Corse et/ou Outre Mer
+Emissions annuelles de CO2;http://opendata-corse-outremer.edf.fr/explore/dataset/emissions-c02/;Ce jeu de données inclut les émissions directes totales annuelles de CO2 liées à la production d'électricité (en kt) insulaire au périmètre quota CO2. Ces données sont publiées annuellement dans le registre des émissions polluantes - outils géorisques.;2022-08-31T18:26:40+02:00;EDF SA;Corse et/ou Outre Mer
+Signal réseau Guyane - Recharge véhicule électrique;http://opendata-corse-outremer.edf.fr/explore/dataset/signal-reseau-guyane-recharge-vehicule-electrique/;"Les spécificités du système électrique  insulaire de la Guyane    incitent à prendre des précautions concernant le  développement de la    mobilité électrique.   EDF en Guyane propose ainsi, à travers   ce  jeu de données, un signal réseau  afin d'inciter le pilotage    intelligent de la recharge des véhicules  électriques en : 
+Évitant les périodes de contraintes sur le réseau, et notamment la pointe de consommation du soirDiminuant     l’impact CO2 en favorisant la recharge pendant les heures où le mix     électrique est moins carboné (heures solaires principalement) La valeur 1 signifie que le créneau est favorable et que le recharge est conseillée.    La valeur 0 signifie que le créneau est défavorable et que la recharge est à éviter si possible.  Le fuseau horaire des données est celui de la Guyane (UTC-3)  Une authentification (compte) est nécessaire pour l'utilisation  régulière  de l'API, en particulier dans le cadre du programme ADVENIR  ZNI (voir  pièce-jointe). Vous pouvez adresser vos questions à l'adresse suivante : sei-opendata@edf.fr";2022-02-08T18:15:53+01:00;EDF SA;Corse et/ou Outre Mer
+Pylônes HTB - Guyane;http://opendata-corse-outremer.edf.fr/explore/dataset/pylones-htb-guy/;"Ce
+jeu de données représente la position des pylônes HTB sur l’ensemble du réseau électrique
+exploité par EDF en Guyane. 
+Ces données sont publiées à titre purement indicatif, EDF ne peut
+garantir leur exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T18:01:41+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes haute tension (HTB aérien) - Guadeloupe;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-haute-tension-htb-aerien-gua/;"Ce jeu de données présente l'ensemble des lignes haute tension (HTB)
+aériennes de Guadeloupe. 
+Ces données sont publiées à titre purement indicatif, EDF ne peut garantir
+leur exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T17:52:14+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes haute tension (HTA souterrain) - Guadeloupe;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-haute-tension-hta-souterrain1/;"Ce
+jeu de données présente l'ensemble des lignes haute tension (HTA) souterraines
+de Guadeloupe. 
+Ces
+données sont publiées à titre purement indicatif, EDF ne peut garantir leur
+exactitude et leur exhaustivité. Des mises à jour seront publiées régulièrement.";2022-02-08T17:49:58+01:00;EDF SA;Corse et/ou Outre Mer
+Pylônes HTB - Réunion;http://opendata-corse-outremer.edf.fr/explore/dataset/pylones-htb-run/;"Ce
+jeu de données représente la position des pylônes HTB sur l’ensemble du réseau électrique
+exploité par EDF sur l'île de la Réunion. 
+Ces
+données sont publiées à titre purement indicatif, EDF ne peut garantir leur
+exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T17:43:33+01:00;EDF SA;Corse et/ou Outre Mer
+Pylônes HTB - Martinique;http://opendata-corse-outremer.edf.fr/explore/dataset/pylones-htb-mar/;"Ce
+jeu de données représente la position des pylônes HTB sur l’ensemble du réseau électrique
+exploité par EDF en Martinique.
+Ces
+données sont publiées à titre purement indicatif, EDF ne peut garantir leur
+exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T17:38:51+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes basse tension (BT aérien) - Martinique;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-basse-tension-bt-aerien-mar/;"Ce
+jeu de données présente l'ensemble des lignes basse tension (BT) aériennes de Martinique. 
+Ces
+données sont publiées à titre purement indicatif, EDF ne peut garantir leur
+exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T17:37:43+01:00;EDF SA;Corse et/ou Outre Mer
+Signal réseau Corse - Recharge véhicule électrique;http://opendata-corse-outremer.edf.fr/explore/dataset/signal-reseau-corse-recharge-vehicule-electrique/;"Les spécificités du système électrique insulaire de la Corse incitent
+ à prendre des précautions concernant le développement de la mobilité 
+électrique. Il est notamment recommandé dans la Programmation 
+Pluriannuelle de l'Energie (PPE) de la Corse de ""développer et installer
+ des bornes de recharges adaptées aux Zones Non Interconnectées (ZNI) et
+ communicantes"", permettant notamment au ""gestionnaire du système de 
+prévenir des contraintes sur le réseau"".   EDF en Corse propose 
+ainsi, à travers ce jeu de données, un signal réseau afin d'inciter le 
+pilotage intelligent de la recharge des véhicules électriques en : Évitant les périodes de contraintes sur le réseau, et notamment la pointe de consommation du soirDiminuant
+ l’impact CO2 en favorisant la recharge pendant les heures où le mix 
+électrique est moins carboné (heures solaires principalement) La valeur 1 signifie que le créneau est favorable et que le recharge est conseillée.   La valeur 0 signifie que le créneau est défavorable et que la recharge est à éviter si possible.  Une
+ authentification (compte) est nécessaire pour l'utilisation  régulière 
+ de l'API, en particulier dans le cadre du programme ADVENIR  ZNI (voir 
+ pièce-jointe).";2020-06-09T15:02:13+02:00;EDF SA;Corse et/ou Outre Mer
+Capacités d'accueil du réseau;http://opendata-corse-outremer.edf.fr/explore/dataset/capacites-reseau/;Capacité d'accueil par poste source (en MW) pour le raccordement aux réseaux de transport (HTB) et de distribution (HTA) des installations de production d'électricité.  Si le territoire concerné dispose d'un S3REnR, indication de la capacité d'accueil  réservée et restante au titre du S3REnR (MW), ainsi que du montant de la quote-part à s'acquitter pour un raccordement (k€/MW).;2022-10-21T12:29:53+02:00;EDF SA;Corse et/ou Outre Mer
+Postes HTA / BT - Guadeloupe;http://opendata-corse-outremer.edf.fr/explore/dataset/postes-hta-bt-gua/;"Ce
+jeu de données représente la position des postes de distribution publique
+(postes HTA/BT) sur l’ensemble du réseau de distribution exploité par EDF en Guadeloupe.
+Ces données sont publiées à titre purement indicatif, EDF ne peut
+garantir leur exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T18:19:53+01:00;EDF SA;Corse et/ou Outre Mer
+Postes HTA/BT - Corse;http://opendata-corse-outremer.edf.fr/explore/dataset/postes-htabt/;"Ce
+jeu de données représente la position des postes de distribution publique
+(postes HTA/BT) sur l’ensemble du réseau de distribution exploité par EDF en Corse.
+Ces
+données sont publiées à titre purement indicatif, EDF ne peut garantir leur
+exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T18:09:20+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes haute tension (HTA aérien) - Corse;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-haute-tension-hta-aerien/;"Ce
+jeu de données présente l'ensemble des lignes haute tension (HTA) aériennes de Corse. 
+Ces données sont publiées à titre purement indicatif, EDF ne peut
+garantir leur exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T17:57:03+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes haute tension (HTA aérien) - Réunion;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-haute-tension-hta-aerien-run/;"Ce jeu de données présente l'ensemble des lignes haute tension (HTA) aériennes de l'île de la Réunion.   Ces données sont publiées  à titre purement indicatif, EDF ne peut 
+garantir leur exactitude et  leur exhaustivité. Des mises à jour seront 
+publiées régulièrement.      Mis a jour en Fevrier 2020";2022-02-08T17:47:27+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes haute tension (HTA aérien) - Martinique;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-haute-tension-hta-aerien-mar/;"Ce
+jeu de données présente l'ensemble des lignes haute tension (HTA) aériennes de Martinique. 
+Ces
+données sont publiées à titre purement indicatif, EDF ne peut garantir leur
+exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T17:39:58+01:00;EDF SA;Corse et/ou Outre Mer
+Postes HTA / BT - Martinique;http://opendata-corse-outremer.edf.fr/explore/dataset/postes-hta-bt-mar/;"Ce
+jeu de données représente la position des postes de distribution publique
+(postes HTA/BT) sur l’ensemble du réseau de distribution exploité par EDF en Martinique.
+Ces
+données sont publiées à titre purement indicatif, EDF ne peut garantir leur
+exactitude et leur exhaustivité. Des mises à jour seront publiées
+régulièrement.";2022-02-08T17:35:30+01:00;EDF SA;Corse et/ou Outre Mer
+Lignes haute tension (HTB aérien) - Martinique;http://opendata-corse-outremer.edf.fr/explore/dataset/lignes-haute-tension-htb/;Ce jeu de données présente l'ensemble des lignes haute tension (HTB) aériennes et souterraines.   Ces données sont publiées  à titre purement indicatif, EDF ne peut garantir leur exactitude et  leur exhaustivité. Des mises à jour seront publiées régulièrement.;2022-02-08T17:34:14+01:00;EDF SA;Corse et/ou Outre Mer
+Production annuelle d'électricité par filière;http://opendata-corse-outremer.edf.fr/explore/dataset/production-annuelle-delectricite-par-filiere/;"Chaque
+année, les informations relatives à la production d’électricité par filière
+sont établies à partir des données de comptage, de télémesures ainsi que
+d’estimation. 
+
+Les données publiées
+sont des données validées. 
+
+La
+part annuelle ENR est un pourcentage indiquant la part annuelle de la
+production d’électricité d’origine renouvelable dans la production totale
+d’électricité du territoire concerné pour l’année concernée. Conformément à la
+directive européenne 2009/28/CE, la production des usines d’incinération
+d’ordures ménagères est comptabilisée à 50%. 
+
+Les
+données concernant moins de 10 installations de production de moins de 36 kVA
+pour un territoire et une filière donnée ne sont pas publiées pour
+préserver l’anonymat de ces productions : c'est le cas des filières hydraulique en Martinique et solaire photovoltaïque à Saint Barthélémy.";2022-02-08T17:28:17+01:00;EDF SA;Corse et/ou Outre Mer
