@@ -11,3 +11,5 @@ Les scripts pythons dans le dossier `scripts`.
 Pour les faire tourner, il faut au préalable installer les dépendances :
 `pip install -r scripts/requirements.txt`  
 Les données nettoyées sont dans le dossier `cleaneddata`.
+
+svp rendez vos scripts lisible avec `black`. Sur VSCode on peut le mettre par défaut avec la commande de formattage, sinon `black nom_de_fichier.py` (installation : `pip install black`).
