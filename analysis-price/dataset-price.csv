@@ -1,0 +1,15 @@
+range,filiere,prix_MWh
+low,Nucléaire,59.8
+high,Nucléaire,109.0
+low,Éolien,90.0
+high,Éolien,200.0
+low,Hydraulique,15.0
+high,Hydraulique,20.0
+low,Photovoltaïque,142.0
+high,Photovoltaïque,142.0
+low,Gaz,70.0
+high,Gaz,100.0
+low,Charbon,40.0
+high,Charbon,40.0
+low,Fioul,70.0
+high,Fioul,100.0
