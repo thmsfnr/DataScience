@@ -22,4 +22,3 @@ df["filiere_group"] = df["filiere_group"].replace(["Hydraulique", "Charbon"], "C
 
 # Analyse the dataset
 print(df.groupby(["filiere_group"]).describe())
-
