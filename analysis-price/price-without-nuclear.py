@@ -4,11 +4,16 @@ import pandas as pd
 # Open file with pandas
 df = pd.read_csv("conclusion.csv")
 
+# Calculate the sum of production part
+sum = 0
+for index, row in df.iterrows():
+    sum += row["part_de_production"]
+
 # Remove nuclear
 df = df[df["filiere"] != "Nucléaire"]
 
 # Simulate whithout nuclear (part of ther increase proportionally the ols shares)
-newPartProduction = {"Charbon": (0.81*100)/(100-76.88), "Gaz": (7.0*100)/(100-76.88), "Hydraulique": (8.56*100)/(100-76.88), "Eolien": (0.7647861595767812*100)/(100-76.88), "Solaire": (0.0787807345745655*100)/(100-76.88), "Fioul": (0.8*100)/(100-76.88)}
+newPartProduction = {"Charbon": (0.81*sum)/(sum-76.88), "Gaz": (7.0*sum)/(sum-76.88), "Hydraulique": (8.56*sum)/(sum-76.88), "Eolien": (0.7647861595767812*sum)/(sum-76.88), "Solaire": (0.0787807345745655*sum)/(100-76.88), "Fioul": (0.8*sum)/(sum-76.88)}
 
 # Calculate a factor for each filiere using newPartProduction variable
 for index, row in df.iterrows():

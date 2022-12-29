@@ -1,0 +1,8 @@
+filiere,prix_MWh,cluster,filiere_group
+Charbon,40.0,2,"Charbon, Hydraulique"
+Eolien,145.0,0,"Eolien, Solaire"
+Fioul,85.0,1,"Fioul, Gaz, Nucléaire"
+Gaz,85.0,1,"Fioul, Gaz, Nucléaire"
+Hydraulique,17.5,2,"Charbon, Hydraulique"
+Nucléaire,84.4,1,"Fioul, Gaz, Nucléaire"
+Solaire,142.0,0,"Eolien, Solaire"
