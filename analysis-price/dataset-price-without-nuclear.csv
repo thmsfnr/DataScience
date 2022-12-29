@@ -1,7 +1,7 @@
 prix_MWh,filiere,cluster,filiere_group
-16.154600000000002,Hydraulique,2,"Charbon, Hydraulique"
-36.924800000000005,Charbon,2,"Charbon, Hydraulique"
-78.46520000000001,Fioul,1,"Fioul, Gaz"
-78.46520000000001,Gaz,1,"Fioul, Gaz"
-131.08304,Solaire,0,"Solaire, Eolien"
-133.85240000000002,Eolien,0,"Solaire, Eolien"
+16.08220104477607,Hydraulique,1,"Charbon, Hydraulique"
+36.759316673773874,Charbon,1,"Charbon, Hydraulique"
+78.11354793176949,Fioul,2,"Fioul, Gaz"
+78.11354793176949,Gaz,2,"Fioul, Gaz"
+131.2597076571714,Solaire,0,"Solaire, Eolien"
+133.2525229424303,Eolien,0,"Solaire, Eolien"
