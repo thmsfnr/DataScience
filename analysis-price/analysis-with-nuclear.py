@@ -36,5 +36,3 @@ plt.title("Similitude between electricity production fields regarding their pric
 plt.ylabel("price/MWh (in €)")
 plt.xlabel("fields of electricity production")
 plt.show()
-
-print(withNuclear)
