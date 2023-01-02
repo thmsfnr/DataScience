@@ -1,7 +1,7 @@
 import pandas
 
 consoelec = pandas.read_csv(
-    "rawdata/conso-elec-gaz-annuelle-par-secteur-dactivite-agregee-departement.csv",
+    "../rawdata/conso-elec-gaz-annuelle-par-secteur-dactivite-agregee-departement.csv",
     sep=";",
 )
 
@@ -35,12 +35,14 @@ consoelec = consoelec.rename(
     }
 )
 
-# sauvegarde
+
+consoelec['libelle_departement'].str.replace('-',' ')
+consoelec['libelle_region'].str.replace('-',' ')
+print(consoelec['libelle_departement'])
+
 consoelec.to_csv(
-    "cleaneddata/conso-elec-gaz-annuelle-par-secteur-dactivite-agregee-departement.csv",
+    "../cleaneddata/conso-elec-gaz-annuelle-par-secteur-dactivite-agregee-departement-TEST.csv",
     index=False,
 )
 
-# question : indice qualité : Pourcentage de la consommation annuelle 
-# qui est mesurée du 1er janvier au 31 décembre. Il est compris entre 0 et 1
-# donc la vraie conso c'est conso + (1-indqual) * conso non ???
+

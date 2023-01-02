@@ -17,6 +17,7 @@ donneesCentrales = donnees[[
     'puissance_installee',
     'unite'
 ]]
+
 donneesCentrales.to_csv('../cleaneddata/centrales-de-production-nucleaire-edf.csv', index=False)
 
 #on peut regrouper par date de mise en service ?
