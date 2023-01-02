@@ -1,6 +1,5 @@
 import warnings
 warnings.filterwarnings('ignore')
-import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from prophet import Prophet
@@ -9,7 +8,6 @@ logging.getLogger().setLevel(logging.ERROR)
 from prophet.diagnostics import cross_validation
 from prophet.plot import plot_cross_validation_metric
 from prophet.diagnostics import performance_metrics
-from prophet.plot import add_changepoints_to_plot
 
 '''
 Choix de prophet :
@@ -26,12 +24,8 @@ Grande capacité à l'interprétation des données. Utile ici car la production 
 
 
 ##-----------------------------------------------Nettoyage des données-----------------------##
-df = pd.read_csv('../cleaneddata/production_electricite_nucleaire.csv')
+df = pd.read_csv('../cleaneddata/production_electricite_bioenergie.csv')
 # Formater les dates
-#conversion TWh en MWh
-df['production électricité TWh'] = df['production électricité TWh'] * 1000000
-print(df.head())
-
 df['annee'] = pd.to_datetime(df['annee'],format="%Y")
 #Formater les noms des colonnes pour lancer Prophet
 df.columns = ['ds', 'y']
@@ -40,8 +34,8 @@ df.columns = ['ds', 'y']
 plt.figure(figsize=(17, 8))
 plt.plot(df['ds'],df['y'])
 plt.xlabel('Année')
-plt.ylabel('Production d\'électricité en MWh pour le nucléaire')
-plt.title('Production d\'électricité en MWh pour le nucléaire en fonction des années')
+plt.ylabel('Production d\'électricité en MWh pour le bioenergie')
+plt.title('Production d\'électricité en MWh pour le bioenergie en fonction des années')
 plt.grid(False)
 plt.show()
 
@@ -55,20 +49,19 @@ future = m.make_future_dataframe(periods=11, freq='Y')
 forecast = m.predict(future)
 fig = m.plot(forecast)
 plt.xlabel('Année')
-plt.ylabel('Production d\'électricité en MWh pour le nucléaire')
-plt.title('Prédiction de la production d\'électricité en MWh pour le nucléaire en fonction des années')
+plt.ylabel('Production d\'électricité en MWh pour le bioenergie')
+plt.title('Prédiction de la production d\'électricité en MWh pour le bioenergie en fonction des années')
 plt.show()
 
 ##----------tendance-----------------------##
 
-'''
 m.plot_components(forecast)
 plt.xlabel('Année')
-plt.ylabel('Production d\'électricité en MWh pour le nucléaire')
+plt.ylabel('Production d\'électricité en MWh pour le bioenergie')
 plt.show()
 # trend = tendance
 # yearly = saisonnalité hebdomadaire
-'''
+
 
 ##------------------graphe-----------------------##
 def afficheGraphePrediction(df,forecast,title):
@@ -79,13 +72,13 @@ def afficheGraphePrediction(df,forecast,title):
     plt.plot(df['ds'],df['y'],label='valeurs réelles')
     plt.legend()
     plt.xlabel('Année')
-    plt.ylabel('Production d\'électricité en MWh pour le nucléaire')
+    plt.ylabel('Production d\'électricité en MWh pour le bioenergie')
     plt.title(title)
     plt.grid(False)
     plt.show()
 
 print(forecast)
-afficheGraphePrediction(df,forecast,'Analyse de la prédiction de la production d\'électricité en MWh pour le nucléaire en fonction des années')
+afficheGraphePrediction(df,forecast,'Analyse de la prédiction de la production d\'électricité en MWh pour le bioenergie en fonction des années')
 
 
 
@@ -95,11 +88,11 @@ afficheGraphePrediction(df,forecast,'Analyse de la prédiction de la production 
 #initial : toutes les données ou on s'entraine 
 # horizon : combien de données je veux prédire 
 #period : le nombres de données à calculer à chaque itération (ici je compte par 1 donc 365 jours))
-#90 % entrainement et 10 % test ( 365 * 25 ans = 9125 jours) (de 1990 à 2015) donc je veux tester sur les  5 ans restant soit 365*5 = 1825 days
-df_cv = cross_validation(m, initial = '9125 days', period='365 days', horizon = '1825 days')
+#90 % entrainement et 10 % test ( 365 * 7 ans =  2555 jours) (de 2003 à 2010) donc je veux tester sur les 10 ans restant soit 365*10= 3650 days
+df_cv = cross_validation(m, initial = '2555 days', period='365 days', horizon = '3650 days')
 print("CROSS VALIDATION")
 print(df_cv)
-afficheGraphePrediction(df_cv,df_cv,'Analyse de la cross validation de la production d\'électricité en MWh pour le nucléaire en fonction des années')
+afficheGraphePrediction(df_cv,df_cv,'Analyse de la cross validation de la production d\'électricité en MWh pour le bioenergie en fonction des années')
 
 #pour calculer des indicateurs utiles par rapport à la prédiction
 df_p = performance_metrics(df_cv)
@@ -122,42 +115,4 @@ fig = plot_cross_validation_metric(df_cv, metric='mape')
 plt.show()
 plot_cross_validation_metric(df_cv, metric='rmse')
 plt.show()
-
-
-
-
-
-'''
-df = pd.read_csv("../cleaneddata/capacites-de-production-par-filiere-en-france.csv", sep=",")
-
-#calcul production par annee
-production_nucleaire = df.groupby(['filiere']).get_group("Nucléaire")
-#print(production_nucleaire)
-productionEpuree = production_nucleaire[['annee','capacite_maximale_de_production_MWe']]
-productionFinale = productionEpuree.sort_values(by="annee")
-#print(productionEpuree)
-productionFinale.to_csv("../cleaneddata/test.csv", index=False)
-
-#Production par filière 2019
-production_2019 = df.groupby(['annee']).get_group(2019)
-
-#Production totale 2019
-production_totale_2019 = production_2019["capacite_maximale_de_production_MWe"].sum()
-print(production_totale_2019)
-#moyenne production 2019
-moyenne_production_2019 = production_2019["capacite_maximale_de_production_MWe"].mean()
-print(moyenne_production_2019)
-#Production nucléaire 2019
-production_nucleaire_2019 = production_2019[production_2019['filiere'] == 'Nucléaire'] 
-print(production_nucleaire_2019)
-#filiere ayant la production maximale 2019
-production_maximale_2019 = production_2019[production_2019['capacite_maximale_de_production_MWe'] == production_2019["capacite_maximale_de_production_MWe"].max()]
-print(production_maximale_2019)
-#filiere ayant la production minimale 2019
-production_minimale_2019 = production_2019[production_2019['capacite_maximale_de_production_MWe'] == production_2019["capacite_maximale_de_production_MWe"].min()]
-print(production_minimale_2019)
-#  production - production nucléaire 2019
-production_sans_nucleaire = production_totale_2019 - production_nucleaire_2019['capacite_maximale_de_production_MWe']
-print(production_sans_nucleaire)
-'''
 
