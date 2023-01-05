@@ -31,6 +31,7 @@ df['production électricité TWh'] = df['production électricité TWh'] * 100000
 print(df.head())
 
 df['annee'] = pd.to_datetime(df['annee'],format="%Y")
+print(df)
 #Formater les noms des colonnes pour lancer Prophet
 df.columns = ['ds', 'y']
 
@@ -53,8 +54,8 @@ future = m.make_future_dataframe(periods=11, freq='Y')
 forecast = m.predict(future)
 fig = m.plot(forecast)
 plt.xlabel('Année')
-plt.ylabel('Production d\'électricité en MWh pour le nucléaire')
-plt.title('Prédiction de la production d\'électricité en MWh pour le nucléaire en fonction des années')
+plt.ylabel("Production d'électricité en MWh pour le nucléaire")
+plt.title("Prédiction de la production d'électricité en MWh pour le nucléaire en fonction des années")
 plt.show()
 
 ##----------tendance-----------------------##
