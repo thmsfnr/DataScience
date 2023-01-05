@@ -14,7 +14,7 @@ conso = conso.rename(
     columns={
         "Année": "annee",
         "Consommation brute électricité (GWh) - RTE": "conso_brute",
-        "Consommation corrigée électricité (GWh) - RTE": "conso_nette"
+        "Consommation corrigée électricité (GWh) - RTE": "conso_corrigee"
     }
 )
 
