@@ -18,4 +18,6 @@ conso = conso.rename(
     }
 )
 
+conso.sort_values(by=["annee"], inplace=True)
+
 conso.to_csv("cleaneddata/consommation-anuelle-electricite-2001-2021.csv", index=False)
