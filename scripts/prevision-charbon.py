@@ -113,6 +113,14 @@ print(df_p)
 #  Par défaut, 10% des prédictions seront incluses dans chaque fenêtre, mais cela peut être modifié avec l'argument rolling_window.
 
 
+'''
+RMSE : 
+Un avantage de l'utilisation de la RMSE est que la mesure qu'elle produit est à la même échelle que l'unité prédite. 
+Par exemple, le calcul de l'EQM pour un modèle de prédiction du prix des maisons donne l'erreur en termes de prix des maisons, 
+
+ Le RMSE peut être relié à la variance du modèle
+'''
+
 #pour calculer des indicateurs utiles par rapport au cross validation
 #Les points montrent le pourcentage d'erreur absolue pour chaque prédiction dans df_cv.
 
@@ -120,3 +128,7 @@ fig = plot_cross_validation_metric(df_cv, metric='mape')
 plt.show()
 plot_cross_validation_metric(df_cv, metric='rmse')
 plt.show()
+
+mean_squared_error =(df_cv["y"], df_cv["yhat"])
+print("MEAN SQUARED ERROR")
+print(mean_squared_error)
