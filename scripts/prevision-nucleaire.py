@@ -8,6 +8,7 @@ logging.getLogger().setLevel(logging.ERROR)
 from prophet.diagnostics import cross_validation
 from prophet.plot import plot_cross_validation_metric
 from prophet.diagnostics import performance_metrics
+from prevision import afficheGraphePrediction
 
 '''
 Choix de prophet :
@@ -70,19 +71,6 @@ plt.show()
 
 
 ##------------------graphe-----------------------##
-def afficheGraphePrediction(df,forecast,title):
-    plt.figure(figsize=(17, 8))
-    plt.plot(forecast['ds'],forecast['yhat'],label='valeurs prédites')
-    plt.plot(forecast['ds'],forecast['yhat_lower'],label='valeurs inférieures prédites')
-    plt.plot(forecast['ds'],forecast['yhat_upper'],label='valeurs supérieures prédites')
-    plt.plot(df['ds'],df['y'],label='valeurs réelles')
-    plt.legend()
-    plt.xlabel('Année')
-    plt.ylabel('Production d\'électricité en MWh pour le nucléaire')
-    plt.title(title)
-    plt.grid(False)
-    plt.show()
-
 print(forecast)
 afficheGraphePrediction(df,forecast,'Analyse de la prédiction de la production d\'électricité en MWh pour le nucléaire en fonction des années')
 
