@@ -16,6 +16,7 @@ from prophet import Prophet
 from prophet.plot import plot_cross_validation_metric
 from prophet.diagnostics import performance_metrics
 from prophet.diagnostics import cross_validation
+import time
 
 df = pandas.read_csv("cleaneddata/consommation-anuelle-electricite-2001-2021.csv")
 
