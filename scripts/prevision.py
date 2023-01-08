@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 
-def afficheGraphePrediction(df, forecast, title):
+def afficheGraphePrediction(df, forecast, title, xlabel, ylabel):
     plt.figure(figsize=(17, 8))
     plt.plot(forecast["ds"], forecast["yhat"], label="valeurs prédites")
     plt.plot(
@@ -12,8 +12,8 @@ def afficheGraphePrediction(df, forecast, title):
     )
     plt.plot(df["ds"], df["y"], label="valeurs réelles")
     plt.legend()
-    plt.xlabel("Année")
-    plt.ylabel("Production d'électricité en MWh pour le nucléaire")
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
     plt.title(title)
     plt.grid(False)
     plt.show()
