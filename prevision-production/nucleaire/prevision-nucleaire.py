@@ -8,7 +8,7 @@ logging.getLogger().setLevel(logging.ERROR)
 from prophet.diagnostics import cross_validation
 from prophet.plot import plot_cross_validation_metric
 from prophet.diagnostics import performance_metrics
-
+from sklearn.metrics import mean_absolute_error, confusion_matrix
 '''
 Choix de prophet :
 Utile pour faire des prédictions sur les séries temporelles. C'est un modèle additif qui permet de faire des prédictions sur des données saisonnières et tendancielles.
@@ -24,13 +24,14 @@ Grande capacité à l'interprétation des données. Utile ici car la production 
 
 
 ##-----------------------------------------------Nettoyage des données-----------------------##
-df = pd.read_csv('../cleaneddata/production_electricite_hydrolique.csv')
+df = pd.read_csv('cleaneddata/production_electricite_nucleaire.csv')
 # Formater les dates
 #conversion TWh en MWh
 df['production électricité TWh'] = df['production électricité TWh'] * 1000000
 print(df.head())
 
 df['annee'] = pd.to_datetime(df['annee'],format="%Y")
+print(df)
 #Formater les noms des colonnes pour lancer Prophet
 df.columns = ['ds', 'y']
 
@@ -38,10 +39,12 @@ df.columns = ['ds', 'y']
 plt.figure(figsize=(17, 8))
 plt.plot(df['ds'],df['y'])
 plt.xlabel('Année')
-plt.ylabel('Production d\'électricité en MWh pour le hydrolique')
-plt.title('Production d\'électricité en MWh pour le hydrolique en fonction des années')
+plt.ylabel('Production d\'électricité en MWh pour le nucléaire')
+plt.title('Production d\'électricité en MWh pour le nucléaire en fonction des années')
 plt.grid(False)
-plt.show()
+#sauvegarde du graphique
+plt.savefig('prevision-production/nucleaire/production-nucleaire.png')
+
 
 ##-----------------------------------------------prediction-----------------------##
 #Creation objet prophet
@@ -53,19 +56,21 @@ future = m.make_future_dataframe(periods=11, freq='Y')
 forecast = m.predict(future)
 fig = m.plot(forecast)
 plt.xlabel('Année')
-plt.ylabel('Production d\'électricité en MWh pour le hydrolique')
-plt.title('Prédiction de la production d\'électricité en MWh pour le hydrolique en fonction des années')
-plt.show()
+plt.ylabel("Production d'électricité en MWh pour le nucléaire")
+plt.title("Prédiction de la production d'électricité en MWh pour le nucléaire en fonction des années")
+#sauvegarde du graphique
+plt.savefig('prevision-production/nucleaire/prevision-nucleaire.png')
 
 ##----------tendance-----------------------##
 
+'''
 m.plot_components(forecast)
 plt.xlabel('Année')
-plt.ylabel('Production d\'électricité en MWh pour le hydrolique')
+plt.ylabel('Production d\'électricité en MWh pour le nucléaire')
 plt.show()
 # trend = tendance
 # yearly = saisonnalité hebdomadaire
-
+'''
 
 ##------------------graphe-----------------------##
 def afficheGraphePrediction(df,forecast,title):
@@ -76,14 +81,14 @@ def afficheGraphePrediction(df,forecast,title):
     plt.plot(df['ds'],df['y'],label='valeurs réelles')
     plt.legend()
     plt.xlabel('Année')
-    plt.ylabel('Production d\'électricité en MWh pour le hydrolique')
+    plt.ylabel('Production d\'électricité en MWh pour le nucléaire')
     plt.title(title)
     plt.grid(False)
-    plt.show()
 
 print(forecast)
-afficheGraphePrediction(df,forecast,'Analyse de la prédiction de la production d\'électricité en MWh pour le hydrolique en fonction des années')
-
+afficheGraphePrediction(df,forecast,'Analyse de la prédiction de la production d\'électricité en MWh pour le nucléaire en fonction des années')
+#sauvegarde du graphique
+plt.savefig('prevision-production/nucleaire/analyse-prevision-nucleaire.png')
 
 
 ##-----------------------------------------------Cross-validation-----------------------##
@@ -92,11 +97,13 @@ afficheGraphePrediction(df,forecast,'Analyse de la prédiction de la production 
 #initial : toutes les données ou on s'entraine 
 # horizon : combien de données je veux prédire 
 #period : le nombres de données à calculer à chaque itération (ici je compte par 1 donc 365 jours))
-#90 % entrainement et 10 % test ( 365 * 2 ans =  jours) (de 2008 à 2010) donc je veux tester sur les 10 ans restant soit 365*10= 3650 days
-df_cv = cross_validation(m, initial = '730 days', period='365 days', horizon = '3650 days')
+#90 % entrainement et 10 % test ( 365 * 20 ans = 7300 jours) (de 1960 à 2010) donc je veux tester sur les 10 ans restant soit 365*10= 3650 days
+df_cv = cross_validation(m, initial = '7300 days', period='365 days', horizon = '3650 days')
 print("CROSS VALIDATION")
 print(df_cv)
-afficheGraphePrediction(df_cv,df_cv,'Analyse de la cross validation de la production d\'électricité en MWh pour le hydrolique en fonction des années')
+afficheGraphePrediction(df_cv,df_cv,'Analyse de la cross validation de la production d\'électricité en MWh pour le nucléaire en fonction des années')
+#sauvegarde du graphique
+plt.savefig('prevision-production/nucleaire/analyse-cross-validation-nucleaire.png')
 
 #pour calculer des indicateurs utiles par rapport à la prédiction
 df_p = performance_metrics(df_cv)
@@ -110,13 +117,27 @@ print(df_p)
 # la couverture des estimations yhat_lower et yhat_upper.
 #  Ils sont calculés sur une fenêtre glissante des prédictions dans df_cv après un tri par horizon (ds moins cutoff).
 #  Par défaut, 10% des prédictions seront incluses dans chaque fenêtre, mais cela peut être modifié avec l'argument rolling_window.
+#y valeurs réelles , yhat valeurs prédites
 
 
 #pour calculer des indicateurs utiles par rapport au cross validation
 #Les points montrent le pourcentage d'erreur absolue pour chaque prédiction dans df_cv.
 
+'''
 fig = plot_cross_validation_metric(df_cv, metric='mape')
 plt.show()
 plot_cross_validation_metric(df_cv, metric='rmse')
 plt.show()
+'''
 
+####-------visualiser l'ensemble de la production par rapport au MAE-------####
+'''
+For example, if the range of nuclear electricity production is between 0 and 10,000 MWh,
+then a MAE of 100 MWh would be considered quite good, while if the range is between 0 and 100 MWh, then a MAE of 100 MWh would be considered quite bad.
+'''
+print("Minimum production : "+ str(df["y"].min())) #minium de la production
+print("Maximum production : " + str(df["y"].max())) #maximum de la production
+print("Moyenne production : " + str(df["y"].mean())) #moyenne de la production
+print("Ecart type production : " + str(df["y"].std())) #écart type de la production
+print("Moyenne MAE : " + str(df_p["mae"].mean())) #moyenne de l'erreur absolue moyenne (MAE), mean absolute error (MAE)
+print("MAE: ", mean_absolute_error(df_cv["y"], df_cv["yhat"])) # MAE avec une autre fonction

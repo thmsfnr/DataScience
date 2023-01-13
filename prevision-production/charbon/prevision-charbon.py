@@ -8,6 +8,8 @@ logging.getLogger().setLevel(logging.ERROR)
 from prophet.diagnostics import cross_validation
 from prophet.plot import plot_cross_validation_metric
 from prophet.diagnostics import performance_metrics
+from sklearn.metrics import mean_absolute_error, confusion_matrix
+
 
 '''
 Choix de prophet :
@@ -24,7 +26,7 @@ Grande capacité à l'interprétation des données. Utile ici car la production 
 
 
 ##-----------------------------------------------Nettoyage des données-----------------------##
-df = pd.read_csv('../cleaneddata/production_electricite_charbon.csv')
+df = pd.read_csv('cleaneddata/production_electricite_charbon.csv')
 # Formater les dates
 #conversion TWh en MWh
 df['production électricité TWh'] = df['production électricité TWh'] * 1000000
@@ -38,10 +40,10 @@ df.columns = ['ds', 'y']
 plt.figure(figsize=(17, 8))
 plt.plot(df['ds'],df['y'])
 plt.xlabel('Année')
-plt.ylabel('Production d\'électricité en MWh pour le charbon')
+plt.ylabel('Production d\'électricité en MWh')
 plt.title('Production d\'électricité en MWh pour le charbon en fonction des années')
 plt.grid(False)
-plt.show()
+plt.savefig('prevision-production/charbon/production-charbon.png')
 
 ##-----------------------------------------------prediction-----------------------##
 #Creation objet prophet
@@ -53,20 +55,20 @@ future = m.make_future_dataframe(periods=11, freq='Y')
 forecast = m.predict(future)
 fig = m.plot(forecast)
 plt.xlabel('Année')
-plt.ylabel('Production d\'électricité en MWh pour le charbon')
-plt.title('Prédiction de la production d\'électricité en MWh pour le charbon en fonction des années')
-plt.show()
+plt.ylabel("Production d'électricité en MWh")
+plt.title("Prédiction de la production d'électricité en MWh pour le charbon en fonction des années")
+plt.savefig('prevision-production/charbon/prediction-charbon.png')
 
 ##----------tendance-----------------------##
 
-
+'''
 m.plot_components(forecast)
 plt.xlabel('Année')
-plt.ylabel('Production d\'électricité en MWh pour le charbon')
+plt.ylabel("Production d'électricité en MWh")
 plt.show()
 # trend = tendance
 # yearly = saisonnalité hebdomadaire
-
+'''
 
 ##------------------graphe-----------------------##
 def afficheGraphePrediction(df,forecast,title):
@@ -77,13 +79,15 @@ def afficheGraphePrediction(df,forecast,title):
     plt.plot(df['ds'],df['y'],label='valeurs réelles')
     plt.legend()
     plt.xlabel('Année')
-    plt.ylabel('Production d\'électricité en MWh pour le charbon')
+    plt.ylabel("Production d'électricité en MWh")
     plt.title(title)
     plt.grid(False)
-    plt.show()
 
 print(forecast)
-afficheGraphePrediction(df,forecast,'Analyse de la prédiction de la production d\'électricité en MWh pour le charbon en fonction des années')
+afficheGraphePrediction(df,forecast,"Analyse de la prédiction de la production d'électricité en MWh pour le charbon en fonction des années")
+#sauvegarde du graphe
+plt.savefig('prevision-production/charbon/analyse-prevision-charbon.png')
+
 
 
 
@@ -97,7 +101,9 @@ afficheGraphePrediction(df,forecast,'Analyse de la prédiction de la production 
 df_cv = cross_validation(m, initial = '21900 days', period='365 days', horizon = '3650 days')
 print("CROSS VALIDATION")
 print(df_cv)
-afficheGraphePrediction(df_cv,df_cv,'Analyse de la cross validation de la production d\'électricité en MWh pour charbon en fonction des années')
+afficheGraphePrediction(df_cv,df_cv,"Analyse de la cross validation de la production d'électricité en MWh pour charbon en fonction des années")
+#sauvegarde du graphe
+plt.savefig('prevision-production/charbon/analyse-cross-validation-charbon.png')
 
 #pour calculer des indicateurs utiles par rapport à la prédiction
 df_p = performance_metrics(df_cv)
@@ -123,12 +129,20 @@ Par exemple, le calcul de l'EQM pour un modèle de prédiction du prix des maiso
 
 #pour calculer des indicateurs utiles par rapport au cross validation
 #Les points montrent le pourcentage d'erreur absolue pour chaque prédiction dans df_cv.
-
+'''
 fig = plot_cross_validation_metric(df_cv, metric='mape')
 plt.show()
 plot_cross_validation_metric(df_cv, metric='rmse')
 plt.show()
-
-mean_squared_error =(df_cv["y"], df_cv["yhat"])
-print("MEAN SQUARED ERROR")
-print(mean_squared_error)
+'''
+####-------visualiser l'ensemble de la production par rapport au MAE-------####
+'''
+For example, if the range of nuclear electricity production is between 0 and 10,000 MWh,
+then a MAE of 100 MWh would be considered quite good, while if the range is between 0 and 100 MWh, then a MAE of 100 MWh would be considered quite bad.
+'''
+print("Minimum production : "+ str(df["y"].min())) #minium de la production
+print("Maximum production : " + str(df["y"].max())) #maximum de la production
+print("Moyenne production : " + str(df["y"].mean())) #moyenne de la production
+print("Ecart type production : " + str(df["y"].std())) #écart type de la production
+print("Moyenne MAE : " + str(df_p["mae"].mean())) #moyenne de l'erreur absolue moyenne (MAE), mean absolute error (MAE)
+print("MAE: ", mean_absolute_error(df_cv["y"], df_cv["yhat"])) # MAE avec une autre fonction
