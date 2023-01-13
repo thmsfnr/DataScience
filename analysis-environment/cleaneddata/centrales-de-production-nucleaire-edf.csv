@@ -1,0 +1,57 @@
+centrale,filiere,sous_filiere,combustible,code_insee_region,region,departement,code_insee_departement,date_de_mise_en_service_industrielle,puissance_installee,unite
+BELLEVILLE,Nucléaire,Réacteur à eau pressurisée (REP) 1300,Uranium Enrichi,24.0,CENTRE-VAL DE LOIRE,CHER,18.0,1988-06-01,1310.0,MW
+BELLEVILLE,Nucléaire,Réacteur à eau pressurisée (REP) 1300,Uranium Enrichi,24.0,CENTRE-VAL DE LOIRE,CHER,18.0,1989-01-01,1310.0,MW
+BLAYAIS (LE),Nucléaire,Réacteur à eau pressurisée (REP) 900,Multi-oxyde d’uranium et de plutonium,75.0,NOUVELLE-AQUITAINE,GIRONDE,33.0,1981-12-01,910.0,MW
+BLAYAIS (LE),Nucléaire,Réacteur à eau pressurisée (REP) 900,Multi-oxyde d’uranium et de plutonium,75.0,NOUVELLE-AQUITAINE,GIRONDE,33.0,1983-02-01,910.0,MW
+BLAYAIS (LE),Nucléaire,Réacteur à eau pressurisée (REP) 900,Uranium Enrichi,75.0,NOUVELLE-AQUITAINE,GIRONDE,33.0,1983-11-14,910.0,MW
+BLAYAIS (LE),Nucléaire,Réacteur à eau pressurisée (REP) 900,Uranium Enrichi,75.0,NOUVELLE-AQUITAINE,GIRONDE,33.0,1983-10-01,910.0,MW
+BUGEY (LE),Nucléaire,Réacteur à eau pressurisée (REP) 900,Uranium Enrichi,84.0,AUVERGNE-RHONE-ALPES,AIN,1.0,1979-03-01,910.0,MW
+BUGEY (LE),Nucléaire,Réacteur à eau pressurisée (REP) 900,Uranium Enrichi,84.0,AUVERGNE-RHONE-ALPES,AIN,1.0,1979-03-01,910.0,MW
+BUGEY (LE),Nucléaire,Réacteur à eau pressurisée (REP) 900,Uranium Enrichi,84.0,AUVERGNE-RHONE-ALPES,AIN,1.0,1979-07-01,880.0,MW
+BUGEY (LE),Nucléaire,Réacteur à eau pressurisée (REP) 900,Uranium Enrichi,84.0,AUVERGNE-RHONE-ALPES,AIN,1.0,1980-01-03,880.0,MW
+CATTENOM,Nucléaire,Réacteur à eau pressurisée (REP) 1300,Uranium Enrichi,44.0,GRAND EST,MOSELLE,57.0,1987-04-01,1300.0,MW
+CATTENOM,Nucléaire,Réacteur à eau pressurisée (REP) 1300,Uranium Enrichi,44.0,GRAND EST,MOSELLE,57.0,1988-02-01,1300.0,MW
+CATTENOM,Nucléaire,Réacteur à eau pressurisée (REP) 1300,Uranium Enrichi,44.0,GRAND EST,MOSELLE,57.0,1991-02-01,1300.0,MW
+CATTENOM,Nucléaire,Réacteur à eau pressurisée (REP) 1300,Uranium Enrichi,44.0,GRAND EST,MOSELLE,57.0,1992-01-01,1300.0,MW
+CHINON B,Nucléaire,Réacteur à eau pressurisée (REP) 900,Multi-oxyde d’uranium et de plutonium,24.0,CENTRE-VAL DE LOIRE,INDRE-ET-LOIRE,37.0,1984-02-01,905.0,MW
+CHINON B,Nucléaire,Réacteur à eau pressurisée (REP) 900,Multi-oxyde d’uranium et de plutonium,24.0,CENTRE-VAL DE LOIRE,INDRE-ET-LOIRE,37.0,1984-08-01,905.0,MW
+CHINON B,Nucléaire,Réacteur à eau pressurisée (REP) 900,Multi-oxyde d’uranium et de plutonium,24.0,CENTRE-VAL DE LOIRE,INDRE-ET-LOIRE,37.0,1987-03-04,905.0,MW
+CHINON B,Nucléaire,Réacteur à eau pressurisée (REP) 900,Multi-oxyde d’uranium et de plutonium,24.0,CENTRE-VAL DE LOIRE,INDRE-ET-LOIRE,37.0,1988-04-01,905.0,MW
+CHOOZ B,Nucléaire,Réacteur à eau pressurisée (REP) 1450,Uranium Enrichi,44.0,GRAND EST,ARDENNES,8.0,2000-05-15,1500.0,MW
+CHOOZ B,Nucléaire,Réacteur à eau pressurisée (REP) 1450,Uranium Enrichi,44.0,GRAND EST,ARDENNES,8.0,2000-09-29,1500.0,MW
+CIVAUX,Nucléaire,Réacteur à eau pressurisée (REP) 1450,Uranium Enrichi,75.0,NOUVELLE-AQUITAINE,VIENNE,86.0,2002-01-29,1495.0,MW
+CIVAUX,Nucléaire,Réacteur à eau pressurisée (REP) 1450,Uranium Enrichi,75.0,NOUVELLE-AQUITAINE,VIENNE,86.0,2002-04-23,1495.0,MW
+CRUAS,Nucléaire,Réacteur à eau pressurisée (REP) 900,Uranium Enrichi,84.0,AUVERGNE-RHONE-ALPES,ARDECHE,7.0,1984-04-02,915.0,MW
+CRUAS,Nucléaire,Réacteur à eau pressurisée (REP) 900,Uranium Enrichi,84.0,AUVERGNE-RHONE-ALPES,ARDECHE,7.0,1985-04-01,915.0,MW
+CRUAS,Nucléaire,Réacteur à eau pressurisée (REP) 900,Uranium Enrichi,84.0,AUVERGNE-RHONE-ALPES,ARDECHE,7.0,1984-09-10,915.0,MW
+CRUAS,Nucléaire,Réacteur à eau pressurisée (REP) 900,Uranium Enrichi,84.0,AUVERGNE-RHONE-ALPES,ARDECHE,7.0,1985-02-11,915.0,MW
+DAMPIERRE-EN-BURLY,Nucléaire,Réacteur à eau pressurisée (REP) 900,Multi-oxyde d’uranium et de plutonium,24.0,CENTRE-VAL DE LOIRE,LOIRET,45.0,1980-09-10,890.0,MW
+DAMPIERRE-EN-BURLY,Nucléaire,Réacteur à eau pressurisée (REP) 900,Multi-oxyde d’uranium et de plutonium,24.0,CENTRE-VAL DE LOIRE,LOIRET,45.0,1981-02-16,890.0,MW
+DAMPIERRE-EN-BURLY,Nucléaire,Réacteur à eau pressurisée (REP) 900,Multi-oxyde d’uranium et de plutonium,24.0,CENTRE-VAL DE LOIRE,LOIRET,45.0,1981-05-27,890.0,MW
+DAMPIERRE-EN-BURLY,Nucléaire,Réacteur à eau pressurisée (REP) 900,Multi-oxyde d’uranium et de plutonium,24.0,CENTRE-VAL DE LOIRE,LOIRET,45.0,1981-11-20,890.0,MW
+FLAMANVILLE,Nucléaire,Réacteur à eau pressurisée (REP) 1300,Uranium Enrichi,28.0,NORMANDIE,MANCHE,50.0,1986-12-01,1330.0,MW
+FLAMANVILLE,Nucléaire,Réacteur à eau pressurisée (REP) 1300,Uranium Enrichi,28.0,NORMANDIE,MANCHE,50.0,1987-03-09,1330.0,MW
+GOLFECH,Nucléaire,Réacteur à eau pressurisée (REP) 1300,Uranium Enrichi,76.0,OCCITANIE,TARN-ET-GARONNE,82.0,1991-02-01,1310.0,MW
+GOLFECH,Nucléaire,Réacteur à eau pressurisée (REP) 1300,Uranium Enrichi,76.0,OCCITANIE,TARN-ET-GARONNE,82.0,1994-03-04,1310.0,MW
+GRAVELINES,Nucléaire,Réacteur à eau pressurisée (REP) 900,Multi-oxyde d’uranium et de plutonium,32.0,HAUTS-DE-FRANCE,NORD,59.0,1980-11-25,910.0,MW
+GRAVELINES,Nucléaire,Réacteur à eau pressurisée (REP) 900,Multi-oxyde d’uranium et de plutonium,32.0,HAUTS-DE-FRANCE,NORD,59.0,1980-12-01,910.0,MW
+GRAVELINES,Nucléaire,Réacteur à eau pressurisée (REP) 900,Multi-oxyde d’uranium et de plutonium,32.0,HAUTS-DE-FRANCE,NORD,59.0,1981-06-01,910.0,MW
+GRAVELINES,Nucléaire,Réacteur à eau pressurisée (REP) 900,Multi-oxyde d’uranium et de plutonium,32.0,HAUTS-DE-FRANCE,NORD,59.0,1981-10-01,910.0,MW
+GRAVELINES,Nucléaire,Réacteur à eau pressurisée (REP) 900,Uranium Enrichi,32.0,HAUTS-DE-FRANCE,NORD,59.0,1985-01-15,910.0,MW
+GRAVELINES,Nucléaire,Réacteur à eau pressurisée (REP) 900,Multi-oxyde d’uranium et de plutonium,32.0,HAUTS-DE-FRANCE,NORD,59.0,1985-10-25,910.0,MW
+NOGENT-SUR-SEINE,Nucléaire,Réacteur à eau pressurisée (REP) 1300,Uranium Enrichi,44.0,GRAND EST,AUBE,10.0,1988-02-24,1310.0,MW
+NOGENT-SUR-SEINE,Nucléaire,Réacteur à eau pressurisée (REP) 1300,Uranium Enrichi,44.0,GRAND EST,AUBE,10.0,1989-05-01,1310.0,MW
+PALUEL,Nucléaire,Réacteur à eau pressurisée (REP) 1300,Uranium Enrichi,28.0,NORMANDIE,SEINE-MARITIME,76.0,1985-12-01,1330.0,MW
+PALUEL,Nucléaire,Réacteur à eau pressurisée (REP) 1300,Uranium Enrichi,28.0,NORMANDIE,SEINE-MARITIME,76.0,1985-12-01,1330.0,MW
+PALUEL,Nucléaire,Réacteur à eau pressurisée (REP) 1300,Uranium Enrichi,28.0,NORMANDIE,SEINE-MARITIME,76.0,1986-02-01,1330.0,MW
+PALUEL,Nucléaire,Réacteur à eau pressurisée (REP) 1300,Uranium Enrichi,28.0,NORMANDIE,SEINE-MARITIME,76.0,1986-06-01,1330.0,MW
+PENLY,Nucléaire,Réacteur à eau pressurisée (REP) 1300,Uranium Enrichi,28.0,NORMANDIE,SEINE-MARITIME,76.0,1990-12-01,1330.0,MW
+PENLY,Nucléaire,Réacteur à eau pressurisée (REP) 1300,Uranium Enrichi,28.0,NORMANDIE,SEINE-MARITIME,76.0,1992-11-01,1330.0,MW
+ST-ALBAN-ST-MAURICE,Nucléaire,Réacteur à eau pressurisée (REP) 1300,Uranium Enrichi,84.0,AUVERGNE-RHONE-ALPES,ISERE,38.0,1986-05-01,1335.0,MW
+ST-ALBAN-ST-MAURICE,Nucléaire,Réacteur à eau pressurisée (REP) 1300,Uranium Enrichi,84.0,AUVERGNE-RHONE-ALPES,ISERE,38.0,1987-03-01,1335.0,MW
+ST-LAURENT-DES-EAUX B,Nucléaire,Réacteur à eau pressurisée (REP) 900,Multi-oxyde d’uranium et de plutonium,24.0,CENTRE-VAL DE LOIRE,LOIR-ET-CHER,41.0,1983-08-01,915.0,MW
+ST-LAURENT-DES-EAUX B,Nucléaire,Réacteur à eau pressurisée (REP) 900,Multi-oxyde d’uranium et de plutonium,24.0,CENTRE-VAL DE LOIRE,LOIR-ET-CHER,41.0,1983-08-01,915.0,MW
+TRICASTIN (LE),Nucléaire,Réacteur à eau pressurisée (REP) 900,Multi-oxyde d’uranium et de plutonium,84.0,AUVERGNE-RHONE-ALPES,DROME,26.0,1980-12-01,915.0,MW
+TRICASTIN (LE),Nucléaire,Réacteur à eau pressurisée (REP) 900,Multi-oxyde d’uranium et de plutonium,84.0,AUVERGNE-RHONE-ALPES,DROME,26.0,1980-12-01,915.0,MW
+TRICASTIN (LE),Nucléaire,Réacteur à eau pressurisée (REP) 900,Multi-oxyde d’uranium et de plutonium,84.0,AUVERGNE-RHONE-ALPES,DROME,26.0,1981-05-11,915.0,MW
+TRICASTIN (LE),Nucléaire,Réacteur à eau pressurisée (REP) 900,Multi-oxyde d’uranium et de plutonium,84.0,AUVERGNE-RHONE-ALPES,DROME,26.0,1981-11-01,915.0,MW
