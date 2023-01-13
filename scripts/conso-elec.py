@@ -1,7 +1,7 @@
 import pandas
 
 consoelec = pandas.read_csv(
-    "../rawdata/conso-elec-gaz-annuelle-par-secteur-dactivite-agregee-departement.csv",
+    "rawdata/conso-elec-gaz-annuelle-par-secteur-dactivite-agregee-departement.csv",
     sep=";",
 )
 
@@ -41,7 +41,7 @@ consoelec['libelle_region'].str.replace('-',' ')
 print(consoelec['libelle_departement'])
 
 consoelec.to_csv(
-    "../cleaneddata/conso-elec-gaz-annuelle-par-secteur-dactivite-agregee-departement-TEST.csv",
+    "cleaneddata/conso-elec-gaz-annuelle-par-secteur-dactivite-agregee-departement.csv",
     index=False,
 )
 
