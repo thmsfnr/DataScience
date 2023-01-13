@@ -1,0 +1,8 @@
+filiere,CO2 emissions (in Tonne),cluster,filiere_group
+Géothermie,0.1423452032,2,"Biomasse, Géothermie, Hydraulique"
+Biomasse,24.568484496,2,"Biomasse, Géothermie, Hydraulique"
+Hydraulique,433.307899136,2,"Biomasse, Géothermie, Hydraulique"
+Nucléaire,2126.36523,0,"Charbon, Fioul, Nucléaire"
+Charbon,3293.8471441010674,0,"Charbon, Fioul, Nucléaire"
+Fioul,3971.11093539003,0,"Charbon, Fioul, Nucléaire"
+Gaz,10808.58927136104,1,Gaz
