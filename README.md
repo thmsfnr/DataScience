@@ -1,7 +1,7 @@
 
 ## Data Science Project
 
-<em>Analysis of the nuclear phase-out in French electricity production</em>
+<em>This project is an analysis of the nuclear phase-out in French electricity production achieved during a course at Polytech Montpellier</em>
 
 *** 
 
