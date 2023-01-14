@@ -26,7 +26,7 @@ Grande capacité à l'interprétation des données. Utile ici car la production 
 
 
 ##-----------------------------------------------Nettoyage des données-----------------------##
-df = pd.read_csv('cleaneddata/production_electricite_hydrolique.csv')
+df = pd.read_csv('cleaneddata/production_electricite_hydraulique.csv')
 # Formater les dates
 #conversion TWh en MWh
 df['production électricité TWh'] = df['production électricité TWh'] * 1000000
@@ -41,10 +41,10 @@ plt.figure(figsize=(17, 8))
 plt.plot(df['ds'],df['y'])
 plt.xlabel('Année')
 plt.ylabel("Production d'électricité en MWh")
-plt.title("Production d'électricité en MWh pour l'hydrolique en fonction des années")
+plt.title("Production d'électricité en MWh pour l'hydraulique en fonction des années")
 plt.grid(False)
 #sauvegarde du graphique
-plt.savefig('prevision-production/hydrolique/production-hydrolique.png')
+plt.savefig('prevision-production/hydraulique/production-hydraulique.png')
 
 
 ##-----------------------------------------------prediction-----------------------##
@@ -58,9 +58,9 @@ forecast = m.predict(future)
 fig = m.plot(forecast)
 plt.xlabel('Année')
 plt.ylabel("Production d'électricité en MWh")
-plt.title("Prédiction de la production d'électricité en MWh pour l'hydrolique en fonction des années")
+plt.title("Prédiction de la production d'électricité en MWh pour l'hydraulique en fonction des années")
 #sauvegarde du graphique
-plt.savefig('prevision-production/hydrolique/prevision-production-hydrolique.png')
+plt.savefig('prevision-production/hydraulique/prevision-production-hydraulique.png')
 
 ##----------tendance-----------------------##
 '''
@@ -86,9 +86,9 @@ def afficheGraphePrediction(df,forecast,title):
     plt.grid(False)
 
 print(forecast)
-afficheGraphePrediction(df,forecast,"Analyse de la prédiction de la production d'électricité en MWh pour l'hydrolique en fonction des années")
+afficheGraphePrediction(df,forecast,"Analyse de la prédiction de la production d'électricité en MWh pour l'hydraulique en fonction des années")
 #sauvegarde du graphique
-plt.savefig('prevision-production/hydrolique/analyse-prevision-production-hydrolique.png')
+plt.savefig('prevision-production/hydraulique/analyse-prevision-production-hydraulique.png')
 
 
 ##-----------------------------------------------Cross-validation-----------------------##
@@ -101,9 +101,9 @@ plt.savefig('prevision-production/hydrolique/analyse-prevision-production-hydrol
 df_cv = cross_validation(m, initial = '730 days', period='365 days', horizon = '3650 days')
 print("CROSS VALIDATION")
 print(df_cv)
-afficheGraphePrediction(df_cv,df_cv,"Analyse de la cross validation de la production d'électricité en MWh pour l'hydrolique en fonction des années")
+afficheGraphePrediction(df_cv,df_cv,"Analyse de la cross validation de la production d'électricité en MWh pour l'hydraulique en fonction des années")
 #sauvegarde du graphique
-plt.savefig('prevision-production/hydrolique/analyse-cross-validation-production-hydrolique.png')
+plt.savefig('prevision-production/hydraulique/analyse-cross-validation-production-hydraulique.png')
 
 #pour calculer des indicateurs utiles par rapport à la prédiction
 df_p = performance_metrics(df_cv)
@@ -141,4 +141,4 @@ print("Moyenne MAE : " + str(df_p["mae"].mean())) #moyenne de l'erreur absolue m
 print("MAE: ", mean_absolute_error(df_cv["y"], df_cv["yhat"])) # MAE avec une autre fonction
 
 #-----sauvegarde des données de prévision dans un fichier csv-----#
-forecast.to_csv('prevision-production/hydrolique/prevision-hydrolique.csv', index=False)
+forecast.to_csv('prevision-production/hydraulique/prevision-hydraulique.csv', index=False)
