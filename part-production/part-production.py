@@ -6,8 +6,8 @@ df_bioenergie = pd.read_csv('cleaneddata/production_electricite_bioenergie.csv')
 df_prevision_bioenergie = pd.read_csv('prevision-production/bioenergie/prevision-bioenergie.csv')
 df_eolien = pd.read_csv('cleaneddata/production_electricite_eolien.csv')
 df_prevision_eolien = pd.read_csv('prevision-production/eolien/prevision-eolien.csv')
-df_hydraulique = pd.read_csv('cleaneddata/production_electricite_hydrolique.csv')
-df_prevision_hydraulique = pd.read_csv('prevision-production/hydrolique/prevision-hydrolique.csv')
+df_hydraulique = pd.read_csv('cleaneddata/production_electricite_hydraulique.csv')
+df_prevision_hydraulique = pd.read_csv('prevision-production/hydraulique/prevision-hydraulique.csv')
 df_nucleaire = pd.read_csv('cleaneddata/production_electricite_nucleaire.csv')
 df_prevision_nucleaire = pd.read_csv('prevision-production/nucleaire/prevision-nucleaire.csv')
 df_solaire = pd.read_csv('cleaneddata/production_electricite_solaire.csv')
@@ -21,7 +21,7 @@ df_part_bioenergie = pd.read_csv('part-production/bioenergie/part-production-bio
 df_part_charbon = pd.read_csv('part-production/charbon/part-production-charbon.csv')
 df_part_eolien = pd.read_csv('part-production/eolien/part-production-eolien.csv')
 df_part_gaz = pd.read_csv('part-production/gaz/part-production-gaz.csv')
-df_part_hydraulique = pd.read_csv('part-production/hydrolique/part-production-hydrolique.csv')
+df_part_hydraulique = pd.read_csv('part-production/hydraulique/part-production-hydraulique.csv')
 df_part_nucleaire = pd.read_csv('part-production/nucleaire/part-production-nucleaire.csv')
 df_part_solaire = pd.read_csv('part-production/solaire/part-production-solaire.csv')
 
@@ -54,194 +54,75 @@ df_production_2020 = pd.concat([df_bioenergie_2020, df_eolien_2020, df_hydrauliq
 df_production_2020 = df_production_2020['production'].sum()
 
 #ajout part 2020
-df_part_bioenergie['annee'] = df_bioenergie_2020['annee']
-df_part_bioenergie['part-production-MWh']= (df_bioenergie_2020['production'] / df_production_2020)*100
-print(df_part_bioenergie)
+df_stock_2020 = df_bioenergie_2020['production']  #df_stock_2020 est une série
+df_part_bioenergie.loc[len(df_part_bioenergie)] = [str(2020),(df_stock_2020.values[0] / df_production_2020)*100]
+df_stock_2020 = df_eolien_2020['production']
+df_part_eolien.loc[len(df_part_eolien)] = [str(2020),(df_stock_2020.values[0] / df_production_2020)*100]
+df_stock_2020 = df_hydraulique_2020['production']
+df_part_hydraulique.loc[len(df_part_hydraulique)] = [str(2020),(df_stock_2020.values[0] / df_production_2020)*100]
+df_stock_2020 = df_nucleaire_2020['production']
+df_part_nucleaire.loc[len(df_part_nucleaire)] = [str(2020),(df_stock_2020.values[0] / df_production_2020)*100]
+df_stock_2020 = df_solaire_2020['production']
+df_part_solaire.loc[len(df_part_solaire)] = [str(2020),(df_stock_2020.values[0] / df_production_2020)*100]
+df_stock_2020 = df_charbon_2020['production']
+df_part_charbon.loc[len(df_part_charbon)] = [str(2020),(df_stock_2020.values[0] / df_production_2020)*100]
+df_stock_2020 = df_gaz_2020['production']
+df_part_gaz.loc[len(df_part_gaz)] = [str(2020),(df_stock_2020.values[0] / df_production_2020)*100]
 
-df_part_eolien['annee'] = df_eolien_2020['annee']
-df_part_eolien['part-production-MWh']= (df_eolien_2020['production'] / df_production_2020)*100
-print(df_part_eolien)
-
-df_part_hydraulique['annee'] = df_hydraulique_2020['annee']
-df_part_hydraulique['part-production-MWh']= (df_hydraulique_2020['production'] / df_production_2020)*100
-print(df_part_hydraulique)
-
-df_part_nucleaire['annee'] = df_nucleaire_2020['annee']
-df_part_nucleaire['part-production-MWh']= (df_nucleaire_2020['production'] / df_production_2020)*100
-print(df_part_nucleaire)
-
-df_part_solaire['annee'] = df_solaire_2020['annee']
-df_part_solaire['part-production-MWh']= (df_solaire_2020['production'] / df_production_2020)*100
-print(df_part_solaire)
-
-df_part_charbon['annee'] = df_charbon_2020['annee']
-df_part_charbon['part-production-MWh']= (df_charbon_2020['production'] / df_production_2020)*100
-print(df_part_charbon)
-
-
-df_part_gaz['annee'] = df_gaz_2020['annee']
-df_part_gaz['part-production-MWh']= (df_gaz_2020['production'] / df_production_2020)*100
-
-
-
-#selection production totale de 2021 à 2030 et production par annee des filieres
+#selection production totale de 2021 à 2030 et production par annee des filieres & prevision production
 for annee in range(2021, 2031):
+    #bioenergie
     df_prevision = pd.concat([df_prevision_bioenergie[['ds','yhat']][df_prevision_bioenergie['ds'] == str(annee) + '-12-31'],df_prevision_eolien[['ds','yhat']][df_prevision_eolien['ds'] == str(annee) + '-12-31'],df_prevision_charbon[['ds','yhat']][df_prevision_charbon['ds'] == str(annee) + '-12-31'],df_prevision_gaz[['ds','yhat']][df_prevision_gaz['ds'] == str(annee) + '-12-31'],df_prevision_hydraulique[['ds','yhat']][df_prevision_hydraulique['ds'] == str(annee) + '-12-31'],df_prevision_nucleaire[['ds','yhat']][df_prevision_nucleaire['ds'] == str(annee) + '-12-31'],df_prevision_solaire[['ds','yhat']][df_prevision_solaire['ds'] == str(annee) + '-12-31']])
-    #print(df_prevision)
     df_prevision = df_prevision.rename(columns={'yhat': 'production_'+str(annee)})
     df_prevision = df_prevision['production_'+str(annee)].sum()
-    #print(df_prevision)
-    df_part_bioenergie['annee'] = df_prevision_bioenergie['ds'][df_prevision_bioenergie['ds'] == str(annee) + '-12-31']
-    #print(df_part_bioenergie)
-    df_part_bioenergie['part-production-MWh']= (df_prevision_bioenergie['yhat'][df_prevision_bioenergie['ds'] == str(annee) + '-12-31'] / df_prevision)*100
-    #print(df_part_bioenergie)
-    '''
-    df_part_eolien['annee'] = df_prevision_eolien['ds'][df_prevision_eolien['ds'] == str(annee) + '-12-31']
-    df_part_eolien['part-production-MWh']= (df_prevision_eolien['yhat'][df_prevision_eolien['ds'] == str(annee) + '-12-31'] / df_prevision)*100
-    df_part_charbon['annee'] = df_prevision_charbon['ds'][df_prevision_charbon['ds'] == str(annee) + '-12-31']
-    df_part_charbon['part-production-MWh']= (df_prevision_charbon['yhat'][df_prevision_charbon['ds'] == str(annee) + '-12-31'] / df_prevision)*100
-    df_part_gaz['annee'] = df_prevision_gaz['ds'][df_prevision_gaz['ds'] == str(annee) + '-12-31']
-    df_part_gaz['part-production-MWh']= (df_prevision_gaz['yhat'][df_prevision_gaz['ds'] == str(annee) + '-12-31'] / df_prevision)*100
-    df_part_hydraulique['annee'] = df_prevision_hydraulique['ds'][df_prevision_hydraulique['ds'] == str(annee) + '-12-31']
-    df_part_hydraulique['part-production-MWh']= (df_prevision_hydraulique['yhat'][df_prevision_hydraulique['ds'] == str(annee) + '-12-31'] / df_prevision)*100
-    df_part_nucleaire['annee'] = df_prevision_nucleaire['ds'][df_prevision_nucleaire['ds'] == str(annee) + '-12-31']
-    df_part_nucleaire['part-production-MWh']= (df_prevision_nucleaire['yhat'][df_prevision_nucleaire['ds'] == str(annee) + '-12-31'] / df_prevision)*100
-    df_part_solaire['annee'] = df_prevision_solaire['ds'][df_prevision_solaire['ds'] == str(annee) + '-12-31']
-    df_part_solaire['part-production-MWh']= (df_prevision_solaire['yhat'][df_prevision_solaire['ds'] == str(annee) + '-12-31'] / df_prevision)*100
-    '''
+    df_stock_bioenergie = df_prevision_bioenergie['yhat'][df_prevision_bioenergie['ds'] == str(annee) + '-12-31'] #df_stock est une série
+    df_stock_eolien = df_prevision_eolien['yhat'][df_prevision_eolien['ds'] == str(annee) + '-12-31']
+    df_stock_hydraulique = df_prevision_hydraulique['yhat'][df_prevision_hydraulique['ds'] == str(annee) + '-12-31']
+    df_stock_nucleaire = df_prevision_nucleaire['yhat'][df_prevision_nucleaire['ds'] == str(annee) + '-12-31']
+    df_stock_solaire = df_prevision_solaire['yhat'][df_prevision_solaire['ds'] == str(annee) + '-12-31']
+    df_stock_charbon = df_prevision_charbon['yhat'][df_prevision_charbon['ds'] == str(annee) + '-12-31']
+    df_stock_gaz = df_prevision_gaz['yhat'][df_prevision_gaz['ds'] == str(annee) + '-12-31']
+   
+    for production_actuelle in df_stock_bioenergie.values:
+        df_part_bioenergie.loc[len(df_part_bioenergie)] = [str(annee), (production_actuelle / df_prevision)*100]
+
+    for production_actuelle in df_stock_eolien.values:
+        df_part_eolien.loc[len(df_part_eolien)] = [str(annee), (production_actuelle / df_prevision)*100]
+    
+    for production_actuelle in df_stock_hydraulique.values:
+        df_part_hydraulique.loc[len(df_part_hydraulique)] = [str(annee), (production_actuelle / df_prevision)*100]
+
+    for production_actuelle in df_stock_nucleaire.values:
+        df_part_nucleaire.loc[len(df_part_nucleaire)] = [str(annee), (production_actuelle / df_prevision)*100]
+
+    for production_actuelle in df_stock_solaire.values:
+        df_part_solaire.loc[len(df_part_solaire)] = [str(annee), (production_actuelle / df_prevision)*100]
+
+    for production_actuelle in df_stock_charbon.values:
+        df_part_charbon.loc[len(df_part_charbon)] = [str(annee), (production_actuelle / df_prevision)*100]
+
+    for production_actuelle in df_stock_gaz.values:
+        df_part_gaz.loc[len(df_part_gaz)] = [str(annee), (production_actuelle / df_prevision)*100]
+
+  
 print(df_part_bioenergie)
-'''
-#mise en forme colonne production
-df_prevision_2021 = df_prevision_2021.rename(columns={'yhat': 'production_2021'})
-df_prevision_2021.drop(['ds'], axis=1, inplace=True)
-df_prevision_2021 = df_prevision_2021.sum()
+print(df_part_eolien)
+print(df_part_hydraulique)
+print(df_part_nucleaire)
+print(df_part_solaire)
+print(df_part_charbon)
+print(df_part_gaz)
 
-df_prevision_2022 = df_prevision_2022.rename(columns={'yhat': 'production_2022'})
-df_prevision_2022.drop(['ds'], axis=1, inplace=True)
-df_prevision_2022 = df_prevision_2022.sum()
-
-df_prevision_2023 = df_prevision_2023.rename(columns={'yhat': 'production_2023'})
-df_prevision_2023.drop(['ds'], axis=1, inplace=True)
-df_prevision_2023 = df_prevision_2023.sum()
-
-df_prevision_2024 = df_prevision_2024.rename(columns={'yhat': 'production_2024'})
-df_prevision_2024.drop(['ds'], axis=1, inplace=True)
-df_prevision_2024 = df_prevision_2024.sum()
-
-df_prevision_2025 = df_prevision_2025.rename(columns={'yhat': 'production_2025'})
-df_prevision_2025.drop(['ds'], axis=1, inplace=True)
-df_prevision_2025 = df_prevision_2025.sum()
-
-df_prevision_2026 = df_prevision_2026.rename(columns={'yhat': 'production_2026'})
-df_prevision_2026.drop(['ds'], axis=1, inplace=True)
-df_prevision_2026 = df_prevision_2026.sum()
-
-df_prevision_2027 = df_prevision_2027.rename(columns={'yhat': 'production_2027'})
-df_prevision_2027.drop(['ds'], axis=1, inplace=True)
-df_prevision_2027 = df_prevision_2027.sum()
-
-df_prevision_2028 = df_prevision_2028.rename(columns={'yhat': 'production_2028'})
-df_prevision_2028.drop(['ds'], axis=1, inplace=True)
-df_prevision_2028 = df_prevision_2028.sum()
-
-df_prevision_2029 = df_prevision_2029.rename(columns={'yhat': 'production_2029'})
-df_prevision_2029.drop(['ds'], axis=1, inplace=True)
-df_prevision_2029 = df_prevision_2029.sum()
-
-df_prevision_2030 = df_prevision_2030.rename(columns={'yhat': 'production_2030'})
-df_prevision_2030.drop(['ds'], axis=1, inplace=True)
-df_prevision_2030 = df_prevision_2030.sum()
+#sauvagegarde des données
+df_part_bioenergie.to_csv('part-production/bioenergie/part_production_bioenergie.csv', index=False)
+df_part_eolien.to_csv('part-production/eolien/part_production_eolien.csv', index=False)
+df_part_hydraulique.to_csv('part-production/hydraulique/part_production_hydraulique.csv', index=False)
+df_part_nucleaire.to_csv('part-production/nucleaire/part_production_nucleaire.csv', index=False)
+df_part_solaire.to_csv('part-production/solaire/part_production_solaire.csv', index=False)
+df_part_charbon.to_csv('part-production/charbon/part_production_charbon.csv', index=False)
+df_part_gaz.to_csv('part-production/gaz/part_production_gaz.csv', index=False)
 
 
-
-
-part_bioenergie_2022 = df_production_bioenergie_2022 / df_prevision_2022['production_2022'] *100
-part_bioenergie_2023 = df_production_bioenergie_2023 / df_prevision_2023['production_2023'] *100
-part_bioenergie_2024 = df_production_bioenergie_2024 / df_prevision_2024['production_2024'] *100
-part_bioenergie_2025 = df_production_bioenergie_2025 / df_prevision_2025['production_2025'] *100
-part_bioenergie_2026 = df_production_bioenergie_2026 / df_prevision_2026['production_2026'] *100
-part_bioenergie_2027 = df_production_bioenergie_2027 / df_prevision_2027['production_2027'] *100
-part_bioenergie_2028 = df_production_bioenergie_2028 / df_prevision_2028['production_2028'] *100
-part_bioenergie_2029 = df_production_bioenergie_2029 / df_prevision_2029['production_2029'] *100
-part_bioenergie_2030 = df_production_bioenergie_2030 / df_prevision_2030['production_2030'] *100
-
-#calcul part de production eolien par année
-part_eolien_2020 = df_eolien_2020['production'] / df_production_2020['production_2020'] *100
-part_eolien_2021 = df_production_eolien_2021 / df_prevision_2021['production_2021'] *100
-part_eolien_2022 = df_production_eolien_2022 / df_prevision_2022['production_2022'] *100
-part_eolien_2023 = df_production_eolien_2023 / df_prevision_2023['production_2023'] *100
-part_eolien_2024 = df_production_eolien_2024 / df_prevision_2024['production_2024'] *100
-part_eolien_2025 = df_production_eolien_2025 / df_prevision_2025['production_2025'] *100
-part_eolien_2026 = df_production_eolien_2026 / df_prevision_2026['production_2026'] *100
-part_eolien_2027 = df_production_eolien_2027 / df_prevision_2027['production_2027'] *100
-part_eolien_2028 = df_production_eolien_2028 / df_prevision_2028['production_2028'] *100
-part_eolien_2029 = df_production_eolien_2029 / df_prevision_2029['production_2029'] *100
-part_eolien_2030 = df_production_eolien_2030 / df_prevision_2030['production_2030'] *100
-
-#calcul part de production solaire par année
-part_solaire_2020 = df_solaire_2020['production'] / df_production_2020['production_2020'] *100 
-part_solaire_2021 = df_production_solaire_2021 / df_prevision_2021['production_2021'] *100
-part_solaire_2022 = df_production_solaire_2022 / df_prevision_2022['production_2022'] *100
-part_solaire_2023 = df_production_solaire_2023 / df_prevision_2023['production_2023'] *100
-part_solaire_2024 = df_production_solaire_2024 / df_prevision_2024['production_2024'] *100
-part_solaire_2025 = df_production_solaire_2025 / df_prevision_2025['production_2025'] *100
-part_solaire_2026 = df_production_solaire_2026 / df_prevision_2026['production_2026'] *100
-part_solaire_2027 = df_production_solaire_2027 / df_prevision_2027['production_2027'] *100
-part_solaire_2028 = df_production_solaire_2028 / df_prevision_2028['production_2028'] *100
-part_solaire_2029 = df_production_solaire_2029 / df_prevision_2029['production_2029'] *100
-part_solaire_2030 = df_production_solaire_2030 / df_prevision_2030['production_2030'] *100
-
-#calcul part de production hydraulique par année
-part_hydraulique_2020 = df_hydraulique_2020['production'] / df_production_2020['production_2020'] *100
-part_hydraulique_2021 = df_production_hydraulique_2021 / df_prevision_2021['production_2021'] *100
-part_hydraulique_2022 = df_production_hydraulique_2022 / df_prevision_2022['production_2022'] *100
-part_hydraulique_2023 = df_production_hydraulique_2023 / df_prevision_2023['production_2023'] *100
-part_hydraulique_2024 = df_production_hydraulique_2024 / df_prevision_2024['production_2024'] *100
-part_hydraulique_2025 = df_production_hydraulique_2025 / df_prevision_2025['production_2025'] *100
-part_hydraulique_2026 = df_production_hydraulique_2026 / df_prevision_2026['production_2026'] *100
-part_hydraulique_2027 = df_production_hydraulique_2027 / df_prevision_2027['production_2027'] *100
-part_hydraulique_2028 = df_production_hydraulique_2028 / df_prevision_2028['production_2028'] *100
-part_hydraulique_2029 = df_production_hydraulique_2029 / df_prevision_2029['production_2029'] *100
-part_hydraulique_2030 = df_production_hydraulique_2030 / df_prevision_2030['production_2030'] *100
-
-#calcul part de production nucléaire par année
-part_nucleaire_2020 = df_nucleaire_2020['production'] / df_production_2020['production_2020'] *100
-part_nucleaire_2021 = df_production_nucleaire_2021 / df_prevision_2021['production_2021'] *100
-part_nucleaire_2022 = df_production_nucleaire_2022 / df_prevision_2022['production_2022'] *100
-part_nucleaire_2023 = df_production_nucleaire_2023 / df_prevision_2023['production_2023'] *100
-part_nucleaire_2024 = df_production_nucleaire_2024 / df_prevision_2024['production_2024'] *100
-part_nucleaire_2025 = df_production_nucleaire_2025 / df_prevision_2025['production_2025'] *100
-part_nucleaire_2026 = df_production_nucleaire_2026 / df_prevision_2026['production_2026'] *100
-part_nucleaire_2027 = df_production_nucleaire_2027 / df_prevision_2027['production_2027'] *100
-part_nucleaire_2028 = df_production_nucleaire_2028 / df_prevision_2028['production_2028'] *100
-part_nucleaire_2029 = df_production_nucleaire_2029 / df_prevision_2029['production_2029'] *100
-part_nucleaire_2030 = df_production_nucleaire_2030 / df_prevision_2030['production_2030'] *100
-
-#calcul part de production gaz par année
-part_gaz_2020 = df_gaz_2020['production'] / df_production_2020['production_2020'] *100
-part_gaz_2021 = df_production_gaz_2021 / df_prevision_2021['production_2021'] *100
-part_gaz_2022 = df_production_gaz_2022 / df_prevision_2022['production_2022'] *100
-part_gaz_2023 = df_production_gaz_2023 / df_prevision_2023['production_2023'] *100
-part_gaz_2024 = df_production_gaz_2024 / df_prevision_2024['production_2024'] *100
-part_gaz_2025 = df_production_gaz_2025 / df_prevision_2025['production_2025'] *100
-part_gaz_2026 = df_production_gaz_2026 / df_prevision_2026['production_2026'] *100
-part_gaz_2027 = df_production_gaz_2027 / df_prevision_2027['production_2027'] *100
-part_gaz_2028 = df_production_gaz_2028 / df_prevision_2028['production_2028'] *100
-part_gaz_2029 = df_production_gaz_2029 / df_prevision_2029['production_2029'] *100
-part_gaz_2030 = df_production_gaz_2030 / df_prevision_2030['production_2030'] *100
-
-#calcul part de production charbon par année
-part_charbon_2020 = df_charbon_2020['production'] / df_production_2020['production_2020'] *100
-part_charbon_2021 = df_production_charbon_2021 / df_prevision_2021['production_2021'] *100
-part_charbon_2022 = df_production_charbon_2022 / df_prevision_2022['production_2022'] *100
-part_charbon_2023 = df_production_charbon_2023 / df_prevision_2023['production_2023'] *100
-part_charbon_2024 = df_production_charbon_2024 / df_prevision_2024['production_2024'] *100
-part_charbon_2025 = df_production_charbon_2025 / df_prevision_2025['production_2025'] *100
-part_charbon_2026 = df_production_charbon_2026 / df_prevision_2026['production_2026'] *100
-part_charbon_2027 = df_production_charbon_2027 / df_prevision_2027['production_2027'] *100
-
-
-'''
 
 
 
