@@ -16,7 +16,6 @@ import frame5
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     html.H1("Analyse de l'arret de l'utilisation du nucléaire dans la production d'électricité en France"),
-    # add a design dropdown
     dcc.Dropdown(
         id='page-selector',
         options=[
