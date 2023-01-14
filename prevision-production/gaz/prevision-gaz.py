@@ -139,3 +139,22 @@ print("Ecart type production : " + str(df["y"].std())) #écart type de la produc
 print("Moyenne MAE : " + str(df_p["mae"].mean())) #moyenne de l'erreur absolue moyenne (MAE), mean absolute error (MAE)
 print("MAE: ", mean_absolute_error(df_cv["y"], df_cv["yhat"])) # MAE avec une autre fonction
 
+##----------Moyenne production prévision --------------##
+moyennePrevision = forecast['yhat'].mean()
+print("MOYENNE PRODUCTION BIOENERGIE PREVISION")
+print(moyennePrevision)
+##----------Minimum production prédite --------------##
+minProductionPrevision = forecast['yhat'].min()
+print("MINIMUM PRODUCTION BIOENERGIE PREVISION")
+print(minProductionPrevision)
+##----------Maximum production prédite --------------##
+maxProductionPrevision = forecast['yhat'].max()
+print("MAXIMUM PRODUCTION BIOENERGIE PREVISION")
+print(maxProductionPrevision)
+##----------Ecart type production prédite --------------##
+ecartTypeProductionPrevision = forecast['yhat'].std()
+print("ECART TYPE PRODUCTION BIOENERGIE PREVISION")
+print(ecartTypeProductionPrevision)
+
+#-----sauvegarde des données de prévision dans un fichier csv-----#
+forecast.to_csv('prevision-production/gaz/prevision-gaz.csv', index=False)

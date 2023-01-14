@@ -139,3 +139,6 @@ print("Moyenne production : " + str(df["y"].mean())) #moyenne de la production
 print("Ecart type production : " + str(df["y"].std())) #écart type de la production
 print("Moyenne MAE : " + str(df_p["mae"].mean())) #moyenne de l'erreur absolue moyenne (MAE), mean absolute error (MAE)
 print("MAE: ", mean_absolute_error(df_cv["y"], df_cv["yhat"])) # MAE avec une autre fonction
+
+#-----sauvegarde des données de prévision dans un fichier csv-----#
+forecast.to_csv('prevision-production/hydrolique/prevision-hydrolique.csv', index=False)

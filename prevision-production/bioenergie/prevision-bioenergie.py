@@ -6,24 +6,8 @@ from prophet import Prophet
 import logging
 logging.getLogger().setLevel(logging.ERROR)
 from prophet.diagnostics import cross_validation
-from prophet.plot import plot_cross_validation_metric
 from prophet.diagnostics import performance_metrics
-from sklearn.metrics import mean_absolute_error, confusion_matrix
-
-
-'''
-Choix de prophet :
-Utile pour faire des prédictions sur les séries temporelles. C'est un modèle additif qui permet de faire des prédictions sur des données saisonnières et tendancielles.
-Il décompose une série temporelle comme cela : y(t) = g(t) + s(t) + h(t) + e(t)
-g(t) : tendance
-s(t) : saisonnalité
-h(t) : effet de vacances
-e(t) : erreur
-
-Grande capacité à l'interprétation des données. Utile ici car la production du nucléaire est très saisonnière et tendancielle.
-
-'''
-
+from sklearn.metrics import mean_absolute_error
 
 ##-----------------------------------------------Nettoyage des données-----------------------##
 df = pd.read_csv('cleaneddata/production_electricite_bioenergie.csv')
@@ -57,17 +41,6 @@ plt.title("Prédiction de la production d'électricité en MWh pour le bioenergi
 #sauvegarde du graphique
 plt.savefig('prevision-production/bioenergie/prevision-bioenergie.png')
 
-##----------tendance-----------------------##
-
-'''
-m.plot_components(forecast)
-plt.xlabel('Année')
-plt.ylabel("Production d'électricité en MWh pour le bioenergie")
-plt.show()
-# trend = tendance
-# yearly = saisonnalité hebdomadaire
-'''
-
 ##------------------graphe-----------------------##
 def afficheGraphePrediction(df,forecast,title):
     plt.figure(figsize=(17, 8))
@@ -85,7 +58,6 @@ print(forecast)
 afficheGraphePrediction(df,forecast,"Analyse de la prédiction de la production d'électricité en MWh pour le bioenergie en fonction des années")
 #sauvegarde du graphique
 plt.savefig('prevision-production/bioenergie/analyse-prevision-bioenergie.png')
-
 
 ##-----------------------------------------------Cross-validation-----------------------##
 
@@ -106,24 +78,6 @@ plt.savefig('prevision-production/bioenergie/analyse-cross-validation-bioenergie
 df_p = performance_metrics(df_cv)
 print("INDICATEUR PERFORMANCE")
 print(df_p)
-# l'erreur quadratique moyenne (MSE) mean squared error (MSE)
-#  l'erreur quadratique moyenne (RMSE), (root mean squared error (RMSE))
-#  l'erreur absolue moyenne (MAE), mean absolute error (MAE)
-# l'erreur absolue moyenne en pourcentage (MAPE), mean absolute percent error (MAPE)
-# l'erreur absolue médiane en pourcentage (MDAPE) ,median absolute percent error (MDAPE) 
-# la couverture des estimations yhat_lower et yhat_upper.
-#  Ils sont calculés sur une fenêtre glissante des prédictions dans df_cv après un tri par horizon (ds moins cutoff).
-#  Par défaut, 10% des prédictions seront incluses dans chaque fenêtre, mais cela peut être modifié avec l'argument rolling_window.
-
-
-#pour calculer des indicateurs utiles par rapport au cross validation
-#Les points montrent le pourcentage d'erreur absolue pour chaque prédiction dans df_cv.
-'''
-fig = plot_cross_validation_metric(df_cv, metric='mape')
-plt.show()
-plot_cross_validation_metric(df_cv, metric='rmse')
-plt.show()
-'''
 
 ####-------visualiser l'ensemble de la production par rapport au MAE-------####
 '''
@@ -136,3 +90,24 @@ print("Moyenne production : " + str(df["y"].mean())) #moyenne de la production
 print("Ecart type production : " + str(df["y"].std())) #écart type de la production
 print("Moyenne MAE : " + str(df_p["mae"].mean())) #moyenne de l'erreur absolue moyenne (MAE), mean absolute error (MAE)
 print("MAE: ", mean_absolute_error(df_cv["y"], df_cv["yhat"])) # MAE avec une autre fonction
+
+
+##----------Moyenne production prévision --------------##
+moyennePrevision = forecast['yhat'].mean()
+print("MOYENNE PRODUCTION BIOENERGIE PREVISION")
+print(moyennePrevision)
+##----------Minimum production prédite --------------##
+minProductionPrevision = forecast['yhat'].min()
+print("MINIMUM PRODUCTION BIOENERGIE PREVISION")
+print(minProductionPrevision)
+##----------Maximum production prédite --------------##
+maxProductionPrevision = forecast['yhat'].max()
+print("MAXIMUM PRODUCTION BIOENERGIE PREVISION")
+print(maxProductionPrevision)
+##----------Ecart type production prédite --------------##
+ecartTypeProductionPrevision = forecast['yhat'].std()
+print("ECART TYPE PRODUCTION BIOENERGIE PREVISION")
+print(ecartTypeProductionPrevision)
+
+#-----sauvegarde des données de prévision dans un fichier csv-----#
+forecast.to_csv('prevision-production/bioenergie/prevision-bioenergie.csv', index=False)
