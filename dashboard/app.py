@@ -27,7 +27,7 @@ app.layout = html.Div([
             {'label': 'Page 4', 'value': '/page4'},
             {'label': 'Page 5', 'value': '/page5'},
         ],
-        value='/page1',
+        value='/description',
         style={'width': '50%'}
     ),
     html.Div(id='page-content')
