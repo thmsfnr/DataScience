@@ -11,7 +11,7 @@ df = pandas.read_csv(
 
 # préparation des données
 
-# on prend en compte que l'électricité
+# on ne prend en compte que l'électricité
 df = df[df["filiere"] == "Electricité"]
 df = df.groupby("annee").sum(numeric_only=True).reset_index()
 
@@ -113,7 +113,7 @@ def afficheGraphePrediction(df, forecast, title):
 def predire_et_graphes(data, title, filename, title2, filename2):
     m = Prophet()
     m.fit(data)
-    future = m.make_future_dataframe(periods=10, freq="Y")
+    future = m.make_future_dataframe(periods=5, freq="Y")
     forecast = m.predict(future)
     fig = m.plot(forecast)
     plt.xlabel("Année")
