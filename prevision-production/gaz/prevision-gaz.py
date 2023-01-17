@@ -11,20 +11,6 @@ from prophet.diagnostics import performance_metrics
 from sklearn.metrics import mean_absolute_error, confusion_matrix
 
 
-'''
-Choix de prophet :
-Utile pour faire des prédictions sur les séries temporelles. C'est un modèle additif qui permet de faire des prédictions sur des données saisonnières et tendancielles.
-Il décompose une série temporelle comme cela : y(t) = g(t) + s(t) + h(t) + e(t)
-g(t) : tendance
-s(t) : saisonnalité
-h(t) : effet de vacances
-e(t) : erreur
-
-Grande capacité à l'interprétation des données. Utile ici car la production du nucléaire est très saisonnière et tendancielle.
-
-'''
-
-
 ##-----------------------------------------------Nettoyage des données-----------------------##
 df = pd.read_csv('cleaneddata/production_electricite_gaz.csv')
 # Formater les dates
@@ -61,16 +47,6 @@ plt.title("Prédiction de la production d'électricité en MWh pour le gaz en fo
 #sauvegarde du graphique
 plt.savefig('prevision-production/gaz/prevision-production-gaz.png')
 
-##----------tendance-----------------------##
-
-'''
-m.plot_components(forecast)
-plt.xlabel('Année')
-plt.ylabel("Production d'électricité en MWh")
-plt.show()
-# trend = tendance
-# yearly = saisonnalité hebdomadaire
-'''
 
 ##------------------graphe-----------------------##
 def afficheGraphePrediction(df,forecast,title):
@@ -109,24 +85,7 @@ plt.savefig('prevision-production/gaz/analyse-cross-validation-production-gaz.pn
 df_p = performance_metrics(df_cv)
 print("INDICATEUR PERFORMANCE")
 print(df_p)
-# l'erreur quadratique moyenne (MSE) mean squared error (MSE)
-#  l'erreur quadratique moyenne (RMSE), (root mean squared error (RMSE))
-#  l'erreur absolue moyenne (MAE), mean absolute error (MAE)
-# l'erreur absolue moyenne en pourcentage (MAPE), mean absolute percent error (MAPE)
-# l'erreur absolue médiane en pourcentage (MDAPE) ,median absolute percent error (MDAPE) 
-# la couverture des estimations yhat_lower et yhat_upper.
-#  Ils sont calculés sur une fenêtre glissante des prédictions dans df_cv après un tri par horizon (ds moins cutoff).
-#  Par défaut, 10% des prédictions seront incluses dans chaque fenêtre, mais cela peut être modifié avec l'argument rolling_window.
 
-
-#pour calculer des indicateurs utiles par rapport au cross validation
-#Les points montrent le pourcentage d'erreur absolue pour chaque prédiction dans df_cv.
-'''
-fig = plot_cross_validation_metric(df_cv, metric='mape')
-plt.show()
-plot_cross_validation_metric(df_cv, metric='rmse')
-plt.show()
-'''
 ####-------visualiser l'ensemble de la production par rapport au MAE-------####
 '''
 For example, if the range of nuclear electricity production is between 0 and 10,000 MWh,
