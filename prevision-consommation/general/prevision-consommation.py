@@ -49,8 +49,7 @@ plt.xlabel("Année")
 plt.ylabel("Consommation d'électricité (en MWh)")
 plt.title("Consommation d'électricité (en MWh) en France, en fonction des années")
 plt.grid(False)
-# plt.show()
-plt.savefig("prevision-consommation/consommation-2001-2021-france.png")
+plt.savefig("prevision-consommation/general/consommation-2001-2021-france.png")
 
 
 ### prédiction
@@ -67,7 +66,7 @@ plt.xlabel("Année")
 plt.ylabel("Consommation d'électricité (en MWh)")
 plt.title("Consommation d'électricité (en MWh) en France, en fonction des années")
 # plt.show()
-plt.savefig("prevision-consommation/prediction-consommation.png")
+plt.savefig("prevision-consommation/general/prediction-consommation.png")
 
 
 ## tendance
@@ -83,18 +82,22 @@ df_cv = cross_validation(m, initial="3650 days", period="365 days", horizon="365
 print("CROSS VALIDATION")
 print(df_cv)
 
-def afficheGraphePrediction(df,forecast,title):
+
+def afficheGraphePrediction(df, forecast, title):
     plt.figure(figsize=(17, 8))
-    plt.plot(forecast['ds'],forecast['yhat'],label='valeurs prédites')
-    plt.plot(forecast['ds'],forecast['yhat_lower'],label='valeurs inférieures prédites')
-    plt.plot(forecast['ds'],forecast['yhat_upper'],label='valeurs supérieures prédites')
-    plt.plot(df['ds'],df['y'],label='valeurs réelles')
+    plt.plot(forecast["ds"], forecast["yhat"], label="valeurs prédites")
+    plt.plot(
+        forecast["ds"], forecast["yhat_lower"], label="valeurs inférieures prédites"
+    )
+    plt.plot(
+        forecast["ds"], forecast["yhat_upper"], label="valeurs supérieures prédites"
+    )
+    plt.plot(df["ds"], df["y"], label="valeurs réelles")
     plt.legend()
-    plt.xlabel('Année')
+    plt.xlabel("Année")
     plt.ylabel("Consommation d'électricité (en MWh) en France")
     plt.title(title)
     plt.grid(False)
-    plt.show()
 
 
 afficheGraphePrediction(
@@ -103,11 +106,15 @@ afficheGraphePrediction(
     "Analyse de la cross-validation de la consommation d'électricité (en MWh) en France en fonction des années",
 )
 
+plt.savefig("prevision-consommation/general/analyse-prevision.png")
+
 df_p = performance_metrics(df_cv)
 print("INDICATEUR PERFORMANCE")
 print(df_p)
 
-fig = plot_cross_validation_metric(df_cv, metric='mape')
+fig = plot_cross_validation_metric(df_cv, metric="mape")
+# plt.savefig("prevision-consommation/general/analyse-cross-validation")
 plt.show()
-plot_cross_validation_metric(df_cv, metric='rmse')
+
+plot_cross_validation_metric(df_cv, metric="rmse")
 plt.show()
