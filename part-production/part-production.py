@@ -121,8 +121,3 @@ df_part_nucleaire.to_csv('part-production/nucleaire/part_production_nucleaire.cs
 df_part_solaire.to_csv('part-production/solaire/part_production_solaire.csv', index=False)
 df_part_charbon.to_csv('part-production/charbon/part_production_charbon.csv', index=False)
 df_part_gaz.to_csv('part-production/gaz/part_production_gaz.csv', index=False)
-
-
-
-
-
