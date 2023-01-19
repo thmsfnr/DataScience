@@ -21,36 +21,41 @@ shinyUI(fluidPage(
       p("Concernant la problématique, nous en avons choisi une qui diffère de celle proposée dans le projet. Au lieu de centrer notre étude sur les conséquences énergétiques de la guerre en Ukraine, nous allons déterminer les conséquences de la fin du nucléaire dans la production d'électricité en France."),
       a(href = "https://github.com/thmsfnr/DataScience", "Cliquez ici pour plus d'informations"),
       tags$hr(style = "border:1px solid black;"),
-      p("Il est possible de choisir entre l'affichage de la répartition des espèces ou des sexes selon la caractéristique sélectionnée."),
-      radioButtons("varChoice","Elément souhaité :",choices = c("Espèce", "Sexe"),selected = "Espèce"),
 
-      # If Espèce is selected
+      # If Conséquences sur le prix et l'environnement is selected
       conditionalPanel(
-        condition = "input.varChoice == 'Espèce'",
-        checkboxGroupInput(inputId = "species", label = "Espèces sélectionnées:",choices = c("Adelie" = "Adelie","Chinstrap" = "Chinstrap","Gentoo" = "Gentoo"),selected=c("Adelie","Chinstrap","Gentoo"))
-      ),
-
-      # If Ailes is selected
-      conditionalPanel(
-        condition = "input.tabSelected == 'Ailes'",
-        sliderInput("xlim","Longueurs d'ailes considérées (mm):",min = 170, max = 240,value = c(170,240)),
+        condition = "input.tabSelected == 'Conséquences sur prix et environnement'",
+        h5(align="center","Choix de la répartition des différentes filières de production"),
+        sliderInput("hydraulic","Hydraulique:",min = 0, max = 100,value = c(10)),
+        sliderInput("nuclear","Nucléaire:",min = 0, max = 100,value = c(10)),
+        sliderInput("wind","Eolien:",min = 0, max = 100,value = c(10)),
+        sliderInput("solar","Photovolatique:",min = 0, max = 100,value = c(10)),
+        sliderInput("gas","Gaz:",min = 0, max = 100,value = c(10)),
+        sliderInput("coal","Charbon:",min = 0, max = 100,value = c(10)),
+        sliderInput("oil","Fioul:",min = 0, max = 100,value = c(10)),
       ),
 
       # If Becs - Longeur is selected
       conditionalPanel(
-        condition = "input.tabSelected == 'Becs - Longeur'",
+        condition = "input.tabSelected == 'Production'",
         sliderInput("ylim","Longueurs de becs considérés (mm):",min = 30, max = 60,value = c(30,60)),
       ),
 
       # If Becs - Longeur is selected
       conditionalPanel(
-        condition = "input.tabSelected == 'Becs - Profondeur'",
+        condition = "input.tabSelected == 'Comsommation'",
         sliderInput("zlim","Profondeurs de becs considérés (mm):",min = 10, max = 30,value = c(10,30)),
       ),
 
       # If Masse is selected
       conditionalPanel(
-        condition = "input.tabSelected == 'Masses'",
+        condition = "input.tabSelected == 'Lien entre production et consommation'",
+        sliderInput("wlim","Masses considérés (g):",min = 2500, max = 7500,value = c(2500,7500)),
+      ),
+
+      # If Masse is selected
+      conditionalPanel(
+        condition = "input.tabSelected == 'Confrontation des prédictions'",
         sliderInput("wlim","Masses considérés (g):",min = 2500, max = 7500,value = c(2500,7500)),
       )
     ),
@@ -60,12 +65,12 @@ shinyUI(fluidPage(
       navbarPage("Menu",id = "tabSelected",
 
         # Display of graphics according to the selected menu
-        navbarMenu("Caractéristiques",
-          tabPanel("Ailes", plotOutput("fliperPlot")),
-          tabPanel("Becs - Longeur",  plotOutput("billPlot")),
-          tabPanel("Becs - Profondeur",  plotOutput("bill2Plot")),
-          tabPanel("Masses",  plotOutput("massPlot")),
-          tabPanel("Iles",  plotOutput("islandPlot")),
+        navbarMenu("Fenetres",
+          tabPanel("Conséquences sur prix et environnement", textOutput("prixEnvironnement"),),
+          tabPanel("Production",  plotOutput("billPlot")),
+          tabPanel("Comsommation",  plotOutput("bill2Plot")),
+          tabPanel("Lien entre production et consommation",  plotOutput("massPlot")),
+          tabPanel("Confrontation des prédictions",  plotOutput("islandPlot")),
         )
       )
     )

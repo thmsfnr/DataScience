@@ -13,7 +13,7 @@ for index, row in df.iterrows():
 df = df[df["filiere"] != "Nucléaire"]
 
 # Simulate whithout nuclear (part of ther increase proportionally the ols shares)
-newPartProduction = {"Charbon": (0.81*sum)/(sum-76.88), "Gaz": (7.0*sum)/(sum-76.88), "Hydraulique": (8.56*sum)/(sum-76.88), "Eolien": (0.7647861595767812*sum)/(sum-76.88), "Solaire": (0.0787807345745655*sum)/(100-76.88), "Fioul": (0.8*sum)/(sum-76.88)}
+newPartProduction = {"Charbon": (0.81*sum)/(sum-76.88), "Gaz": (7.0*sum)/(sum-76.88), "Hydraulique": (8.56*sum)/(sum-76.88), "Eolien": (0.7647861595767812*sum)/(sum-76.88), "Solaire": (0.0787807345745655*sum)/(sum-76.88), "Fioul": (0.8*sum)/(sum-76.88)}
 
 # Calculate a factor for each filiere using newPartProduction variable
 for index, row in df.iterrows():
