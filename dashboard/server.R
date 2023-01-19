@@ -2,12 +2,52 @@
 library(shiny)
 library(ggplot2)
 library(palmerpenguins)
-includeCSS("./style.css")
+library(tidyverse)
 
 penguins_nomissing <- na.omit(penguins)
+price <- read.csv("../analysis-price/conclusion.csv", header = TRUE)
 
 # Server logic
 shinyServer(function(input, output) {
+
+  output$prixEnvironnement <- renderText({
+
+    # Calculate the sum of production part
+    sum <- sum(price$part_de_production)
+
+    # Remove nuclear
+    df <- price %>% filter(filiere != "Nucléaire")
+
+    # Simulate whithout nuclear (part of ther increase proportionally the ols shares)
+    newPartProduction <- c(Charbon = (0.81*sum)/(sum-76.88), Gaz = (7.0*sum)/(sum-76.88), Hydraulique = (8.56*sum)/(sum-76.88), Eolien = (0.7647861595767812*sum)/(sum-76.88), Solaire = (0.0787807345745655*sum)/(sum-76.88), Fioul = (0.8*sum)/(sum-76.88))
+
+    # Calculate a factor for each filiere using newPartProduction variable
+    for (i in 1:nrow(df)) {
+      ratio <- (df$part_de_production[i] / (newPartProduction[df$filiere[i]]))
+      ratio <- ratio - (ratio - 1) * 0.9
+      df$factor[i] <- ratio
+    }
+
+    # Add the new production part
+    for (i in 1:nrow(df)) {
+      df$part_de_production[i] <- newPartProduction[df$filiere[i]]
+    }
+
+    # Replace the old price by the new price
+    for (i in 1:nrow(df)) {
+      price <- df$prix_MWh[i] * df$factor[i]
+      df$prix_MWh[i] <- price
+    }
+
+    # Calculate the electricity price
+    priceNuclear <- 0
+    for (i in 1:nrow(df)) {
+      priceNuclear <- priceNuclear + df$prix_MWh[i] * (df$part_de_production[i]/100)
+    }
+
+
+    paste("Prix:",priceNuclear,"€")
+  })
 
   # Plot of flipper length
   output$fliperPlot <- renderPlot({
