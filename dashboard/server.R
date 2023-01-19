@@ -6,20 +6,17 @@ library(tidyverse)
 
 penguins_nomissing <- na.omit(penguins)
 price <- read.csv("../analysis-price/conclusion.csv", header = TRUE)
+pollution <- read.csv("../analysis-environment/CO2_emissions_for_R.csv", header = TRUE)
 
 # Server logic
 shinyServer(function(input, output) {
 
   output$prixEnvironnement <- renderText({
 
-    # Calculate the sum of production part
-    sum <- sum(price$part_de_production)
-
-    # Remove nuclear
-    df <- price %>% filter(filiere != "Nucléaire")
+    df <- price
 
     # Simulate whithout nuclear (part of ther increase proportionally the ols shares)
-    newPartProduction <- c(Charbon = (0.81*sum)/(sum-76.88), Gaz = (7.0*sum)/(sum-76.88), Hydraulique = (8.56*sum)/(sum-76.88), Eolien = (0.7647861595767812*sum)/(sum-76.88), Solaire = (0.0787807345745655*sum)/(sum-76.88), Fioul = (0.8*sum)/(sum-76.88))
+    newPartProduction <- c(Charbon = input$coal, Gaz = input$gas, Hydraulique = input$hydraulic, Eolien = input$wind, Solaire = input$solar, Fioul = input$oil, Nucléaire = input$nuclear)
 
     # Calculate a factor for each filiere using newPartProduction variable
     for (i in 1:nrow(df)) {
@@ -41,12 +38,13 @@ shinyServer(function(input, output) {
 
     # Calculate the electricity price
     priceNuclear <- 0
+    pollutionNuclear <- 0
     for (i in 1:nrow(df)) {
       priceNuclear <- priceNuclear + df$prix_MWh[i] * (df$part_de_production[i]/100)
+      pollutionNuclear <- pollutionNuclear + (df$part_de_production[i]/100) * pollution$CO2_emissions[i]
     }
 
-
-    paste("Prix:",priceNuclear,"€")
+    paste("Avec ce mix des filières de production d'électricité, nous obtenons un prix moyen de",round(priceNuclear,2),"€/MWh ainsi que des émissions polluantes de",round(pollutionNuclear,3),"kgCO2/MWh.")
   })
 
   # Plot of flipper length
@@ -141,5 +139,30 @@ shinyServer(function(input, output) {
       labs(x = "Nom de l'ile",y="Nombre de manchots",title = "Répartition des manchots pour chaque ile.")
     }
   })
+
+  output$rte <- renderImage({
+    list(src = "www/RTE_logo.png")
+  })
+  
+  output$mix <- renderImage({
+    list(src = "www/mix_2050.png")
+  })
+
+  output$consommation <- renderImage({
+    list(src = "www/consommation_2050.png")
+  })
+
+  output$introduction <- renderText({
+    paste("L'objectif de ce projet est de réaliser une application Shiny permettant de visualiser les données de la base de données penguins de R. Cette base de données contient des informations sur les manchots de l'Antarctique. Les données sont disponibles sur le site de R :")
+  })
+
+  output$mix2030 <- renderText({
+    paste("La consommation d'électricité en France en 2030 est estimée à 400 TWh. La production d'électricité en France en 2030 est estimée à 400 TWh. La consommation d'électricité en France en 2050 est estimée à 500 TWh. La production d'électricité en France en 2050 est estimée à 500 TWh.")
+  })
+
+  output$consommation2030 <- renderText({
+    paste("La consommation d'électricité en France en 2030 est estimée à 400 TWh. La production d'électricité en France en 2030 est estimée à 400 TWh. La consommation d'électricité en France en 2050 est estimée à 500 TWh. La production d'électricité en France en 2050 est estimée à 500 TWh.")
+  })
+
 
 })

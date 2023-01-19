@@ -43,7 +43,7 @@ shinyUI(fluidPage(
 
       # If Becs - Longeur is selected
       conditionalPanel(
-        condition = "input.tabSelected == 'Comsommation'",
+        condition = "input.tabSelected == 'Consommation'",
         sliderInput("zlim","Profondeurs de becs considérés (mm):",min = 10, max = 30,value = c(10,30)),
       ),
 
@@ -70,7 +70,10 @@ shinyUI(fluidPage(
           tabPanel("Production",  plotOutput("billPlot")),
           tabPanel("Comsommation",  plotOutput("bill2Plot")),
           tabPanel("Lien entre production et consommation",  plotOutput("massPlot")),
-          tabPanel("Confrontation des prédictions",  plotOutput("islandPlot")),
+          tabPanel("Confrontation des prédictions",  
+          column(6,
+            imageOutput("rte"), textOutput("introduction"), imageOutput("mix"), textOutput("mix2030"), imageOutput("consommation"), textOutput("consommation2030")
+          )),
         )
       )
     )
