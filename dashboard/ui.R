@@ -72,8 +72,8 @@ shinyUI(fluidPage(
           tabPanel("Lien entre production et consommation",  plotOutput("massPlot")),
           tabPanel("Confrontation des prédictions",  
           column(6,
-         imageOutput("rte"), textOutput("introduction"), imageOutput("mix"), textOutput("mix2030"), imageOutput("consommation"), textOutput("consommation2030")
-  )),
+            imageOutput("rte"), textOutput("introduction"), imageOutput("mix"), textOutput("mix2030"), imageOutput("consommation"), textOutput("consommation2030")
+          )),
         )
       )
     )
