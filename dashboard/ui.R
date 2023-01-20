@@ -5,6 +5,7 @@ library(shinythemes)
 # Define UI for the application
 shinyUI(fluidPage(
 
+  includeCSS("./styles/style1.css"),
   theme = shinytheme("superhero"),
 
   # Application header
@@ -68,7 +69,7 @@ shinyUI(fluidPage(
 
         # Display of graphics according to the selected menu
         navbarMenu("Fenetres",
-          tabPanel("Conséquences sur prix et environnement", h3(textOutput("prixEnvironnement")),),
+          tabPanel("Conséquences sur prix et environnement", tags$h1(class = "alert alert-dismissible alert-warning price",textOutput("prix")),tags$h1(class = "alert alert-dismissible alert-warning price",textOutput("environnement")),),
           tabPanel("Production",),
           tabPanel("Comsommation",),
           tabPanel("Lien entre production et consommation",),
