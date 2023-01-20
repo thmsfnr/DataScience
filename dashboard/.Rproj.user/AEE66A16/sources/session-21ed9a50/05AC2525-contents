@@ -1,16 +1,12 @@
 
 library(shiny)
 library(ggplot2)
-library(palmerpenguins)
 
 price <- read.csv("../analysis-price/conclusion.csv", header = TRUE)
 pollution <- read.csv("../analysis-environment/CO2_emissions_for_R.csv", header = TRUE)
-production <- read.csv("../cleaneddata/df_production.csv",header = TRUE)
 
 # Server logic
 shinyServer(function(input, output) {
-  penguins_nomissing <- na.omit(penguins) #donnees pingouins
-  
 
   output$prixEnvironnement <- renderText({
 
@@ -58,28 +54,6 @@ shinyServer(function(input, output) {
 
   output$consommation <- renderImage({
     list(src = "www/consommation_2050.png")
-  })
-  
-  output$production <- renderPlot({
-    df_production <- subset(production,annee >= input$anneeLim[1] & annee <= input$anneeLim[2])
-    ggplot(subset(penguinsLimit,species %in% input$species), aes(x=flipper_length_mm,color = sex, fill = species))+
-      geom_histogram(
-        if(input$typeHistogramme == "densité") aes(y = after_stat(density)) else aes(),
-        alpha=0.6,
-        position = 'identity',
-        bins = 30,
-        binwidth = 3,
-      )+
-      ggtitle(label= "Longueur des ailes en fonction du sexe et de l'espèce")+
-      labs(x="Longueur des ailes",y = labelY, fill="Espèces", color ="Sexe")
-  })
-  output$summaryofvariable <- renderPrint({
-    if(input$typeHistogramme == "densité") x    <- faithful[, 2] else x    <- faithful[, 1]
-    summary(x)
-  })
-  
-  output$text <- renderText({
-    paste("Résumé de l'histogramme : ")
   })
 
 })

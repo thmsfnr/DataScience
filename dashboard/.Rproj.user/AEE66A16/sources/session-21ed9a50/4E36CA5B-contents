@@ -62,7 +62,7 @@ shinyServer(function(input, output) {
   
   output$production <- renderPlot({
     df_production <- subset(production,annee >= input$anneeLim[1] & annee <= input$anneeLim[2])
-    ggplot(subset(penguinsLimit,species %in% input$species), aes(x=flipper_length_mm,color = sex, fill = species))+
+    ggplot(subset(df_production,filieres %in% input$filieres), aes(x=flipper_length_mm,color = sex, fill = species))+
       geom_histogram(
         if(input$typeHistogramme == "densité") aes(y = after_stat(density)) else aes(),
         alpha=0.6,
