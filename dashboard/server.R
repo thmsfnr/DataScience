@@ -62,16 +62,15 @@ shinyServer(function(input, output) {
   output$production <- renderPlot({
     
     df_production <- reactive({subset(production,annee >= input$anneeLim[1] & annee <= input$anneeLim[2] & filiere %in% input$filieres)})
-    ggplot(df_production(), aes(x=annee,y=production_electricite_MWh, color = filiere))+
-      geom_col(
-      )+
-      ggtitle(label= "Evolution de la production d'électricité(MWh) en fonction des années par filière")+
-      labs(x="années",y = "production électricité", color="Filières")
+    ggplot(df_production(), aes(x=annee,y=production_electricite_MWh, fill = filiere))+
+      geom_col()+
+      ggtitle(label= "Évolution de la production d'électricité (en MWh) en fonction des années par filière")+
+      labs(x="Année",y = "Production d'électricité (en MWh)", color="Filières")
   })
 
   output$grapheConsommation <- renderPlot({
     if (input$secteurConsommation != "totale") {
-      titlelab = paste("Consommation d'électricité (en MWh) en France, dans le secteur", input$secteurConsommation, ", en fonction des années")
+      titlelab = paste("Consommation d'électricité (en MWh) en France, dans le secteur ", input$secteurConsommation, ", en fonction des années", sep="")
     } else {
       titlelab = "Consommation d'électricité (en MWh) en France, en fonction des années"
     }
@@ -95,4 +94,22 @@ shinyServer(function(input, output) {
       list(src = paste("../prevision-consommation/filieres/", input$secteurConsommation, "-consommation-prevision.png", sep=""))
     }
   })
+  
+  output$prodConso <- renderPlot({
+    df_production <- reactive({subset(production,annee >= 2011 & annee <= 2021 & filiere %in% input$filieres2)})
+    
+    if (input$secteurConsommation2 != "totale") {
+      titlelab = paste("Production et consommation d'électricité (dans le secteur ", input$secteurConsommation2, ") (en MWh) en France, en fonction des années", sep="")
+    } else {
+      titlelab = "Production et consommation d'électricité (en MWh) en France, en fonction des années"
+    }
+    
+    ggplot() + 
+      geom_col(data=df_production(), mapping=aes(x=annee,y=production_electricite_MWh, fill = filiere)) +
+      geom_line(data=consommation, mapping=aes_string(x="annee", y=paste("conso_", input$secteurConsommation2, sep=""))) +
+      labs(title = titlelab,
+           x = "Année",
+           y = "Production/Consommation d'électricité (en MWh)")
+  })
+  
 })

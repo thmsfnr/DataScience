@@ -47,25 +47,26 @@ shinyUI(fluidPage(
       # If "Production" is selected
       conditionalPanel(
         condition = "input.tabSelected == 'Production'",
-        sidebarPanel(
-          sliderInput("anneeLim",
-                      "Interval d'année",
-                      min = 1950, max = 2030,
-                      value = c(2000, 2030)
-          ),
-          checkboxGroupInput(inputId = "filieres",
-                             label = "Filières sélectionnées:",
-                             choices = c("Bioénergie" = "bioénergie",
-                                         "Charbon" = "charbon",
-                                         "Eolien" = "éolien",
-                                         "Gaz" = "gaz",
-                                         "Hydraulique" = "hydraulique",
-                                         "Nucléaire" = "nucléaire",
-                                         "Solaire" = "solaire"),selected="nucléaire"
-          ),
-          radioButtons("typeDiagramme", "Choix du type de diagramme", 
-                       choices = c("histogramme","courbe"),selected="histogramme"),
-          ),
+        sliderInput("anneeLim",
+                    "Interval d'année",
+                    min = 1950, max = 2030,
+                    value = c(2000, 2030)
+        ),
+        checkboxGroupInput(inputId = "filieres",
+                           label = "Filières sélectionnées:",
+                           choices = c("Bioénergie" = "bioénergie",
+                                       "Charbon" = "charbon",
+                                       "Eolien" = "éolien",
+                                       "Gaz" = "gaz",
+                                       "Hydraulique" = "hydraulique",
+                                       "Nucléaire" = "nucléaire",
+                                       "Solaire" = "solaire"), 
+                           selected=c("bioénergie", "charbon", "éolien",
+                                      "gaz", "hydraulique", "solaire",
+                                      "nucléaire"),
+        ),
+        radioButtons("typeDiagramme", "Choix du type de diagramme", 
+                     choices = c("histogramme","courbe"),selected="histogramme"),
       ),
       # If "Consommation" is selected
       conditionalPanel(
@@ -87,7 +88,23 @@ shinyUI(fluidPage(
       # If "Lien entre production et consommation" is selected
       conditionalPanel(
         condition = "input.tabSelected == 'Lien entre production et consommation'",
-
+        checkboxGroupInput(inputId = "filieres2",
+                           label = "Filières sélectionnées :",
+                           choices = c("Bioénergie" = "bioénergie",
+                                       "Charbon" = "charbon",
+                                       "Eolien" = "éolien",
+                                       "Gaz" = "gaz",
+                                       "Hydraulique" = "hydraulique",
+                                       "Nucléaire" = "nucléaire",
+                                       "Solaire" = "solaire"), 
+                           selected=c("bioénergie", "charbon", "éolien",
+                                      "gaz", "hydraulique", "solaire"),
+        ),
+        radioButtons("secteurConsommation2", "Choix du secteur",
+                     choices = c("totale", "agriculture",
+                                 "industrie", "tertiaire",
+                                 "residentiel", "secteur_inconnu"),
+                     selected="totale"),
       ),
 
       # If "Confrontation des prédictions" is selected
@@ -102,14 +119,14 @@ shinyUI(fluidPage(
       navbarPage("Menu",id = "tabSelected",
 
         # Display of graphics according to the selected menu
-        navbarMenu("Fenetres",
-          tabPanel("Conséquences sur prix et environnement", h3(textOutput("prixEnvironnement")),),
+        navbarMenu("Fenêtres",
           tabPanel("Production",plotOutput("production")),
           tabPanel("Consommation", div(plotOutput("grapheConsommation"), 
                                        h4("Prédiction des valeurs jusqu'en 2030 avec Prophet"),
                                        #imageOutput("predictionConsommation", width="100%", height="auto"))),
                                        imageOutput("predictionConsommation"))),
-          tabPanel("Lien entre production et consommation",),
+          tabPanel("Lien entre production et consommation", plotOutput("prodConso")),
+          tabPanel("Conséquences sur prix et environnement", h3(textOutput("prixEnvironnement")),),
           tabPanel("Confrontation des prédictions",
           column(6,
             imageOutput("rte"), p("hjdfjdhf"), imageOutput("mix"), p("hjdfjdhf"), imageOutput("consommation"), p("hjsgfhjs")
