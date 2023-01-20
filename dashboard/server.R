@@ -1,9 +1,11 @@
 
 library(shiny)
 library(ggplot2)
+library(palmerpenguins)
 
 price <- read.csv("../analysis-price/conclusion.csv", header = TRUE)
 pollution <- read.csv("../analysis-environment/CO2_emissions_for_R.csv", header = TRUE)
+consommation <- read.csv("../cleaneddata/df_consommation.csv", header = TRUE)
 
 # Server logic
 shinyServer(function(input, output) {
@@ -54,6 +56,22 @@ shinyServer(function(input, output) {
 
   output$consommation <- renderImage({
     list(src = "www/consommation_2050.png")
+  })
+
+  output$grapheConsommation <- renderPlot({
+    if (input$secteurConsommation != "totale") {
+      titlelab = paste("Consommation d'électricité (en MWh) en France, dans le secteur", input$secteurConsommation, "en fonction des années")
+    } else {
+      titlelab = "Consommation d'électricité (en MWh) en France, en fonction des années"
+    }
+
+    ggplot(consommation, aes_string(x="annee", y=paste("conso_", input$secteurConsommation, sep=""))) +
+      geom_line() +
+      geom_point() +
+      geom_smooth(method = "lm") +
+      labs(title = titlelab,
+          x = "Année",
+          y = "Consommation d'électricité (en MWh)")
   })
 
 })
