@@ -5,8 +5,14 @@ library(shinythemes)
 # Define UI for the application
 shinyUI(fluidPage(
   title = "Énergie en France",
-
   theme = shinytheme("superhero"),
+  
+  tags$head(tags$style(
+    type="text/css",
+    "#predictionConsommation img {max-width: 100%; height: auto}
+    #grapheConsommation {max-width: 800px; width: 100%;}
+    "
+  )),
 
   # Application header
   titlePanel(h2(align="center","Énergie en France")),
@@ -82,7 +88,10 @@ shinyUI(fluidPage(
         navbarMenu("Fenetres",
           tabPanel("Conséquences sur prix et environnement", h3(textOutput("prixEnvironnement")),),
           tabPanel("Production",),
-          tabPanel("Consommation", plotOutput("grapheConsommation")),
+          tabPanel("Consommation", div(plotOutput("grapheConsommation"), 
+                                       h4("Prédiction des valeurs jusqu'en 2030 avec Prophet"),
+                                       #imageOutput("predictionConsommation", width="100%", height="auto"))),
+                                       imageOutput("predictionConsommation"))),
           tabPanel("Lien entre production et consommation",),
           tabPanel("Confrontation des prédictions",
           column(6,

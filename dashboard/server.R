@@ -76,5 +76,13 @@ shinyServer(function(input, output) {
 
     graph_conso
   })
+  
+  output$predictionConsommation <- renderImage({
+    if (input$secteurConsommation == "totale") {
+      list(src = "../prevision-consommation/filieres/global-consommation-prevision.png") 
+    } else {
+      list(src = paste("../prevision-consommation/filieres/", input$secteurConsommation, "-consommation-prevision.png", sep=""))
+    }
+  })
 
 })
