@@ -4,11 +4,18 @@ library(shinythemes)
 
 # Define UI for the application
 shinyUI(fluidPage(
-
+  title = "Énergie en France",
   theme = shinytheme("superhero"),
+  
+  tags$head(tags$style(
+    type="text/css",
+    "#predictionConsommation img {max-width: 100%; height: auto}
+    #grapheConsommation {max-width: 800px; width: 100%;}
+    "
+  )),
 
   # Application header
-  titlePanel(h2(align="center","Energie en France")),
+  titlePanel(h2(align="center","Énergie en France")),
   fluidRow(h4(align="center","Ce projet est une analyse de la sortie du nucléaire dans la production d'électricité française réalisée lors d'un cours à Polytech Montpellier.")),
   fluidRow(h3("")),
 
@@ -63,7 +70,18 @@ shinyUI(fluidPage(
       # If "Consommation" is selected
       conditionalPanel(
         condition = "input.tabSelected == 'Consommation'",
-
+        checkboxGroupInput(inputId = "graph_consommation_choices",
+                           label = "Modifier le graphique",
+                           choices = c("Courbe de tendance" = "tendance",
+                                        "Afficher les points" = "points",
+                                        "Afficher la ligne" = "ligne"),
+                           selected= c("tendance", "points", "ligne")
+        ),
+        radioButtons("secteurConsommation", "Choix du secteur",
+                     choices = c("totale", "agriculture",
+                                 "industrie", "tertiaire",
+                                 "residentiel", "secteur_inconnu"),
+                     selected="totale"),
       ),
 
       # If "Lien entre production et consommation" is selected
@@ -87,7 +105,10 @@ shinyUI(fluidPage(
         navbarMenu("Fenetres",
           tabPanel("Conséquences sur prix et environnement", h3(textOutput("prixEnvironnement")),),
           tabPanel("Production",plotOutput("production")),
-          tabPanel("Comsommation",),
+          tabPanel("Consommation", div(plotOutput("grapheConsommation"), 
+                                       h4("Prédiction des valeurs jusqu'en 2030 avec Prophet"),
+                                       #imageOutput("predictionConsommation", width="100%", height="auto"))),
+                                       imageOutput("predictionConsommation"))),
           tabPanel("Lien entre production et consommation",),
           tabPanel("Confrontation des prédictions",
           column(6,

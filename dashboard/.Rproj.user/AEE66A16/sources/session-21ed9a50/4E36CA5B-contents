@@ -1,10 +1,12 @@
 
 library(shiny)
 library(ggplot2)
+library(palmerpenguins)
 
 price <- read.csv("../analysis-price/conclusion.csv", header = TRUE)
 pollution <- read.csv("../analysis-environment/CO2_emissions_for_R.csv", header = TRUE)
 production <- read.csv("../cleaneddata/df_production.csv",header = TRUE)
+consommation <- read.csv("../cleaneddata/df_consommation.csv", header = TRUE)
 
 # Server logic
 shinyServer(function(input, output) {
@@ -56,7 +58,7 @@ shinyServer(function(input, output) {
   output$consommation <- renderImage({
     list(src = "www/consommation_2050.png")
   })
-  
+
   output$production <- renderPlot({
     
     df_production <- reactive({subset(production,annee >= input$anneeLim[1] & annee <= input$anneeLim[2])})
@@ -67,5 +69,32 @@ shinyServer(function(input, output) {
       )+
       ggtitle(label= "Evolution de la production d'électricité(MWh) en fonction des années par filière")+
       labs(x="années",y = "production électricité", color="Filières")
+  })
+
+  output$grapheConsommation <- renderPlot({
+    if (input$secteurConsommation != "totale") {
+      titlelab = paste("Consommation d'électricité (en MWh) en France, dans le secteur", input$secteurConsommation, ", en fonction des années")
+    } else {
+      titlelab = "Consommation d'électricité (en MWh) en France, en fonction des années"
+    }
+
+    graph_conso = ggplot(consommation, aes_string(x="annee", y=paste("conso_", input$secteurConsommation, sep=""))) +
+      labs(title = titlelab,
+          x = "Année",
+          y = "Consommation d'électricité (en MWh)")
+
+    if ("ligne" %in% input$graph_consommation_choices) graph_conso = graph_conso + geom_line()
+    if ("tendance" %in% input$graph_consommation_choices) graph_conso = graph_conso + geom_smooth(method = "lm")
+    if ("points" %in% input$graph_consommation_choices) graph_conso = graph_conso + geom_point()
+
+    graph_conso
+  })
+  
+  output$predictionConsommation <- renderImage({
+    if (input$secteurConsommation == "totale") {
+      list(src = "../prevision-consommation/filieres/global-consommation-prevision.png") 
+    } else {
+      list(src = paste("../prevision-consommation/filieres/", input$secteurConsommation, "-consommation-prevision.png", sep=""))
+    }
   })
 })
