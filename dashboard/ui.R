@@ -4,11 +4,12 @@ library(shinythemes)
 
 # Define UI for the application
 shinyUI(fluidPage(
+  title = "Énergie en France",
 
   theme = shinytheme("superhero"),
 
   # Application header
-  titlePanel(h2(align="center","Energie en France")),
+  titlePanel(h2(align="center","Énergie en France")),
   fluidRow(h4(align="center","Ce projet est une analyse de la sortie du nucléaire dans la production d'électricité française réalisée lors d'un cours à Polytech Montpellier.")),
   fluidRow(h3("")),
 
@@ -46,7 +47,8 @@ shinyUI(fluidPage(
       # If "Consommation" is selected
       conditionalPanel(
         condition = "input.tabSelected == 'Consommation'",
-
+        radioButtons("secteurConsommation", "Choix du secteur",
+                     choices = c("totale", "agriculture", "industrie", "tertiaire", "residentiel", "secteur_inconnu"), selected="totale"),
       ),
 
       # If "Lien entre production et consommation" is selected
@@ -70,7 +72,7 @@ shinyUI(fluidPage(
         navbarMenu("Fenetres",
           tabPanel("Conséquences sur prix et environnement", h3(textOutput("prixEnvironnement")),),
           tabPanel("Production",),
-          tabPanel("Comsommation",),
+          tabPanel("Consommation", plotOutput("grapheConsommation")),
           tabPanel("Lien entre production et consommation",),
           tabPanel("Confrontation des prédictions",
           column(6,
