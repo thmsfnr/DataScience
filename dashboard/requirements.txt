@@ -1,2 +1,4 @@
-dash
-dash_bootstrap_components
+shiny
+ggplot2
+tydyverse
+shinythemes
