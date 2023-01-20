@@ -35,7 +35,6 @@ shinyServer(function(input, output, session) {
         updateSliderInput(session, "solar", value = solar)
         updateSliderInput(session, "oil", value = oil)
         updateSliderInput(session, "nuclear", value = nuclear)
-
     }
   })
 
@@ -91,19 +90,11 @@ shinyServer(function(input, output, session) {
       pollutionNuclear <- pollutionNuclear + (df$part_de_production[i]/100) * pollution$CO2_emissions[i]
     }
 
-    paste("Emmissions de CO2 moyennes:",round(pollutionNuclear,3),"kgCO2/MWh.")
-  })
-
-  output$rte <- renderImage({
-    list(src = "www/RTE_logo.png")
+    paste("Emmissions de CO2 moyennes:",round(pollutionNuclear,3),"kgCO2/MWh")
   })
 
   output$mix <- renderImage({
-    list(src = "www/mix_2050.png")
-  })
-
-  output$consommation <- renderImage({
-    list(src = "www/consommation_2050.png")
+    list(src = "./mix_2050.png")
   })
 
 })
