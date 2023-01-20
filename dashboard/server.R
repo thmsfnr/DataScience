@@ -60,18 +60,21 @@ shinyServer(function(input, output) {
 
   output$grapheConsommation <- renderPlot({
     if (input$secteurConsommation != "totale") {
-      titlelab = paste("Consommation d'électricité (en MWh) en France, dans le secteur", input$secteurConsommation, "en fonction des années")
+      titlelab = paste("Consommation d'électricité (en MWh) en France, dans le secteur", input$secteurConsommation, ", en fonction des années")
     } else {
       titlelab = "Consommation d'électricité (en MWh) en France, en fonction des années"
     }
 
-    ggplot(consommation, aes_string(x="annee", y=paste("conso_", input$secteurConsommation, sep=""))) +
-      geom_line() +
-      geom_point() +
-      geom_smooth(method = "lm") +
+    graph_conso = ggplot(consommation, aes_string(x="annee", y=paste("conso_", input$secteurConsommation, sep=""))) +
       labs(title = titlelab,
           x = "Année",
           y = "Consommation d'électricité (en MWh)")
+
+    if ("ligne" %in% input$graph_consommation_choices) graph_conso = graph_conso + geom_line()
+    if ("tendance" %in% input$graph_consommation_choices) graph_conso = graph_conso + geom_smooth(method = "lm")
+    if ("points" %in% input$graph_consommation_choices) graph_conso = graph_conso + geom_point()
+
+    graph_conso
   })
 
 })
