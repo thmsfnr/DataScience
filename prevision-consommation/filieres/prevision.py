@@ -16,6 +16,8 @@ df = pandas.read_csv(
 df = df[df["filiere"] == "Electricité"]
 df = df.groupby("annee").sum(numeric_only=True).reset_index()
 
+df.to_csv("cleaneddata/df_consommation.csv", index=False)
+
 # conversion de l'année
 df["annee"] = pandas.to_datetime(df["annee"], format="%Y")
 
