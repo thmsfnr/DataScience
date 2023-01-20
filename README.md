@@ -24,10 +24,11 @@ To run a file of the analysis part, you first need to install the dependencies :
 
 ### Dashboard
 
-To launch the dashboard, you need to install the dependencies :
-`pip install -r dashboard/requirements.txt`  
-Then, you can launch the dashboard with the following command :
-`python dashboard/app.py`
+To launch the dashboard, you need to do the following steps :
+- Go to the folder `dashboard`
+- Install the libraries listed in the `requirements.txt` file
+- Open `ui.R` and `server.R` files in RStudio
+- Run the app
 
 ***
 
