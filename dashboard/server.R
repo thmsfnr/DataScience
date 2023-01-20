@@ -61,10 +61,8 @@ shinyServer(function(input, output) {
 
   output$production <- renderPlot({
     
-    df_production <- reactive({subset(production,annee >= input$anneeLim[1] & annee <= input$anneeLim[2])})
-    df_production <- reactive({subset(production,filiere %in% input$filieres)})
-   
-      ggplot(df_production(), aes(x=annee,y=production_electricite_MWh, color = filiere))+
+    df_production <- reactive({subset(production,annee >= input$anneeLim[1] & annee <= input$anneeLim[2] & filiere %in% input$filieres)})
+    ggplot(df_production(), aes(x=annee,y=production_electricite_MWh, color = filiere))+
       geom_col(
       )+
       ggtitle(label= "Evolution de la production d'électricité(MWh) en fonction des années par filière")+
