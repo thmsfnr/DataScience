@@ -47,8 +47,18 @@ shinyUI(fluidPage(
       # If "Consommation" is selected
       conditionalPanel(
         condition = "input.tabSelected == 'Consommation'",
+        checkboxGroupInput(inputId = "graph_consommation_choices",
+                           label = "Modifier le graphique",
+                           choices = c("Courbe de tendance" = "tendance",
+                                        "Afficher les points" = "points",
+                                        "Afficher la ligne" = "ligne"),
+                           selected= c("tendance", "points", "ligne")
+        ),
         radioButtons("secteurConsommation", "Choix du secteur",
-                     choices = c("totale", "agriculture", "industrie", "tertiaire", "residentiel", "secteur_inconnu"), selected="totale"),
+                     choices = c("totale", "agriculture",
+                                 "industrie", "tertiaire",
+                                 "residentiel", "secteur_inconnu"),
+                     selected="totale"),
       ),
 
       # If "Lien entre production et consommation" is selected
