@@ -47,8 +47,8 @@ shinyUI(fluidPage(
                       value = c(2000, 2030)
           ),
         ),
-        checkboxGroupInput(inputId = "species",
-                           label = "Espèces sélectionnées:",
+        checkboxGroupInput(inputId = "filieres",
+                           label = "Filières sélectionnées:",
                            choices = c("Adelie" = "Adelie",
                                        "Chinstrap" = "Chinstrap",
                                        "Gentoo" = "Gentoo"),selected="Adelie"
