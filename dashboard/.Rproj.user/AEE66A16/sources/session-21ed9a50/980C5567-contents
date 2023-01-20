@@ -46,19 +46,20 @@ shinyUI(fluidPage(
                       min = 1950, max = 2030,
                       value = c(2000, 2030)
           ),
-        ),
-        checkboxGroupInput(inputId = "filieres",
-                           label = "Filières sélectionnées:",
-                           choices = c("Adelie" = "Adelie",
-                                       "Chinstrap" = "Chinstrap",
-                                       "Gentoo" = "Gentoo"),selected="Adelie"
-        ),
-        radioButtons("typeDiagramme", "Choix du type de diagramme", 
-                     choices = c("histogramme","courbe"),selected="histogramme"),
-        textOutput("text"),
-        verbatimTextOutput("summaryofvariable"),
+          checkboxGroupInput(inputId = "filieres",
+                             label = "Filières sélectionnées:",
+                             choices = c("Bioénergie" = "bioénergie",
+                                         "Charbon" = "charbon",
+                                         "Eolien" = "éolien",
+                                         "Gaz" = "gaz",
+                                         "Hydraulique" = "hydraulique",
+                                         "Nucléaire" = "nucléaire",
+                                         "Solaire" = "solaire"),selected="nucléaire"
+          ),
+          radioButtons("typeDiagramme", "Choix du type de diagramme", 
+                       choices = c("histogramme","courbe"),selected="histogramme"),
+          ),
       ),
-
       # If "Consommation" is selected
       conditionalPanel(
         condition = "input.tabSelected == 'Consommation'",
