@@ -1,6 +1,7 @@
 import pandas
 import matplotlib.pyplot as plt
 from prophet import Prophet
+from sklearn.metrics import mean_absolute_error
 
 # from prophet.plot import plot_cross_validation_metric
 from prophet.diagnostics import cross_validation
@@ -14,6 +15,8 @@ df = pandas.read_csv(
 # on ne prend en compte que l'électricité
 df = df[df["filiere"] == "Electricité"]
 df = df.groupby("annee").sum(numeric_only=True).reset_index()
+
+df.to_csv("cleaneddata/df_consommation.csv", index=False)
 
 # conversion de l'année
 df["annee"] = pandas.to_datetime(df["annee"], format="%Y")
@@ -132,6 +135,7 @@ def predire_et_graphes(data, title, filename, title2, filename2):
         title2,
     )
     plt.savefig(filename2)
+    print("MAE: ", mean_absolute_error(df_cv["y"], df_cv["yhat"]))
 
 
 def predire_et_graphes_secteur(data, secteur):
@@ -146,6 +150,10 @@ def predire_et_graphes_secteur(data, secteur):
         ),
         "prevision-consommation/filieres/{}-analyse-prediction.png".format(secteur),
     )
+
+    print("secteur : {}".format(secteur))
+    print("Minimum production : " + str(data["y"].min()))  # minium de la production
+    print("Maximum production : " + str(data["y"].max()))  # maximum de la production
 
 
 predire_et_graphes(
