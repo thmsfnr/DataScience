@@ -6,7 +6,6 @@ from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 from pandas.plotting import scatter_matrix
 
-
 # Open file with pandas
 df = pd.read_csv("dataset-price.csv")
 
