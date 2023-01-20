@@ -81,7 +81,7 @@ df_solaire['filiere'] = "solaire"
 #fusion de tous les dataframes
 df_production = pd.concat([df_bioenergie,df_charbon,df_eolien,df_gaz,df_hydro,df_nucleaire,df_solaire], axis=0)
 df_production['annee']= df_production['annee'].replace(regex="-12-31",value="")
-df_production = df_production.rename(columns={'production électricité MWh':'production electricite MWh'})
+df_production = df_production.rename(columns={'production électricité MWh':'production_electricite_MWh'})
 
 
 #sauvegarde du dataframe
