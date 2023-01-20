@@ -1,4 +1,6 @@
 '''
+http://127.0.0.1:8050/
+
 from app import app
 from dash import html
 from dash.dependencies import Input, Output
@@ -163,7 +165,7 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
 
         html.Br(),
         html.Label('Radio Items'),
-        dcc.RadioItems(['New York City', 'Montréal', 'San Francisco'], 'Montréal'),
+        dcc.RadioItems(['Courbe', 'diagramme en barre', 'histogramme'], 'histogramme'),
     ], style={'padding': 10, 'flex': 1}),
 
     html.Div(children=[
@@ -178,12 +180,24 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
 
         html.Br(),
         html.Label('Slider'),
-        dcc.Slider(
-            min=0,
-            max=9,
-            marks={i: f'Label {i}' if i == 1 else str(i) for i in range(1, 6)},
-            value=5,
-        ),
+        dcc.RangeSlider(
+            id='annee-slider',
+            min=1950,
+            max=2030,
+            step=None,
+            marks={
+                1950: '1950',
+                1960: '1960',
+                1970: '1970',
+                1980: '1980',
+                1990: '1990',
+                2000: '2000',
+                2010: '2010',
+                2020: '2020',
+                2030: '2030',
+            },
+            value=[2000,2030]
+        )
     ], style={'padding': 10, 'flex': 1}),
     html.Div([
     html.H4('Life expentancy progression of countries per continents'),
@@ -200,9 +214,23 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
 
 @app.callback(
     Output("line-chart", "figure"), 
-    Input("checklist-line", "value"))
-def update_line_chart(filiere):
-    filtre = df_production['filière'].isin(filiere)
+    Input("checklist-line", "value"),
+    Input("annee-slider", "value"))
+def update_line_chart(filiere,annee):
+    #recupérer valeur du marker annee
+    print(annee)
+    print(type(df_production['annee']))
+    filtre = df_production['filière'].isin(filiere) & df_production['annee'].between(int(annee[0]),int(annee[1]))
+    #print(annee)
+    #recupere les valeurs de l'annee
+    '''
+    print(df_production)
+    for year in range(annee[0],annee[1]):
+        print("ANNEE BOUCLE")
+       # print(df_production['annee'] == year)
+        filtre = filtre & df_production['annee'] == year
+    '''
+    #print(filtre)
     fig = px.line(df_production[filtre], 
         x="annee", y="production électricité MWh", color='filière')
     return fig
@@ -212,12 +240,15 @@ def update_line_chart(filiere):
     Input("checklist-bar", "value"))
 def update_bar_chart(filiere):
     filtre = df_production['filière'].isin(filiere)
-    fig = px.bar(df_production[filtre], x="annee", y="production électricité MWh", color='filière',barmode="group")
+    fig= px.histogram(df_production[filtre], x="annee", y="production électricité MWh", color='filière')
+   # fig = px.bar(df_production[filtre], x="annee", y="production électricité MWh", color='filière',barmode="group")
     
+
     '''
+    #VOIR HISTOGRAMME
     fig.add_trace(
         go.Scatter(
-        x=df_production[df_production['production électricité MWh'][(df_production['filière'] == 'nucléaire')]],
+        x=df_production.loc[df_production['filière'] == 'nucléaire'],
         y=df_production['annee'],
     ))
     '''

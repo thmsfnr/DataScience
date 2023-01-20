@@ -111,3 +111,18 @@ print(ecartTypeProductionPrevision)
 
 #-----sauvegarde des données de prévision dans un fichier csv-----#
 forecast.to_csv('prevision-production/bioenergie/prevision-bioenergie.csv', index=False)
+
+
+
+
+print("Minimum production : "+ str(df["y"].min())) #minium de la production
+print("Maximum production : " + str(df["y"].max())) #maximum de la production
+print("Moyenne production : " + str(df["y"].mean())) #moyenne de la production
+print("Ecart type production : " + str(df["y"].std())) #écart type de la production
+moyennePrevision = forecast['yhat'].mean()
+minProductionPrevision = forecast['yhat'].min()
+maxProductionPrevision = forecast['yhat'].max()
+ecartTypeProductionPrevision = forecast['yhat'].std()
+forecast.to_csv('prevision-production/bioenergie/prevision-bioenergie.csv', index=False)
+
+
