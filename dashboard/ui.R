@@ -55,7 +55,7 @@ shinyUI(fluidPage(
       conditionalPanel(
         condition = "input.tabSelected == 'Production'",
         sliderInput("anneeLim",
-                    "Interval d'année",
+                    "Intervalle d'années",
                     min = 1950, max = 2030,
                     value = c(2000, 2030)
         ),
@@ -145,8 +145,8 @@ shinyUI(fluidPage(
             )
           ),
           tabPanel("Production",
-            h3(style = "text-align:center; margin-bottom: 40px; margin-top: 20px;","Production"),
-            div(plotOutput("production"),imageOutput("prediction_production"))
+            h3(style = "text-align:center; margin-bottom: 40px; margin-top: 20px;","Production d'électricité en France en fonction des filières"),
+            div(plotOutput("production"),h4("Prédiction des valeurs de production d'électricité jusqu'en 2030 avec Prophet"),tags$div(style = "text-align: center;",imageOutput("prediction_production")))
           ),
           tabPanel("Consommation",
             h3(style = "text-align:center; margin-bottom: 40px; margin-top: 20px;","Consommation"),
