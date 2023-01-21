@@ -30,6 +30,8 @@ To launch the dashboard, you need to do the following steps :
 - Open `ui.R` and `server.R` files in RStudio
 - Run the app
 
+Note that the dashboard is also available on [shinyapps.io](https://thmsfnr.shinyapps.io/EnergieEnFrance/).
+
 ***
 
 ## Created by Thomas, Emma, Loris, Océan.
