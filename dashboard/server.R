@@ -168,10 +168,10 @@ shinyServer(function(input, output, session) {
   
   output$prediction_production <- renderImage({
       if(input$choix_prediction_filiere == "bioénergie"){
-        list(src = "../www/prevision-bioenergie.png") 
+        list(src = "./www/prevision-bioenergie.png") 
       }
       else if (input$choix_prediction_filiere == "charbon"){
-        list(src = "../prevision-production/charbon/prediction-charbon.png") 
+        list(src = "./prevision-production/charbon/prediction-charbon.png") 
       }
       else if(input$choix_prediction_filiere == "éolien"){
         list(src = "./www/prevision-production-eolien.png") 
