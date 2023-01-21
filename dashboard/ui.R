@@ -12,6 +12,7 @@ shinyUI(fluidPage(
   tags$head(tags$style(
     type="text/css",
     "#predictionConsommation img {max-width: 100%; height: auto}
+    #prediction_production img {max-width: 100%; height: auto}
     #grapheConsommation {max-width: 800px; width: 100%;}
     "
   )),
@@ -69,6 +70,15 @@ shinyUI(fluidPage(
         ),
         radioButtons("typeDiagramme", "Choix du type de diagramme", 
                      choices = c("histogramme","courbe"),selected="histogramme"),
+        radioButtons("choix_prediction_filiere", "Choix de la filièrer",
+                     choices = c("Bioénergie" = "bioénergie",
+                                 "Charbon" = "charbon",
+                                 "Eolien" = "éolien",
+                                 "Gaz" = "gaz",
+                                 "Hydraulique" = "hydraulique",
+                                 "Nucléaire" = "nucléaire",
+                                 "Solaire" = "solaire"), 
+                     selected="nucléaire"),
       ),
       # If "Consommation" is selected
       conditionalPanel(
@@ -130,7 +140,7 @@ shinyUI(fluidPage(
                 textOutput("environnement")
             )
           ),
-          tabPanel("Production",plotOutput("production")),
+          tabPanel("Production",div(plotOutput("production"),imageOutput("prediction_production"))),
           tabPanel("Consommation", div(plotOutput("grapheConsommation"), 
                                        h4("Prédiction des valeurs jusqu'en 2030 avec Prophet"),
                                        #imageOutput("predictionConsommation", width="100%", height="auto"))),

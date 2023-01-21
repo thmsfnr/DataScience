@@ -103,10 +103,22 @@ shinyServer(function(input, output, session) {
   output$production <- renderPlot({
     
     df_production <- reactive({subset(production,annee >= input$anneeLim[1] & annee <= input$anneeLim[2] & filiere %in% input$filieres)})
-    ggplot(df_production(), aes(x=annee,y=production_electricite_MWh, fill = filiere))+
-      geom_col()+
-      ggtitle(label= "Évolution de la production d'électricité (en MWh) en fonction des années par filière")+
-      labs(x="Année",y = "Production d'électricité (en MWh)", color="Filières")
+    if(input$typeDiagramme == "histogramme"){
+      ggplot(df_production(), aes(x=annee,y=production_electricite_MWh, fill = filiere))+
+        geom_col()+
+        ggtitle(label= "Évolution de la production d'électricité (en MWh) en fonction des années par filière")+
+        labs(x="Année",y = "Production d'électricité (en MWh)", color="Filières")
+    }
+    else if (input$typeDiagramme == "courbe") {
+      ggplot(df_production()) + geom_line(
+        aes(x = annee, y = production_electricite_MWh,
+            color = filiere,
+        )
+      )+
+        xlab("Années")+
+        ylab("Production en électricité (en MWh)")+
+        ggtitle("Évolution de la production d'électricité (en MWh) en fonction des années par filière")
+    }
   })
 
   output$grapheConsommation <- renderPlot({
@@ -122,12 +134,36 @@ shinyServer(function(input, output, session) {
           y = "Consommation d'électricité (en MWh)")
 
     if ("ligne" %in% input$graph_consommation_choices) graph_conso = graph_conso + geom_line()
-    if ("tendance" %in% input$graph_consommation_choices) graph_conso = graph_conso + geom_smooth(method = "lm")
+    if ("tendance" %in% input$graph_consommation_choices) graph_conso = graph_conso + geom_smooth(method = "lm",formula = 'y ~ x')
     if ("points" %in% input$graph_consommation_choices) graph_conso = graph_conso + geom_point()
 
     graph_conso
   })
   
+  output$prediction_production <- renderImage({
+      if(input$choix_prediction_filiere == "bioénergie"){
+        list(src = "../prevision-production/bioenergie/prevision-bioenergie.png") 
+      }
+      else if (input$choix_prediction_filiere == "charbon"){
+        list(src = "../prevision-production/charbon/prediction-charbon.png") 
+      }
+      else if(input$choix_prediction_filiere == "éolien"){
+        list(src = "../prevision-production/eolien/prevision-production-eolien.png") 
+      }
+      else if(input$choix_prediction_filiere == "gaz"){
+        list(src = "../prevision-production/gaz/prevision-production-gaz.png") 
+      }
+      else if(input$choix_prediction_filiere == "hydraulique"){
+        list(src = "../prevision-production/hydraulique/prevision-production-hydraulique.png") 
+      }
+      else if(input$choix_prediction_filiere == "nucléaire"){
+        list(src = "../prevision-production/nucleaire/prevision-nucleaire.png") 
+      }
+      else if (input$choix_prediction_filiere == "solaire"){
+        list(src = "../prevision-production/solaire/prevision-solaire.png") 
+      }
+  })
+
   output$predictionConsommation <- renderImage({
     if (input$secteurConsommation == "totale") {
       list(src = "../prevision-consommation/filieres/global-consommation-prevision.png") 
