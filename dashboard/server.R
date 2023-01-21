@@ -171,7 +171,7 @@ shinyServer(function(input, output, session) {
         list(src = "./www/prevision-bioenergie.png") 
       }
       else if (input$choix_prediction_filiere == "charbon"){
-        list(src = "./prevision-production/charbon/prediction-charbon.png") 
+        list(src = "./www/prediction-charbon.png") 
       }
       else if(input$choix_prediction_filiere == "éolien"){
         list(src = "./www/prevision-production-eolien.png") 
