@@ -4,15 +4,23 @@
 }
 #anneeLim-label{
     font-size: 18px;
-    text-align: center;
     width: 100%;
+}
+#filieres2{
+    padding: 10px;
+    margin: 10px;
+}
+#filieres2 > label{
+    width: 100%;
+}
+#filieres2 label{
+    font-size:18px;
 }
 #filieres{
     padding: 10px;
     margin: 10px;
 }
 #filieres > label{
-    text-align: center;
     width: 100%;
 }
 #filieres label{
@@ -30,13 +38,59 @@
     font-size: 18px;
 }
 #typeDiagramme > label{
-    text-align: center;
     width: 100%;
 }
 #choix_prediction_filiere label{
     font-size: 18px;
 }
 #choix_prediction_filiere > label{
-    text-align: center;
     width: 100%;
+}
+#graph_consommation_choices{
+    padding: 10px;
+    margin: 10px;
+}
+#graph_consommation_choices > label{
+    width: 100%;
+}
+#graph_consommation_choices label{
+    font-size: 18px;
+}
+#secteurConsommation{
+    padding: 10px;
+    margin: 10px;
+}
+#secteurConsommation > label{
+    width: 100%;
+}
+#secteurConsommation label{
+    font-size: 18px;
+}
+#paragraphe1-conso{
+    font-size: 18px;
+    text-align: center;
+}
+#paragraphe2-conso{
+    font-size: 18px;
+    text-align: center;
+}
+#paragraphe3-conso{
+    font-size: 18px;
+    text-align: center;
+}
+#paragraphe4-conso{
+    font-size: 18px;
+    text-align: center;
+}
+#paragraphe1-prod{
+    font-size: 18px;
+    text-align: center;
+}
+#paragraphe2-prod{
+    font-size: 18px;
+    text-align: center;
+}
+#paragraphe3-prod{
+    font-size: 18px;
+    text-align: center;
 }

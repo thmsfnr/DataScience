@@ -59,6 +59,7 @@ shinyUI(fluidPage(
                     min = 1950, max = 2030,
                     value = c(2000, 2030)
         ),
+        tags$hr(style = "border:0.8px solid white;"),
         checkboxGroupInput(inputId = "filieres",
                            label = "Filières sélectionnées:",
                            choices = c("Bioénergie" = "bioénergie",
@@ -72,8 +73,10 @@ shinyUI(fluidPage(
                                       "gaz", "hydraulique", "solaire",
                                       "nucléaire"),
         ),
+        tags$hr(style = "border:0.8px solid white;"),
         radioButtons("typeDiagramme", "Choix du type de diagramme", 
                      choices = c("histogramme","courbe"),selected="histogramme"),
+        tags$hr(style = "border:0.8px solid white;"),
         radioButtons("choix_prediction_filiere", "Choix de la filière",
                      choices = c("Bioénergie" = "bioénergie",
                                  "Charbon" = "charbon",
@@ -94,6 +97,7 @@ shinyUI(fluidPage(
                                         "Afficher la ligne" = "ligne"),
                            selected= c("tendance", "points", "ligne")
         ),
+        tags$hr(style = "border:0.8px solid white;"),
         radioButtons("secteurConsommation", "Choix du secteur",
                      choices = c("totale", "agriculture",
                                  "industrie", "tertiaire",
@@ -116,6 +120,7 @@ shinyUI(fluidPage(
                            selected=c("bioénergie", "charbon", "éolien",
                                       "gaz", "hydraulique", "solaire"),
         ),
+        tags$hr(style = "border:0.8px solid white;"),
         radioButtons("secteurConsommation2", "Choix du secteur",
                      choices = c("totale", "agriculture",
                                  "industrie", "tertiaire",
@@ -146,17 +151,19 @@ shinyUI(fluidPage(
           ),
           tabPanel("Production",
             h3(style = "text-align:center; margin-bottom: 40px; margin-top: 20px;","Production d'électricité en France en fonction des filières"),
-            div(plotOutput("production"),h4("Prédiction des valeurs de production d'électricité jusqu'en 2030 avec Prophet"),tags$div(style = "text-align: center;",imageOutput("prediction_production")))
+            div(plotOutput("production"),p(id ="paragraphe1-prod", "Ce graphe montre la production d'électricité prévue jusqu'en 2030 en fonction de la filière sélectionnée."),h4(style ="text-align:center; margin-bottom: 40px; margin-top: 20px;" , "Prédiction des valeurs de production d'électricité jusqu'en 2030 avec Prophet"),tags$div(style = "text-align: center;",imageOutput("prediction_production")))
+            
           ),
           tabPanel("Consommation",
-            h3(style = "text-align:center; margin-bottom: 40px; margin-top: 20px;","Consommation"),
+            h3(style = "text-align:center; margin-bottom: 40px; margin-top: 20px;","Consommation d'électricité en France en fonction des secteurs"),
             div(style = "text-align: center;", plotOutput("grapheConsommation"), h4("Prédiction des valeurs jusqu'en 2030 avec Prophet"), imageOutput("predictionConsommation"))
           ),
-          tabPanel("Lien entre production et consommation",
+          tabPanel("Lien entre production et consommation d'électricité en France",
             h3(style = "text-align:center; margin-bottom: 40px; margin-top: 20px;","Lien entre production et consommation"),
-            plotOutput("prodConso"), p("Ce graphique montre la production d'électricité entre 2011 et 2021 selon les filières. La consommation d'électricité (par secteur) est représentée par la ligne noire."),
-             p("Nous pouvons sélectionner et déselectionner les différentes filières de production d'électricité, et choisir le secteur de consommation."),
-             p("On remarque qu'avec le parc actuel, sans le nucléaire, on ne produit pas assez d'électricité pour subvenir à la consommation.")
+            plotOutput("prodConso"), p(id ="paragraphe1-conso", "Ce graphique montre la production d'électricité entre 2011 et 2021 selon les filières."),
+            p(id="paragraphe2-conso","La consommation d'électricité (par secteur) est représentée par la ligne noire."),
+             p(id ="paragraphe3-conso","Nous pouvons sélectionner et déselectionner les différentes filières de production d'électricité, et choisir le secteur de consommation."),
+             p(id ="paragraphe4-conso","On remarque qu'avec le parc actuel, sans le nucléaire, on ne produit pas assez d'électricité pour subvenir à la consommation.")
           ),
           tabPanel("Confrontation des prédictions",
             h3(style = "text-align:center","Confrontation des prédictions"),
