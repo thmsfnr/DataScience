@@ -70,7 +70,7 @@ shinyUI(fluidPage(
         ),
         radioButtons("typeDiagramme", "Choix du type de diagramme", 
                      choices = c("histogramme","courbe"),selected="histogramme"),
-        radioButtons("choix_prediction_filiere", "Choix de la filièrer",
+        radioButtons("choix_prediction_filiere", "Choix de la filière",
                      choices = c("Bioénergie" = "bioénergie",
                                  "Charbon" = "charbon",
                                  "Eolien" = "éolien",
