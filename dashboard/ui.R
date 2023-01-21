@@ -13,7 +13,7 @@ shinyUI(fluidPage(
     type="text/css",
     "#predictionConsommation img {max-width: 100%; height: auto}
     #prediction_production img {max-width: 100%; height: auto}
-    #grapheConsommation {max-width: 800px; width: 100%;}
+    #grapheConsommation {max-width: 800px; width: 100%; margin: auto;}
     "
   )),
 
@@ -150,11 +150,13 @@ shinyUI(fluidPage(
           ),
           tabPanel("Consommation",
             h3(style = "text-align:center; margin-bottom: 40px; margin-top: 20px;","Consommation"),
-            div(plotOutput("grapheConsommation"), h4("Prédiction des valeurs jusqu'en 2030 avec Prophet"),imageOutput("predictionConsommation"))
+            div(style = "text-align: center;", plotOutput("grapheConsommation"), h4("Prédiction des valeurs jusqu'en 2030 avec Prophet"), imageOutput("predictionConsommation"))
           ),
           tabPanel("Lien entre production et consommation",
             h3(style = "text-align:center; margin-bottom: 40px; margin-top: 20px;","Lien entre production et consommation"),
-            plotOutput("prodConso")
+            plotOutput("prodConso"), p("Ce graphique montre la production d'électricité entre 2011 et 2021 selon les filières. La consommation d'électricité (par secteur) est représentée par la ligne noire."),
+             p("Nous pouvons sélectionner et déselectionner les différentes filières de production d'électricité, et choisir le secteur de consommation."),
+             p("On remarque qu'avec le parc actuel, sans le nucléaire, on ne produit pas assez d'électricité pour subvenir à la consommation.")
           ),
           tabPanel("Confrontation des prédictions",
             h3(style = "text-align:center","Confrontation des prédictions"),
