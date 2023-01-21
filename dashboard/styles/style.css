@@ -94,3 +94,13 @@
     font-size: 18px;
     text-align: center;
 }
+#secteurConsommation2{
+    padding: 10px;
+    margin: 10px;
+}
+#secteurConsommation2 > label{
+    width: 100%;
+}
+#secteurConsommation2 label{
+    font-size: 18px;
+}
