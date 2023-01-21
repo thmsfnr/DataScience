@@ -40,6 +40,30 @@ shinyServer(function(input, output, session) {
     }
   })
 
+  # Use observeEvent to clear the sliders
+  observeEvent(input$clear, {
+    # Update the sliders
+        updateSliderInput(session, "coal", value = 0)
+        updateSliderInput(session, "gas", value = 0)
+        updateSliderInput(session, "hydraulic", value = 0)
+        updateSliderInput(session, "wind", value = 0)
+        updateSliderInput(session, "solar", value = 0)
+        updateSliderInput(session, "oil", value = 0)
+        updateSliderInput(session, "nuclear", value = 0)
+  })
+
+  # Use observeEvent to reset the sliders
+  observeEvent(input$reset, {
+    # Update the sliders
+        updateSliderInput(session, "coal", value = 2)
+        updateSliderInput(session, "gas", value = 7)
+        updateSliderInput(session, "hydraulic", value = 9)
+        updateSliderInput(session, "wind", value = 2)
+        updateSliderInput(session, "solar", value = 2)
+        updateSliderInput(session, "oil", value = 2)
+        updateSliderInput(session, "nuclear", value = 76)
+  })
+
   output$prix <- renderText({
 
     df <- price
@@ -68,10 +92,13 @@ shinyServer(function(input, output, session) {
     # Calculate the electricity price
     priceNuclear <- 0
     for (i in 1:nrow(df)) {
-      priceNuclear <- priceNuclear + df$prix_MWh[i] * (df$part_de_production[i]/100)
+      # if part de production is different from 0
+      if (df$part_de_production[i] != 0) {
+        priceNuclear <- priceNuclear + df$prix_MWh[i] * (df$part_de_production[i]/100)
+      }
     }
 
-    paste("Cout de production moyen:",round(priceNuclear,2),"€/MWh")
+    paste("Coût de production moyen:",round(priceNuclear,2),"€/MWh")
   })
 
   output$environnement <- renderText({
@@ -92,7 +119,7 @@ shinyServer(function(input, output, session) {
       pollutionNuclear <- pollutionNuclear + (df$part_de_production[i]/100) * pollution$CO2_emissions[i]
     }
 
-    paste("Emmissions de CO2 moyennes:",round(pollutionNuclear,3),"kgCO2/MWh")
+    paste("Émissions de CO2 moyennes:",round(pollutionNuclear,3),"kgCO2/MWh")
   })
 
   output$mix <- renderImage({
