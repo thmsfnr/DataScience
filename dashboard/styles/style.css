@@ -2,3 +2,41 @@
 .price {
     text-align: center;
 }
+#anneeLim-label{
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+}
+#filieres{
+    padding: 10px;
+    margin: 10px;
+}
+#filieres > label{
+    text-align: center;
+    width: 100%;
+}
+#filieres label{
+    font-size:18px;
+}
+#typeDiagramme {
+    padding: 10px;
+    margin: 10px;
+}
+#choix_prediction_filiere{
+    padding: 10px;
+    margin: 10px;
+}
+#typeDiagramme label{
+    font-size: 18px;
+}
+#typeDiagramme > label{
+    text-align: center;
+    width: 100%;
+}
+#choix_prediction_filiere label{
+    font-size: 18px;
+}
+#choix_prediction_filiere > label{
+    text-align: center;
+    width: 100%;
+}
