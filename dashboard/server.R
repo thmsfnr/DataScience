@@ -168,25 +168,25 @@ shinyServer(function(input, output, session) {
   
   output$prediction_production <- renderImage({
       if(input$choix_prediction_filiere == "bioénergie"){
-        list(src = "../prevision-production/bioenergie/prevision-bioenergie.png") 
+        list(src = "../www/prevision-bioenergie.png") 
       }
       else if (input$choix_prediction_filiere == "charbon"){
         list(src = "../prevision-production/charbon/prediction-charbon.png") 
       }
       else if(input$choix_prediction_filiere == "éolien"){
-        list(src = "../prevision-production/eolien/prevision-production-eolien.png") 
+        list(src = "./www/prevision-production-eolien.png") 
       }
       else if(input$choix_prediction_filiere == "gaz"){
-        list(src = "../prevision-production/gaz/prevision-production-gaz.png") 
+        list(src = "./www/prevision-production-gaz.png") 
       }
       else if(input$choix_prediction_filiere == "hydraulique"){
-        list(src = "../prevision-production/hydraulique/prevision-production-hydraulique.png") 
+        list(src = "./www/prevision-production-hydraulique.png") 
       }
       else if(input$choix_prediction_filiere == "nucléaire"){
-        list(src = "../prevision-production/nucleaire/prevision-nucleaire.png") 
+        list(src = "./www/prevision-nucleaire.png") 
       }
       else if (input$choix_prediction_filiere == "solaire"){
-        list(src = "../prevision-production/solaire/prevision-solaire.png") 
+        list(src = "./www/prevision-solaire.png") 
       }
   })
 
