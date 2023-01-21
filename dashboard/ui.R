@@ -151,14 +151,13 @@ shinyUI(fluidPage(
           ),
           tabPanel("Production",
             h3(style = "text-align:center; margin-bottom: 40px; margin-top: 20px;","Production d'électricité en France en fonction des filières"),
-            div(plotOutput("production"),p(id ="paragraphe1-prod", "Ce graphe montre la production d'électricité prévue jusqu'en 2030 en fonction de la filière sélectionnée."),h4(style ="text-align:center; margin-bottom: 40px; margin-top: 20px;" , "Prédiction des valeurs de production d'électricité jusqu'en 2030 avec Prophet"),tags$div(style = "text-align: center;",imageOutput("prediction_production")))
-            
+            div(plotOutput("production"),p(id ="paragraphe1-prod", "Ce graphe montre la production d'électricité prévue jusqu'en 2030 en fonction de la filière sélectionnée"),h4(style ="text-align:center; margin-bottom: 40px; margin-top: 20px;" , "Prédiction des valeurs de production d'électricité jusqu'en 2030 avec Prophet"),tags$div(style = "text-align: center;",imageOutput("prediction_production")))
           ),
           tabPanel("Consommation",
             h3(style = "text-align:center; margin-bottom: 40px; margin-top: 20px;","Consommation d'électricité en France en fonction des secteurs"),
             div(style = "text-align: center;", plotOutput("grapheConsommation"), h4("Prédiction des valeurs jusqu'en 2030 avec Prophet"), imageOutput("predictionConsommation"))
           ),
-          tabPanel("Lien entre production et consommation d'électricité en France",
+          tabPanel("Lien entre production et consommation",
             h3(style = "text-align:center; margin-bottom: 40px; margin-top: 20px;","Lien entre production et consommation"),
             plotOutput("prodConso"), p(id ="paragraphe1-conso", "Ce graphique montre la production d'électricité entre 2011 et 2021 selon les filières."),
             p(id="paragraphe2-conso","La consommation d'électricité (par secteur) est représentée par la ligne noire."),
