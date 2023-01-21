@@ -1,12 +1,11 @@
 
 library(shiny)
 library(ggplot2)
-library(palmerpenguins)
 
-price <- read.csv("../analysis-price/conclusion.csv", header = TRUE)
-pollution <- read.csv("../analysis-environment/CO2_emissions_for_R.csv", header = TRUE)
-production <- read.csv("../cleaneddata/df_production.csv",header = TRUE)
-consommation <- read.csv("../cleaneddata/df_consommation.csv", header = TRUE)
+price <- read.csv("./www/conclusion.csv", header = TRUE)
+pollution <- read.csv("./www/CO2_emissions_for_R.csv", header = TRUE)
+production <- read.csv("./www/df_production.csv",header = TRUE)
+consommation <- read.csv("./www/df_consommation.csv", header = TRUE)
 
 # Server logic
 shinyServer(function(input, output, session) {
@@ -97,7 +96,7 @@ shinyServer(function(input, output, session) {
   })
 
   output$mix <- renderImage({
-    list(src = "./mix_2050.png")
+    list(src = "./www/mix_2050.png")
   })
 
   output$production <- renderPlot({
@@ -166,9 +165,9 @@ shinyServer(function(input, output, session) {
 
   output$predictionConsommation <- renderImage({
     if (input$secteurConsommation == "totale") {
-      list(src = "../prevision-consommation/filieres/global-consommation-prevision.png") 
+      list(src = "./www/global-consommation-prevision.png")
     } else {
-      list(src = paste("../prevision-consommation/filieres/", input$secteurConsommation, "-consommation-prevision.png", sep=""))
+      list(src = paste("./www/", input$secteurConsommation, "-consommation-prevision.png", sep=""))
     }
   })
   

@@ -5,7 +5,7 @@ library(shinythemes)
 # Define UI for the application
 shinyUI(fluidPage(
 
-  includeCSS("./style.css"),
+  includeCSS("./styles/style.css"),
   title = "Énergie en France",
   theme = shinytheme("superhero"),
   
@@ -143,7 +143,6 @@ shinyUI(fluidPage(
           tabPanel("Production",div(plotOutput("production"),imageOutput("prediction_production"))),
           tabPanel("Consommation", div(plotOutput("grapheConsommation"), 
                                        h4("Prédiction des valeurs jusqu'en 2030 avec Prophet"),
-                                       #imageOutput("predictionConsommation", width="100%", height="auto"))),
                                        imageOutput("predictionConsommation"))),
           tabPanel("Lien entre production et consommation", plotOutput("prodConso")),
           tabPanel("Confrontation des prédictions",
