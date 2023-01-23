@@ -5,9 +5,9 @@ account: thmsfnr
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 8090444
-bundleId: 6758031
+bundleId: 6758266
 url: https://thmsfnr.shinyapps.io/EnergieEnFrance/
-when: 1674292802.20537
-lastSyncTime: 1674292802.20538
+when: 1674300952.34836
+lastSyncTime: 1674300952.34841
 asMultiple: FALSE
 asStatic: FALSE
