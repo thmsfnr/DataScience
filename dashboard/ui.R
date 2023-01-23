@@ -8,7 +8,7 @@ shinyUI(fluidPage(
   includeCSS("./styles/style.css"),
   title = "Énergie en France",
   theme = shinytheme("superhero"),
-  
+
   tags$head(tags$style(
     type="text/css",
     "#predictionConsommation img {max-width: 100%; height: auto}
@@ -68,13 +68,13 @@ shinyUI(fluidPage(
                                        "Gaz" = "gaz",
                                        "Hydraulique" = "hydraulique",
                                        "Nucléaire" = "nucléaire",
-                                       "Solaire" = "solaire"), 
+                                       "Solaire" = "solaire"),
                            selected=c("bioénergie", "charbon", "éolien",
                                       "gaz", "hydraulique", "solaire",
                                       "nucléaire"),
         ),
         tags$hr(style = "border:0.8px solid white;"),
-        radioButtons("typeDiagramme", "Choix du type de diagramme", 
+        radioButtons("typeDiagramme", "Choix du type de diagramme",
                      choices = c("histogramme","courbe"),selected="histogramme"),
         tags$hr(style = "border:0.8px solid white;"),
         radioButtons("choix_prediction_filiere", "Choix de la filière",
@@ -84,7 +84,7 @@ shinyUI(fluidPage(
                                  "Gaz" = "gaz",
                                  "Hydraulique" = "hydraulique",
                                  "Nucléaire" = "nucléaire",
-                                 "Solaire" = "solaire"), 
+                                 "Solaire" = "solaire"),
                      selected="nucléaire"),
       ),
       # If "Consommation" is selected
@@ -116,7 +116,7 @@ shinyUI(fluidPage(
                                        "Gaz" = "gaz",
                                        "Hydraulique" = "hydraulique",
                                        "Nucléaire" = "nucléaire",
-                                       "Solaire" = "solaire"), 
+                                       "Solaire" = "solaire"),
                            selected=c("bioénergie", "charbon", "éolien",
                                       "gaz", "hydraulique", "solaire"),
         ),
